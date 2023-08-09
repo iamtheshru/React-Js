@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: serif;
+}
+.logo {
+    display: flex;
+    margin: 30px 0px;
+    padding: 10px;
+}
+
+.logo img {
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+}
+
+.jsc {
+    justify-content: center;
+}
+
+.main {
+    margin-right: auto;
+}
+
+.col-30 {
+    width: 30%;
+    border: 1px solid gray;
+    margin: 20px;
+    box-shadow: 10px 5px 7px 6px;
+}
+
+.col-30 img {
+    width: 100%;
+}
+
+.col-30 p {
+    border: 1px solid none;
+    margin: 5px 0px;
+}
+
+.col-30 button {
+    padding: 0 20px;
+    margin: 5px;
+}
