@@ -1,10 +1,14 @@
 import React from "react";
 
-const functionalcompointro = () => {
+const Functionalcompointro = () => {
     return (
         <>
-            functionalcompointro;
+            <div className="row">
+                <div className="col offset-6">
+                    <h2>fucntionalcompointro</h2>
+                </div>
+            </div>
         </>
     );
 };
-export default functionalcompointro;
+export default Functionalcompointro;

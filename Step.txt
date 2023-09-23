@@ -1,0 +1,23 @@
+create react app using 
+
+
+cmd :> npx create-react-app projectname
+
+
+cmd :> cd projectname
+
+
+https://mdbootstrap.com/docs/react/getting-started/installation/
+
+projectname :> npm i mdb-react-ui-kit
+
+projectname :> npm i @fortawesome/fontawesome-free
+
+
+Follow steps from MDB copy paste bellow lines in our src/index.js
+
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+projectname :> npm install react-router-dom localforage match-sorter sort-by
+

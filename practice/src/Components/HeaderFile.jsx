@@ -47,7 +47,7 @@ export default function App() {
                             <Link className='nav-link' to="/contact">Contact Us</Link>
                         </MDBNavbarItem>
                         <MDBNavbarItem>
-                            <Link className='nav-link' to="/Example">Contact Us</Link>
+                            <Link className='nav-link' to="/Example">Example</Link>
                         </MDBNavbarItem>
 
                         <MDBNavbarItem>

@@ -1,23 +1,23 @@
 import React from "react";
 import { useRoutes } from "react-router-dom";
-import FunctionalCompoMenu from "../Components/FunctionalComponent/01FunctionalCompoMenu";
-import FunctionalComponetIntro from "./../Components/FunctionalComponent/02fucntionalcompointro";
+import FunctionalCompoMenu from "./../Components/FunctionalComponent/01FunctionalCompoMenu.jsx";
+import FunctionalComponetIntro from "./../Components/FunctionalComponent/02Fucntionalcompointro.jsx";
 
 
 const FunctionalComponentRoute = () => {
     const routes = useRoutes([
         {
             path: "/",
-            Element: <FunctionalCompoMenu />,
+            element: <FunctionalCompoMenu />,
             children: [
                 {
-                    path: "functionalcompointro",
+                    path: "functionalComponetIntro",
                     element: <FunctionalComponetIntro />,
-                },
-                {
-                    path: "fucntionalhooks",
-                    element: <FunctionalComponetIntro />,
-                },
+                }
+                // {
+                //     path: "fucntionalhooks",
+                //     element: <FunctionalComponetIntro />,
+                // },
             ]
         }
     ])

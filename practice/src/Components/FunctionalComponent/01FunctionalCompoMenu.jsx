@@ -5,9 +5,9 @@ const FunctionalCompoMenu = () => {
     return (
         <>
             <div className="row">
-                <div className="col-ld-4 offset-md-6">
+                <div className="col offset-6">
                     <ol>
-                        <li> <Link to="functionalcompointro">Functional Components Intro</Link> </li>
+                        <li> <Link to="functionalComponetIntro">Functional Components Intro</Link> </li>
                     </ol>
                 </div>
             </div>

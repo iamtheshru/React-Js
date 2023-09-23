@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Outlet } from 'react-router-dom';
 
-const ExampleCompo = () => {
+const Example = () => {
     return (
         <>
             <div className="container mt-3">
@@ -22,13 +22,13 @@ const ExampleCompo = () => {
                         </h4>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col">
-                        <Outlet></Outlet>
-                    </div>
+                {/* <div className="row"> */}
+                <div className="col">
+                    <Outlet></Outlet>
                 </div>
+                {/* </div> */}
             </div>
         </>
     );
 };
-export default ExampleCompo;
+export default Example;

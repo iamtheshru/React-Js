@@ -1,12 +1,13 @@
 import React, { Suspense } from "react";
-import { createBrowserRouter, Link } from "react-router-dom";
-import MainPage from "./../page//MainPage";
+import { createBrowserRouter } from "react-router-dom";
+import MainPage from "./../page/MainPage";
 import About from "./../page/About";
 import Contactus from "./../page/Contactus";
 import Example from "./../page/Example";
 import HeaderFile from './../Components/HeaderFile';
 
-const FunctionalCompoRoute = React.lazy(() => import('./FunctionalComponentRoute'));
+const FunctionalCompoRoute = React.lazy(() => { return import('./FunctionalComponentRoute.jsx') })
+const ClassCompoRoute = React.lazy(() => { return import('./ClassComponentRoute.jsx') })
 const MainRouter = createBrowserRouter([
     {
         path: "/",
@@ -36,7 +37,7 @@ const MainRouter = createBrowserRouter([
             </>
         ),
     }, {
-        path: "/Example",
+        path: "/example",
         element: (
             <>
                 <HeaderFile />
@@ -45,8 +46,12 @@ const MainRouter = createBrowserRouter([
         ),
         children: [
             {
-                path: "/Example/functionalcomponent/*",
+                path: "/example/functionalcomponent/*",
                 element: <Suspense fallback={<>Loading....</>} ><FunctionalCompoRoute /></Suspense>,
+            },
+            {
+                path: "/example/classcomponent/*",
+                element: <Suspense fallback={<>Loading....</>} ><ClassCompoRoute/></Suspense>,
             },
         ],
     },
