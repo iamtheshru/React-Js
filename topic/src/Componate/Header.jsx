@@ -15,7 +15,7 @@ import {
   MDBDropdownItem,
   MDBCollapse,
 } from 'mdb-react-ui-kit';
-import { Link } from "react-router-dom";
+import { Link } from 'react';
 
 export default function App() {
   const [showBasic, setShowBasic] = useState(false);
@@ -40,14 +40,14 @@ export default function App() {
               {/* <MDBNavbarLink active aria-current='page' href='#'>
                 Home
               </MDBNavbarLink> */}
-              <Link to="/">Home</Link>
+              <Link to="/"> Home </Link>
             </MDBNavbarItem>
             <MDBNavbarItem>
-            <Link to="/about">About</Link>
+              <Link to="/about"> About </Link>
               {/* <MDBNavbarLink href='#'>Link</MDBNavbarLink> */}
             </MDBNavbarItem>
 
-            {/* <MDBNavbarItem>
+            <MDBNavbarItem>
               <MDBDropdown>
                 <MDBDropdownToggle tag='a' className='nav-link' role='button'>
                   Dropdown
@@ -58,19 +58,19 @@ export default function App() {
                   <MDBDropdownItem link>Something else here</MDBDropdownItem>
                 </MDBDropdownMenu>
               </MDBDropdown>
-            </MDBNavbarItem> */}
+            </MDBNavbarItem>
 
-            {/* <MDBNavbarItem>
+            <MDBNavbarItem>
               <MDBNavbarLink disabled href='#' tabIndex={-1} aria-disabled='true'>
                 Disabled
               </MDBNavbarLink>
-            </MDBNavbarItem> */}
+            </MDBNavbarItem>
           </MDBNavbarNav>
 
-          {/* <form className='d-flex input-group w-auto'>
+          <form className='d-flex input-group w-auto'>
             <input type='search' className='form-control' placeholder='Type query' aria-label='Search' />
             <MDBBtn color='primary'>Search</MDBBtn>
-          </form> */}
+          </form>
         </MDBCollapse>
       </MDBContainer>
     </MDBNavbar>

@@ -1,17 +1,27 @@
-import React,{createBrowserRouter} from "react";
-import Header from "./Header"
+import { createBrowserRouter, Link } from "react-router-dom";
+import Header from "./../Componate/Header";
+import Home from "./../Pages/Home";
+import About  from "../Pages/About";
 
 
-
-const MainRouter=createBrowserRouter([
+const MainRouter = createBrowserRouter([
     {
-        path:"/",
-        element:(
+        path: "/",
+        element: (
             <>
-            <Header/>
+                <Header />
+                <Home />
             </>
-        )
-    }
+        ),
+    }, {
+        path: "/about",
+        element: (
+            <>
+                <Header />
+                <About />
+            </>
+        ),
+    },
 ]);
 
 export default MainRouter;
