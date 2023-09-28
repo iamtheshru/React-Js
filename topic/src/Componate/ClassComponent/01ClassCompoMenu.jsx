@@ -1,14 +1,16 @@
-import { Link, Outlet } from 'react-router-dom'
 import React, { Component } from 'react'
+import { Outlet, Link } from 'react-router-dom';
 
 class ClassCompoMenu extends Component {
     render() {
         return (
             <>
                 <div className="row">
-                    <div className="col">
+                    <div className="col-ld-4">
                         <ol>
-                            <li> <Link to="ClassCompointro">Class Components Intro</Link></li>
+                            <li><Link to="whatiscomponate">what is componate</Link></li>
+                            <li><Link to="classcompointro">Class Compointro </Link></li>
+                            <li><Link to="jsx">Class Compointro </Link></li>
                         </ol>
                     </div>
                 </div>
@@ -20,6 +22,6 @@ class ClassCompoMenu extends Component {
             </>
         )
     }
-}
+};
 
 export default ClassCompoMenu;
