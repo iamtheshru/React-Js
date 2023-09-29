@@ -6,6 +6,8 @@ class ClassComponentIntro extends Component {
             <>
                 <div className="row">
                     <div className="col">
+                        <p>class components are more complex than function components.It required  you to extend  from react component and creat a reander function  which return a react element. you can pass data from one class to other class component</p>
+                        <br />
                         <pre>
                             class Welcome extends React.Component &#123; <br />
                             &nbsp;&nbsp; render() &#123;<br />

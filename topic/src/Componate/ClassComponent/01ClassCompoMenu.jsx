@@ -10,7 +10,9 @@ class ClassCompoMenu extends Component {
                         <ol>
                             <li><Link to="whatiscomponate">what is componate</Link></li>
                             <li><Link to="classcompointro">Class Compointro </Link></li>
-                            <li><Link to="jsx">Class Compointro </Link></li>
+                            <li><Link to="jsx">Jsx</Link></li>
+                            <li><Link to="event">Event</Link></li>
+                            <li><Link to="state">State</Link></li>
                         </ol>
                     </div>
                 </div>
