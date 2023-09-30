@@ -1,13 +1,17 @@
 import React from "react";
-import { Link, Outlet } from 'react-router-dom'
+import { Outlet, Link } from "react-router-dom";
 
-const FunctionalCompoMenu = () => {
+
+
+const FunctionComponentIntro = () => {
     return (
         <>
             <div className="row">
-                <div className="col offset-6">
+                <div className="col">
                     <ol>
-                        <li> <Link to="functionalComponetIntro">Functional Components Intro</Link> </li>
+                        <li>
+                            <Link to="functioncompointro">Functional Components Intro</Link>
+                        </li>
                     </ol>
                 </div>
             </div>
@@ -17,6 +21,7 @@ const FunctionalCompoMenu = () => {
                 </div>
             </div>
         </>
-    );
+    )
 };
-export default FunctionalCompoMenu;
+
+export default FunctionComponentIntro;
