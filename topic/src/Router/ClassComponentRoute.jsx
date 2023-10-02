@@ -6,6 +6,8 @@ import ClassComponentIntro from './../Componate/ClassComponent/03ClassComponentI
 import ExampleOfJsx from './../Componate/ClassComponent/04ExampleOfJsx.jsx';
 import ExampleOfEvent from './../Componate/ClassComponent/05ExampleOfEvent.jsx';
 import StateInClassCompo from './../Componate/ClassComponent/06StateInClassCompo.jsx';
+import PropsInClassCompo from './../Componate/ClassComponent/07PropsInClassCompo.jsx';
+import StateLifeCycleInClassCompo from './../Componate/ClassComponent/08StateLifeCycleInClassCompo.jsx';
 
 
 const ClassComponentRoute = () => {
@@ -28,11 +30,19 @@ const ClassComponentRoute = () => {
                 },
                 {
                     path: "event",
-                    element: <ExampleOfEvent/>
+                    element: <ExampleOfEvent />
                 },
                 {
                     path: "state",
-                    element: <StateInClassCompo/>
+                    element: <StateInClassCompo />
+                },
+                {
+                    path: "propsinclass",
+                    element: <PropsInClassCompo />
+                },
+                {
+                    path: "statelifecycle",
+                    element: <StateLifeCycleInClassCompo />
                 }
             ]
         }
