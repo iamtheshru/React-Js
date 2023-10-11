@@ -15,6 +15,14 @@ class ClassCompoMenu extends Component {
                             <li><Link to="state">State</Link></li>
                             <li><Link to="propsinclass">PropsInClassCompo</Link></li>
                             <li><Link to="statelifecycle">StateLifeCycleInClassCompo</Link></li>
+                            <li><Link to="statelifecycleloader">Statelifecycleloader</Link></li>
+                            <li><Link to="conditionalRendering">ConditionalRendering</Link></li>
+                            <li><Link to="loaderExample">LoaderExample</Link></li>
+                            <li><Link to="listKeysClassCompo">ListKeysClassCompo</Link></li>
+                            <li><Link to="dynamicSubMenu">DynamicSubMenu</Link></li>
+                            <li><Link to="classcompospreadrest">ClassCompoSpreadRest</Link></li>
+                            <li><Link to="controlledcompo">ControlledCompo</Link></li>
+                            <li><Link to="dynamicsubmenuex">DynamicSubMenuEx</Link></li>
                         </ol>
                     </div>
                 </div>

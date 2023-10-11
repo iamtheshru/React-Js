@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CustomCard from '../ClassComponent/07PropsChildInClassCompo'
+import CustomCard from '../ClassComponent/08PropsChildInClassCompo'
 import ReactSrc from './reactSrc.jpg'
 class PropsInClassCompo extends Component {
     render() {
