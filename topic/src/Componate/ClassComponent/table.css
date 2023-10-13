@@ -1,0 +1,44 @@
+.table1 {
+    color: black;
+    background-color: blue;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.table2 {
+    color: black;
+    background-color: rgba(149, 52, 57, 0.422);
+    padding: 10px;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.table3 {
+    color: black;
+    background-color: rgba(122, 132, 34, 0.505);
+    padding: 10px;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.table4 {
+    color: black;
+    background-color: rgba(171, 50, 177, 0.388);
+    padding: 10px;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.table5 {
+    color: black;
+    background-color: rgba(35, 132, 130, 0.352);
+    padding: 10px;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.pt {
+    padding-right: 30px;
+    text-align: center;
+}

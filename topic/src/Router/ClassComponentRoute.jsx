@@ -17,6 +17,7 @@ import ClassCompoSpreadRest from './../Componate/ClassComponent/17ClassCompoSpre
 import ControlledCompo from './../Componate/ClassComponent/18ControlledCompo.jsx';
 import DynamicSubMenuEx from './../Componate/ClassComponent/19DynamicSubMenuEx.jsx';
 import UncontrolledCompo from './../Componate/ClassComponent/20UncontrolledCompo.jsx';
+import UncontrolledCompoEx from './../Componate/ClassComponent/21UncontrolledCompoEx.jsx';
 
 
 const ClassComponentRoute = () => {
@@ -88,6 +89,10 @@ const ClassComponentRoute = () => {
                 {
                     path: "uncontrolledcompo",
                     element: < UncontrolledCompo />
+                },
+                {
+                    path: "uncontrolledcompoex",
+                    element: < UncontrolledCompoEx />
                 }
             ]
         }

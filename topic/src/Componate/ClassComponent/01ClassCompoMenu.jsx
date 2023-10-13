@@ -24,6 +24,7 @@ class ClassCompoMenu extends Component {
                             <li><Link to="controlledcompo">ControlledCompo</Link></li>
                             <li><Link to="dynamicsubmenuex">DynamicSubMenuEx</Link></li>
                             <li><Link to="uncontrolledcompo">UncontrolledCompo</Link></li>
+                            <li><Link to="uncontrolledcompoex">UncontrolledCompoEx</Link></li>
                         </ol>
                     </div>
                 </div>
