@@ -1,87 +1,117 @@
 import React, { Component } from 'react'
+import './table.css'
 
-class UncontrolledCompoEx extends Component {
+class Uncontrolledcompo extends Component {
     constructor(props) {
         super(props);
-        this.fristname = React.createRef();
-        this.lastname = React.createRef();
+        this.firstName = React.createRef();
+        this.lastName = React.createRef();
+        this.email = React.createRef();
         this.password = React.createRef();
         this.contact = React.createRef();
-        this.email = React.createRef();
     }
-    inputHendal = () => {
-        let table = document.getElementById('result');
-        let tr = document.createElement('tr');
-        let td1 = document.createElement('td');
-        let td2 = document.createElement('td');
-        let td3 = document.createElement('td');
-        let td4 = document.createElement('td');
-        let td5 = document.createElement('td');
-        let tabletd1 = td1.classList.add('td1')
-        let tabletd2 = td2.classList.add('td2')
-        let tabletd3 = td3.classList.add('td3')
-        let tabletd4 = td4.classList.add('td4')
-        let tabletd5 = td5.classList.add('td5')
-        td1.append.tabletd1
-        td2.append.tabletd2
-        td3.append.tabletd3
-        td4.append.tabletd4
-        td5.append.tabletd5
-        td1.textContent = this.fristname.current.value;
-        td2.textContent = this.lastname.current.value;
-        td3.textContent = this.password.current.value;
-        td4.textContent = this.contact.current.value;
-        td5.textContent = this.email.current.value;
+    submitdata = (e) => {
+        e.preventDefault();
+        const result = document.getElementById("result");
+        const tr = document.createElement("tr");
+        const td1 = document.createElement("td");
+        const td1Class = td1.classList.add("table1");
+        td1.append(td1Class);
+        const td2 = document.createElement("td");
+        const td2Class = td2.classList.add("table2");
+        td2.append(td2Class);
+        const td3 = document.createElement("td");
+        const td3Class = td3.classList.add("table3");
+        td3.append(td3Class);
+        const td4 = document.createElement("td");
+        const td4Class = td4.classList.add("table4");
+        td4.append(td4Class);
+        const td5 = document.createElement("td");
+        const td5Class = td5.classList.add("table5");
+        td5.append(td5Class);
+        const fname = this.firstName.current.value;
+        const lName = this.lastName.current.value;
+        const email = this.email.current.value;
+        const password = this.password.current.value;
+        const contact = this.contact.current.value;
         td1.textContent = fname;
         td2.textContent = lName;
         td3.textContent = email;
         td4.textContent = password;
         td5.textContent = contact;
-        tr.append.td1
-        tr.append.td2
-        tr.append.td3
-        tr.append.td4
-        tr.append.td5
-        table.append.tr
+        tr.append(td1);
+        tr.append(td2);
+        tr.append(td3);
+        tr.append(td4);
+        tr.append(td5);
+        result.append(tr);
+        this.firstName.current.value = "";
+        this.lastName.current.value = "";
+        this.email.current.value = "";
+        this.password.current.value = "";
+        this.contact.current.value = "";
+
+
+
+
+        // console.log("called");
+        // console.log(this.username);
+        // console.log(this.username.current.value);
     }
+
     render() {
         return (
             <>
-                <div>
-                    <form method='post' onSubmit={this.inputHendal}>
-                        <div className="mb-3 col-6">
-                            <label for="exampleFormControlInput1" className="form-label">Frist Name</label>
-                            <input type="text" className="form-control" ref={this.fristname} id="exampleFormControlInput1" placeholder="Frist Name" />
+                <h3>Uncontrolled Component</h3>
+                <div className="row">
+                    <div className="col-6">
+                        <form onSubmit={this.submitdata} method="post">
+                            <div className="mb-3">
+                                <label htmlFor="firstName" className="form-label">First Name</label>
+                                <input type="text" className="form-control" ref={this.firstName} id="" aria-describedby="emailHelp" />
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="lastName" className="form-label">Last Name</label>
+                                <input type="text" className="form-control" ref={this.lastName} id="" aria-describedby="emailHelp" />
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="email" className="form-label">Email Id</label>
+                                <input type="email" className="form-control" ref={this.email} id="" />
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="password" className="form-label">Password</label>
+                                <input type="password" className="form-control" ref={this.password} id="" />
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="contact" className="form-label">Mobile</label>
+                                <input type="text" className="form-control" ref={this.contact} id="" />
+                            </div>
+                            <button type="submit" className="btn btn-primary">Submit</button>
+                        </form>
+                        <div>
+                            <table id="result">
+                                <thead>
+                                    <tr>
+                                        <th className=""> Table</th>
+                                    </tr>
+                                    <tr>
+                                        <th className="pt">First Name</th>
+                                        <th className="pt">Last Name</th>
+                                        <th className="pt">Email Id</th>
+                                        <th className="pt">Password</th>
+                                        <th>Contact</th>
+                                        <br />
+                                        <br />
+                                        <br />
+                                    </tr>
+                                </thead>
+                            </table>
                         </div>
-                        <div className="mb-3 col-6">
-                            <label for="exampleFormControlInput1" className="form-label">Last Name</label>
-                            <input type="text" className="form-control" ref={this.lastname} id="exampleFormControlInput1" placeholder="Last Name" />
-                        </div>
-                        <div className="mb-3 col-6">
-                            <label for="exampleFormControlInput1" className="form-label">Contact</label>
-                            <input type='tel' className="form-control" ref={this.contact} id="exampleFormControlInput1" placeholder="+91" />
-                        </div>
-                        <div className="mb-3 col-6">
-                            <label for="exampleFormControlInput1" className="form-label">Email address</label>
-                            <input type="email" className="form-control" ref={this.email} id="exampleFormControlInput1" placeholder="name@example.com" />
-                        </div>
-                        <div className="mb-3 col-6">
-                            <label for="exampleFormControlInput1" className="form-label">Password</label>
-                            <input type='password' className="form-control" ref={this.password} id="exampleFormControlInput1" placeholder="Password" />
-                        </div>
-                        <div className="mb-3 col-6">
-                            {/* <label for="exampleFormControlInput1" className="form-label">Password</label> */}
-                            <input type='submit' value='submit' className="form-control" id="exampleFormControlInput1" placeholder="Password" />
-                        </div>
-                    </form>
-                    <table id='result'>
-                        <tr>
-                            <td>Table</td>
-                        </tr>
-                    </table>
+                    </div>
                 </div>
-            </>
-        )
+
+            </>);
     }
 }
-export default UncontrolledCompoEx;
+
+export default Uncontrolledcompo;
