@@ -18,6 +18,9 @@ import ControlledCompo from './../Componate/ClassComponent/18ControlledCompo.jsx
 import DynamicSubMenuEx from './../Componate/ClassComponent/19DynamicSubMenuEx.jsx';
 import UncontrolledCompo from './../Componate/ClassComponent/20UncontrolledCompo.jsx';
 import UncontrolledCompoEx from './../Componate/ClassComponent/21UncontrolledCompoEx.jsx';
+import UncontrolledCompoEx1 from './../Componate/ClassComponent/22UncontrolledCompoEx1.jsx';
+import CompositionVsInheritance from './../Componate/ClassComponent/23CompositionVsInheritance.jsx';
+import StateLifting from './../Componate/ClassComponent/20StateLifting/mainfile.jsx';
 
 
 const ClassComponentRoute = () => {
@@ -93,6 +96,18 @@ const ClassComponentRoute = () => {
                 {
                     path: "uncontrolledcompoex",
                     element: < UncontrolledCompoEx />
+                },
+                {
+                    path: "uncontrolledcompoex1",
+                    element: < UncontrolledCompoEx1 />
+                },
+                {
+                    path: "compositionvsinheritance",
+                    element: < CompositionVsInheritance />
+                },
+                {
+                    path: "statelifting",
+                    element: < StateLifting />
                 }
             ]
         }
