@@ -1,29 +1,16 @@
 import React from "react";
 import { Component } from "react";
-import Secondcompo from "./Secondcompo";
+import Secondcompo from "./Secndcompo";
 class StateLifting extends Component {
     constructor(props) {
         super(props);
         this.state = {
             data: "default"
         }
-        this.checkbox1 = React.createRef();
-        this.checkbox2 = React.createRef();
-        this.checkbox3 = React.createRef();
     }
     inputChange = (fromChild) => {
         console.log("called", fromChild);
         this.setState({ data: fromChild })
-        let checkbox1 = document.getElementById("p1")
-        let checkbox2 = document.getElementById("p2")
-        let checkbox3 = document.getElementById("p3")
-
-        this.checkbox1.current.value = checkbox1;
-        this.checkbox2.current.value = checkbox2;
-        this.checkbox3.current.value = checkbox3;
-        console.log(checkbox1);                         
-
-
     }
     render() {
         return (<>

@@ -29,6 +29,7 @@ class ClassCompoMenu extends Component {
                             <li><Link to="compositionvsinheritance">CompositionVsInheritance</Link></li>
                             <li><Link to="compositionvsinheritance">CompositionVsInheritance</Link></li>
                             <li> <Link to="statelifting">State Lifting</Link> </li>
+                            <li> <Link to="maincompo">State Lifting</Link> </li>
                         </ol>
                     </div>
                 </div>

@@ -20,7 +20,8 @@ import UncontrolledCompo from './../Componate/ClassComponent/20UncontrolledCompo
 import UncontrolledCompoEx from './../Componate/ClassComponent/21UncontrolledCompoEx.jsx';
 import UncontrolledCompoEx1 from './../Componate/ClassComponent/22UncontrolledCompoEx1.jsx';
 import CompositionVsInheritance from './../Componate/ClassComponent/23CompositionVsInheritance.jsx';
-import StateLifting from './../Componate/ClassComponent/20StateLifting/mainfile.jsx';
+import StateLifting from './../Componate/ClassComponent/20StateLifting/StateLifting.jsx';
+import mainCompo from './../Componate/ClassComponent/21HOC_in_classCompo/mainCompo.jsx';
 
 
 const ClassComponentRoute = () => {
@@ -108,6 +109,10 @@ const ClassComponentRoute = () => {
                 {
                     path: "statelifting",
                     element: < StateLifting />
+                },
+                {
+                    path: "maincompo",
+                    element: < mainCompo />
                 }
             ]
         }
