@@ -18,10 +18,11 @@ import ControlledCompo from './../Componate/ClassComponent/18ControlledCompo.jsx
 import DynamicSubMenuEx from './../Componate/ClassComponent/19DynamicSubMenuEx.jsx';
 import UncontrolledCompo from './../Componate/ClassComponent/20UncontrolledCompo.jsx';
 import UncontrolledCompoEx from './../Componate/ClassComponent/21UncontrolledCompoEx.jsx';
-import UncontrolledCompoEx1 from './../Componate/ClassComponent/22UncontrolledCompoEx1.jsx';
+import ControlledCompoEx from './../Componate/ClassComponent/22ControlledCompoEx.jsx';
 import CompositionVsInheritance from './../Componate/ClassComponent/23CompositionVsInheritance.jsx';
 import StateLifting from './../Componate/ClassComponent/20StateLifting/StateLifting.jsx';
-import mainCompo from './../Componate/ClassComponent/21HOC_in_classCompo/mainCompo.jsx';
+import HOCInClass from './../Componate/ClassComponent/21HOC_in_classCompo/mainCompo.jsx';
+import HOCInClass1 from './../Componate/ClassComponent/21HOC_in_classCompo/mainCompoEx.jsx';
 
 
 const ClassComponentRoute = () => {
@@ -99,8 +100,8 @@ const ClassComponentRoute = () => {
                     element: < UncontrolledCompoEx />
                 },
                 {
-                    path: "uncontrolledcompoex1",
-                    element: < UncontrolledCompoEx1 />
+                    path: "controlledcompoex",
+                    element: < ControlledCompoEx />
                 },
                 {
                     path: "compositionvsinheritance",
@@ -111,8 +112,12 @@ const ClassComponentRoute = () => {
                     element: < StateLifting />
                 },
                 {
-                    path: "maincompo",
-                    element: < mainCompo />
+                    path: "hoc",
+                    element: < HOCInClass />
+                },
+                {
+                    path: "hoc1",
+                    element: < HOCInClass1 />
                 }
             ]
         }

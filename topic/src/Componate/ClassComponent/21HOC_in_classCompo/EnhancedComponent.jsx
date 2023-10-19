@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
 
-const NewComponent = (OriginalComponent) => {
-    class EnhancedComponent extends Component {
+const EnhancedComponent = (OriginalComponent) => {
+    class NewComponent extends Component {
         clickHnadle = () => {
             console.log("called inside enhanced");
         }
@@ -15,8 +15,8 @@ const NewComponent = (OriginalComponent) => {
             )
         }
     }
-    return EnhancedComponent
+    return NewComponent;
 }
 
 
-export default NewComponent;
+export default EnhancedComponent;

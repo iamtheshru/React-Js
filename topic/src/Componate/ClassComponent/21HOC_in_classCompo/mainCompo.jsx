@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import EnhancedComponent from './EnhancedComponent.jsx'
 
-export class mainCompo extends Component {
+class mainCompo extends Component {
     render() {
         console.log("Main Compo called");
         const { clickHnadle } = this.props
@@ -18,4 +18,4 @@ export class mainCompo extends Component {
     }
 }
 
-export default EnhancedComponent(mainCompo)
+export default EnhancedComponent(mainCompo);

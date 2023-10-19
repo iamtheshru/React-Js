@@ -25,11 +25,11 @@ class ClassCompoMenu extends Component {
                             <li><Link to="dynamicsubmenuex">DynamicSubMenuEx</Link></li>
                             <li><Link to="uncontrolledcompo">UncontrolledCompo</Link></li>
                             <li><Link to="uncontrolledcompoex">UncontrolledCompoEx</Link></li>
-                            <li><Link to="uncontrolledcompoex1">UncontrolledCompoEx</Link></li>
-                            <li><Link to="compositionvsinheritance">CompositionVsInheritance</Link></li>
+                            <li><Link to="controlledcompoex">ControlledCompoEx</Link></li>
                             <li><Link to="compositionvsinheritance">CompositionVsInheritance</Link></li>
                             <li> <Link to="statelifting">State Lifting</Link> </li>
-                            <li> <Link to="maincompo">State Lifting</Link> </li>
+                            <li> <Link to="hoc">HOC</Link> </li>
+                            <li> <Link to="hoc1">HOCEX</Link> </li>
                         </ol>
                     </div>
                 </div>
