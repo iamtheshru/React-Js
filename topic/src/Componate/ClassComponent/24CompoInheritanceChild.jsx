@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class CompoInheritanceChild extends Component {
+class CompoInheritanceChild extends Component {
     render() {
         return (
             <>

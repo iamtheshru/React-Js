@@ -18,9 +18,6 @@ class StateLifting extends Component {
                 <div className="col">
                     <Secondcompo parentMethod={this.inputChange} />
                     <p >in parent compo  :{this.state.data}</p>
-                    <p id="p1">in parent compo : </p>
-                    <p id="p2">in parent compo :</p>
-                    <p id="p3">in parent compo :</p>
                 </div>
             </div>
         </>);
