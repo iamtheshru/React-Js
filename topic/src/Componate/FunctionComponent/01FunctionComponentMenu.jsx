@@ -11,6 +11,8 @@ const FunctionComponentIntro = () => {
                     <ol>
                         <li>
                             <Link to="functioncompointro">Functional Components Intro</Link>
+                            <li> <Link to="functionalcompostate">State in Functional Components</Link> </li>
+                            <li> <Link to="functionalcompoprops">Props in Functional Components</Link> </li>
                         </li>
                     </ol>
                 </div>
