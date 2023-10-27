@@ -4,6 +4,7 @@ import FunctionComponentMenu from './../Componate/FunctionComponent/01FunctionCo
 import FunctionComponentIntro from './../Componate/FunctionComponent/02FunctionComponentIntro.jsx'
 import FunctionalComponentState from './../Componate/FunctionComponent/03FunctionalComponentState.jsx'
 import FunctionalComponentProps from './../Componate/FunctionComponent/04FunctionalComponentProps.jsx'
+import FunctionalComponentUseEffect from './../Componate/FunctionComponent/05FunctionalComponentUseEffect.jsx'
 
 const FunctionComponentRoute = () => {
     const routes = useRoutes([
@@ -22,6 +23,10 @@ const FunctionComponentRoute = () => {
                 {
                     path: 'functionalcompoprops',
                     element: <FunctionalComponentProps />
+                },
+                {
+                    path: 'functionalcomponentuseeffect',
+                    element: <FunctionalComponentUseEffect />
                 }
             ]
         },
