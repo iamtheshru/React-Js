@@ -9,15 +9,15 @@ const FunctionalComponentUseEffect = () => {
     //     fetch("https://jsonplaceholder.typicode.com/todos/").then((res) => res.json())
     //         .then((data) => console.log(data))
     //         .catch((error) => console.log("error"));
-    // })
+    // }, [])
     useEffect(() => {
         // console.log("called");
         fetch("https://jsonplaceholder.typicode.com/todos/").then((res) => res.json()).then((response) => console.log(response))
     }, [state2])
 
-    // const change = () => {
-    //     changeState2((state) => !state)
-    // }
+    const change = () => {
+        changeState2((state) => !state)
+    }
     useEffect(() => {
         // console.log("called");
         fetch("https://jsonplaceholder.typicode.com/todos/").then((res) => res.json()).then((response) => { console.log(response); })
@@ -29,7 +29,7 @@ const FunctionalComponentUseEffect = () => {
         <>
             <p>render</p>
             <button onClick={() => { changeState(!state) }}>Click</button>
-            <button onClick={() => { changeState2(!state) }}>Click</button>
+            <button onClick={() => { changeState2(!state2) }}>Click</button>
 
             {/* <button onClick={() => { changeState(!state) }}>Click</button>
             <button onClick={() => { changeState2(!state) }}>Click</button> */}

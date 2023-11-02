@@ -5,6 +5,10 @@ import FunctionComponentIntro from './../Componate/FunctionComponent/02FunctionC
 import FunctionalComponentState from './../Componate/FunctionComponent/03FunctionalComponentState.jsx'
 import FunctionalComponentProps from './../Componate/FunctionComponent/04FunctionalComponentProps.jsx'
 import FunctionalComponentUseEffect from './../Componate/FunctionComponent/05FunctionalComponentUseEffect.jsx'
+import FunctionalComponentuselayouteffect from './../Componate/FunctionComponent/06FunctionalComponentuselayouteffect.jsx'
+import FunctionalComponentuselayouteffect1 from './../Componate/FunctionComponent/07FunctionalComponentuselayouteffect1.jsx'
+import FunctionalComponentMeno from './../Componate/FunctionComponent/08FunctionalComponentMeno.jsx'
+import FunctionalComponentCallBack from './../Componate/FunctionComponent/09FunctionalComponentCallBack.jsx'
 
 const FunctionComponentRoute = () => {
     const routes = useRoutes([
@@ -27,6 +31,22 @@ const FunctionComponentRoute = () => {
                 {
                     path: 'functionalcomponentuseeffect',
                     element: <FunctionalComponentUseEffect />
+                },
+                {
+                    path: 'functionalcomponentuselayouteffect',
+                    element: <FunctionalComponentuselayouteffect />
+                },
+                {
+                    path: 'functionalcomponentuselayouteffect1',
+                    element: <FunctionalComponentuselayouteffect1 />
+                },
+                {
+                    path: 'functionalcomponentmeno',
+                    element: <FunctionalComponentMeno />
+                },
+                {
+                    path: 'functionalcomponentcallback',
+                    element: <FunctionalComponentCallBack />
                 }
             ]
         },
