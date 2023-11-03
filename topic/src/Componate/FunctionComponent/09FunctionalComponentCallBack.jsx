@@ -1,32 +1,42 @@
 import { useCallback, useState } from "react";
-import ChildUseMemo from './10ChildUseMemo.jsx'
 
+const funcount = new Set();
 const Functionalcomponentcallback = () => {
     const [count, setCount] = useState(0);
-    const [item, setItem] = useState(1);
+    const [number, setNumber] = useState(0);
+    // const incrementCount = () => {
+    //     setCount(count + 1);
+    // };
+    // const decrementCounter = () => {
+    //     setCount(count - 1);
+    // }
+    // const incrementNumber = () => {
+    //     setNumber(number + 1);
+    // };
 
-    const add = useCallback(() => {
-        var a = 10, b = 20, c;
-        c = a + b;
-        console.log("Additaion of two number", c);
-    }, [count])
-    const data = (() => {
-        console.log("item");
-    });
+    const incrementCount = useCallback(() => {
+        setCount(count + 1);
+    }, [count]);
+    const decrementCounter = useCallback(() => {
+        setCount(count - 1);
+    }, [count]);
+    const incrementNumber = useCallback(() => {
+        setNumber(number + 1);
+    }, [number]);
+    funcount.add(incrementCount);
+    funcount.add(decrementCounter);
+    funcount.add(incrementNumber);
+    console.log(funcount);
+
     return (
         <>
-            <div className="row">
-                <div className="col">
-                    <h3>{count}</h3>
-                    <h3>{item}</h3>
-                    <h3>{data()}</h3>  {/*multiple callback  and without dependency*/}
-                    <ChildUseMemo add={add} />
-                    <button onClick={() => setCount(count + 1)}>Count</button>
-                    <button onClick={() => setItem(item * 2)}>Update Item</button>
-                </div>
-            </div>
-        </>
+            <p> Count:{count}</p>
+            <p>Number:{number}</p>
 
+            <button onClick={incrementCount}>IncrementCount</button>
+            <button onClick={decrementCounter}>DecrementCount</button>
+            <button onClick={incrementNumber}>IncrementNumber</button>
+        </>
     );
 }
 

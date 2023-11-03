@@ -6,9 +6,12 @@ import FunctionalComponentState from './../Componate/FunctionComponent/03Functio
 import FunctionalComponentProps from './../Componate/FunctionComponent/04FunctionalComponentProps.jsx'
 import FunctionalComponentUseEffect from './../Componate/FunctionComponent/05FunctionalComponentUseEffect.jsx'
 import FunctionalComponentuselayouteffect from './../Componate/FunctionComponent/06FunctionalComponentuselayouteffect.jsx'
-import FunctionalComponentuselayouteffect1 from './../Componate/FunctionComponent/07FunctionalComponentuselayouteffect1.jsx'
+import FunctionalComponentuseEffectAndLayout from './../Componate/FunctionComponent/07FunctionalComponentuseeffectandlayout.jsx'
 import FunctionalComponentMeno from './../Componate/FunctionComponent/08FunctionalComponentMeno.jsx'
 import FunctionalComponentCallBack from './../Componate/FunctionComponent/09FunctionalComponentCallBack.jsx'
+import FunctionalComponentMenoEx from './../Componate/FunctionComponent/10FunctionalComponentMenoEx.jsx'
+import FunctionalComponentCallbackEx from './../Componate/FunctionComponent/11FunctionalComponentCallBackEX.jsx'
+import FunctionalComponentReducer from './../Componate/FunctionComponent/12FunctionalComponentReducer.jsx'
 
 const FunctionComponentRoute = () => {
     const routes = useRoutes([
@@ -32,21 +35,34 @@ const FunctionComponentRoute = () => {
                     path: 'functionalcomponentuseeffect',
                     element: <FunctionalComponentUseEffect />
                 },
+
                 {
                     path: 'functionalcomponentuselayouteffect',
                     element: <FunctionalComponentuselayouteffect />
                 },
                 {
-                    path: 'functionalcomponentuselayouteffect1',
-                    element: <FunctionalComponentuselayouteffect1 />
+                    path: 'functionalcomponentuseeffectandlayout',
+                    element: <FunctionalComponentuseEffectAndLayout />
                 },
                 {
-                    path: 'functionalcomponentmeno',
+                    path: 'functionalcomponentmemo',
                     element: <FunctionalComponentMeno />
                 },
                 {
                     path: 'functionalcomponentcallback',
                     element: <FunctionalComponentCallBack />
+                },
+                {
+                    path: 'functionalcomponentmemoex',
+                    element: <FunctionalComponentMenoEx />
+                },
+                {
+                    path: 'functionalcomponentcallbackex',
+                    element: <FunctionalComponentCallbackEx />
+                },
+                {
+                    path: 'functionalcomponentreducer',
+                    element: <FunctionalComponentReducer />
                 }
             ]
         },

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CustomCard from './05propChild.jsx';
+import CustomCard from './04propChilds.jsx';
 
 
 const FunctionalComponentState = () => {

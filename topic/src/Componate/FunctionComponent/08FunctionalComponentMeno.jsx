@@ -1,24 +1,45 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
-const Functionalcomponentmeno = () => {
-    const [count, setCount] = useState(0);
-    const [item, setItem] = useState(0);
-    const [text, setText] = useState("sachin");
-    const UseMemo = useMemo(() => {
-        console.log("multiCount");
-        return count * 2;
-    }, [count])
+const Functionalcomponentmemo = () => {
+    const [counter, kuchbhi] = useState(0);
+    const [wordIndex, setWordIndex] = useState(0);
+    const words = ["hey", "this", "is", "cool"];
+    const word = words[wordIndex];
+    const computeletterCount = (word) => {
+        let i = 0;
+        while (i < 100000) i++;
+        console.log("computeletterCount", i);
+        return word.length
+    }
+    const increment = () => kuchbhi(counter + 1);
+    const letterCount = computeletterCount(word)
+
+
     return (
         <>
             <p>UseMemo</p>
-            <p>{UseMemo}</p>
-            <p>{item}</p>
-            <p>{text}</p>
-            <button onClick={() => setCount(count + 1)}>Click</button>
-            <button onClick={() => setItem(item + 5)}>Click</button>
-            <button onClick={() => setText("Virat")}>Update Text</button>
+            <p>useMemo is a React Hook that lets you cache the result of a calculation between re-renders.</p>
+            <p>words = ["hey", "this", "is", "cool"];</p>
+            <p>Words Array Element of {wordIndex} index: {word}</p>
+            <p>"{word}" has {letterCount} letters</p>
+
+            {/* <p>State for word count: {wordIndex}</p> */}
+            <p>{computeletterCount(wordIndex)}</p>
+            <button onClick={() => {
+                if (wordIndex + 1 == word.length) {
+                    setWordIndex(0);
+                } else {
+                    setWordIndex(wordIndex + 1);
+
+                }
+            }
+            }>Click Next Word Count</button >
+            <button className='btn btn-primary' onClick={increment}>+</button>
+            &nbsp; <label htmlFor="">{counter}</label>&nbsp;
+            <button className='btn btn-danger' onClick={() => { kuchbhi(counter - 1) }}>-</button>
+
         </>
     );
 }
 
-export default Functionalcomponentmeno;
+export default Functionalcomponentmemo;
