@@ -12,6 +12,7 @@ import FunctionalComponentCallBack from './../Componate/FunctionComponent/09Func
 import FunctionalComponentMenoEx from './../Componate/FunctionComponent/10FunctionalComponentMenoEx.jsx'
 import FunctionalComponentCallbackEx from './../Componate/FunctionComponent/11FunctionalComponentCallBackEX.jsx'
 import FunctionalComponentReducer from './../Componate/FunctionComponent/12FunctionalComponentReducer.jsx'
+import FunctionalComponentContext from './../Componate/FunctionComponent/13FunctionalComponentContext.jsx'
 
 const FunctionComponentRoute = () => {
     const routes = useRoutes([
@@ -63,6 +64,10 @@ const FunctionComponentRoute = () => {
                 {
                     path: 'functionalcomponentreducer',
                     element: <FunctionalComponentReducer />
+                },
+                {
+                    path: 'functionalcomponentcontext',
+                    element: <FunctionalComponentContext />
                 }
             ]
         },
