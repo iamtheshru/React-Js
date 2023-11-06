@@ -1,9 +1,11 @@
 import { useCallback, useState } from "react";
+import Child from "./Child.jsx";
 
 const funcount = new Set();
 const Functionalcomponentcallback = () => {
     const [count, setCount] = useState(0);
     const [number, setNumber] = useState(0);
+
     // const incrementCount = () => {
     //     setCount(count + 1);
     // };
@@ -28,6 +30,13 @@ const Functionalcomponentcallback = () => {
     funcount.add(incrementNumber);
     console.log(funcount);
 
+    const [toggle, setToggle] = useState(false);
+    const [data, setData] = useState('Yo, pls sub to the channel!');
+    const returnComment = useCallback(
+        (name) => {
+            return name + data
+        }, [data]
+    );
     return (
         <>
             <p> Count:{count}</p>
@@ -36,6 +45,10 @@ const Functionalcomponentcallback = () => {
             <button onClick={incrementCount}>IncrementCount</button>
             <button onClick={decrementCounter}>DecrementCount</button>
             <button onClick={incrementNumber}>IncrementNumber</button>
+
+            <Child returnComment={returnComment} />
+            <button onClick={() => { setToggle(!toggle) }}>{" "} Toggle</button>
+            {toggle && <h1>toggle</h1>}
         </>
     );
 }
