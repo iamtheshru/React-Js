@@ -13,6 +13,8 @@ import FunctionalComponentMenoEx from './../Componate/FunctionComponent/10Functi
 import FunctionalComponentCallbackEx from './../Componate/FunctionComponent/11FunctionalComponentCallBackEX.jsx'
 import FunctionalComponentReducer from './../Componate/FunctionComponent/12FunctionalComponentReducer.jsx'
 import FunctionalComponentContext from './../Componate/FunctionComponent/13FunctionalComponentContext.jsx'
+import FunctionalComponentUseRef from './../Componate/FunctionComponent/14FunctionalComponentUseRef.jsx'
+import FunctionalImperativeHandle from './../Componate/FunctionComponent/ImperativeHandle/15FunctionalImperativeHandle.jsx'
 
 const FunctionComponentRoute = () => {
     const routes = useRoutes([
@@ -68,6 +70,14 @@ const FunctionComponentRoute = () => {
                 {
                     path: 'functionalcomponentcontext',
                     element: <FunctionalComponentContext />
+                },
+                {
+                    path: 'functionalcomponentuseref',
+                    element: <FunctionalComponentUseRef />
+                },
+                {
+                    path: 'functionalimperativehandle',
+                    element: <FunctionalImperativeHandle />
                 }
             ]
         },

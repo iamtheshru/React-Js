@@ -11,7 +11,7 @@ const FunctionalCompoUselayouteffect = () => {
     //     } else {
     //         changeText("flase useLayoutEffect")
     //     }
-    // }, [text]);
+    // }, [state]);
 
     // useLayoutEffect(()=>{
     //     // console.log("called");

@@ -7,8 +7,13 @@ const FunctionalComponentState = () => {
     let [count, setCount] = useState(0);
     const [info, setInfo] = useState(false);
     let [box, setBox] = useState(false);
+    let [inputValue, setInputvalue] = useState("Pedro")
     let varible = "data";
 
+    let onChange = (event) => {
+        const newValue = event.target.value;
+        setInputvalue(newValue);
+    }
     const changeData = () => {
         console.log("called");
         varible = "Test";
@@ -40,6 +45,11 @@ const FunctionalComponentState = () => {
                     </> : ""
                     }
                 </div>
+            </div>
+
+            <div>
+                <input type="text" placeholder="enter something..." onChange={onChange} />
+                {inputValue}
             </div>
         </>
 

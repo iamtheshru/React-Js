@@ -22,6 +22,8 @@ const FunctionComponentIntro = () => {
                             <li> <Link to="functionalcomponentcallbackex">Functional  CallbackEx</Link> </li>
                             <li> <Link to="functionalcomponentreducer">Functional  Reducer</Link> </li>
                             <li> <Link to="functionalcomponentcontext">Functional  Context</Link> </li>
+                            <li> <Link to="functionalcomponentuseref">Functional  UseRef</Link> </li>
+                            <li> <Link to="functionalimperativehandle">Functional Components UseImparative</Link> </li>
                         </li>
                     </ol>
                 </div>
