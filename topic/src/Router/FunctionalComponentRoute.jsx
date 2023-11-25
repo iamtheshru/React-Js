@@ -15,6 +15,7 @@ import FunctionalComponentReducer from './../Componate/FunctionComponent/12Funct
 import FunctionalComponentContext from './../Componate/FunctionComponent/13FunctionalComponentContext.jsx'
 import FunctionalComponentUseRef from './../Componate/FunctionComponent/14FunctionalComponentUseRef.jsx'
 import FunctionalImperativeHandle from './../Componate/FunctionComponent/ImperativeHandle/15FunctionalImperativeHandle.jsx'
+import FunctionalHonyComTask from './../Componate/FunctionalComponent/HonyComTask/userImperativeMain.jsx';
 
 const FunctionComponentRoute = () => {
     const routes = useRoutes([
@@ -78,6 +79,10 @@ const FunctionComponentRoute = () => {
                 {
                     path: 'functionalimperativehandle',
                     element: <FunctionalImperativeHandle />
+                },
+                {
+                    path: 'honycomtask',
+                    element: <FunctionalHonyComTask />
                 }
             ]
         },

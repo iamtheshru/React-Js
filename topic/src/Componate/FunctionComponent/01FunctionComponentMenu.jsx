@@ -24,6 +24,7 @@ const FunctionComponentIntro = () => {
                             <li> <Link to="functionalcomponentcontext">Functional  Context</Link> </li>
                             <li> <Link to="functionalcomponentuseref">Functional  UseRef</Link> </li>
                             <li> <Link to="functionalimperativehandle">Functional Components UseImparative</Link> </li>
+                            <li> <Link to="honycomtask">HoneyComTask</Link> </li>
                         </li>
                     </ol>
                 </div>
