@@ -25,6 +25,7 @@ import HOCInClass from './../Componate/ClassComponent/21HOC_in_classCompo/mainCo
 import HOCInClass1 from './../Componate/ClassComponent/21HOC_in_classCompo/mainCompoEx.jsx';
 
 
+
 const ClassComponentRoute = () => {
     const routes = useRoutes([
         {
@@ -118,7 +119,8 @@ const ClassComponentRoute = () => {
                 {
                     path: "hoc1",
                     element: < HOCInClass1 />
-                }
+                },
+                
             ]
         }
     ])

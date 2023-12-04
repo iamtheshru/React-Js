@@ -7,13 +7,18 @@ class StateInClassCompo extends Component {
         this.usernamedm = "Something from DM";
         // console.log("Constructor called");
         this.state = { DataMariMarji: "Test" }
-        // this.changeStateData=this.changeStateData.bind(this);
+        this.changeStateData = this.changeStateData.bind(this);
+        this.datachanging = this.datachanging.bind(this);
     }
     datachanging() {
         console.log("cheking");
+        // this.setState({ DataMariMarji: "aa" })
     }
     changeStateData() {
+        // this.setState({ DataMariMarji: "Changed" });
+        console.log("called");
         console.log(this.setState({ DataMariMarji: "Testing from changeStateData" }));
+        // console.log(this.state.DataMariMarji);
     }
     // changeStateData = () => {
     //     // console.log(this.username);
@@ -33,8 +38,8 @@ class StateInClassCompo extends Component {
                 {/* <button onClick={this.username}>Click</button> */}
                 <button onClick={this.datachanging}>Click</button>
                 <button onClick={() => { console.log("btn Clicked"); }}>Click</button>
-                <button onClick={() => { this.setState({ DataMariMarji: "change" }) }}>{this.state.DataMariMarji}</button>
-                {/* <button onClick={this.changeStateData}>Btn Click Change StateData by Function</button> */}
+                {/* <button onClick={() => { this.setState({ DataMariMarji: "change" }) }}>{this.state.DataMariMarji}</button> */}
+                <button onClick={this.changeStateData}>{this.state.DataMariMarji}</button>
             </>
         )
     }

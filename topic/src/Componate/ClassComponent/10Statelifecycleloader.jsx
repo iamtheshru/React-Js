@@ -22,19 +22,19 @@ class Statelifecycleloader extends Component {
             this.setState({ loader: true })
         }, 2000);
     }
-    shouldComponentUpdate(nextProps, nextState) {
-        console.log("shouldComponentUpdate");
-        // return false
-        return true
-    }
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     console.log("shouldComponentUpdate");
+    //     // return false
+    //     return true
+    // }
 
-    componentDidUpdate(prevProps, prevState) {
-        console.log("componentDidUpdate");
-        setTimeout(() => {
-            console.log("componentDidUpdate time out");
-            this.setState({ loader: false })
-        }, 4000);
-    }
+    // componentDidUpdate(prevProps, prevState) {
+    //     console.log("componentDidUpdate");
+    //     setTimeout(() => {
+    //         console.log("componentDidUpdate time out");
+    //         this.setState({ loader: false })
+    //     }, 4000);
+    // }
     // componentWillUnmount() {
     //     //     console.log("componentWillUnmount");
     //     // }
@@ -63,7 +63,7 @@ class Statelifecycleloader extends Component {
                 {/* {this.state.laoder ? <img src="https://miro.medium.com/v2/resize:fit:1400/1*CsJ05WEGfunYMLGfsT2sXA.gif" alt="" /> : <p>Data</p>}  */}
                 {/* <button onClick={changeDataFunc}>Click</button> */}
                 {/* {HtmlDisp} */}
-                <button onClick={() => this.setState({ loader: !this.state })}>Data1</button>
+                <button onClick={() => this.setState({ loader: !this.state.loader })}>Data1</button>
             </>
         )
     }

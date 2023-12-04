@@ -16,6 +16,9 @@ import FunctionalComponentContext from './../Componate/FunctionComponent/13Funct
 import FunctionalComponentUseRef from './../Componate/FunctionComponent/14FunctionalComponentUseRef.jsx'
 import FunctionalImperativeHandle from './../Componate/FunctionComponent/ImperativeHandle/15FunctionalImperativeHandle.jsx'
 import FunctionalHonyComTask from './../Componate/FunctionalComponent/HonyComTask/userImperativeMain.jsx';
+import StyledCompo from './../Componate/FunctionalComponent/16StyledComponent.jsx';
+import CustomCSSCompo from './../Componate/FunctionalComponent/17CustomCSSCompo.jsx';
+import CSSModuleCompo from './../Componate/FunctionalComponent/18CSSModuleCompo.jsx';
 
 const FunctionComponentRoute = () => {
     const routes = useRoutes([
@@ -83,6 +86,18 @@ const FunctionComponentRoute = () => {
                 {
                     path: 'honycomtask',
                     element: <FunctionalHonyComTask />
+                },
+                {
+                    path: 'styledCompo',
+                    element: <StyledCompo />
+                },
+                {
+                    path: 'customCSSCompo',
+                    element: <CustomCSSCompo />
+                },
+                {
+                    path: 'cssmodule',
+                    element: <CSSModuleCompo />
                 }
             ]
         },

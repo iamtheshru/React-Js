@@ -46,7 +46,7 @@ class ControlledCompo extends Component {
                 </div>
                 <div className="row my-3">
                     <div className="col-4">
-                        <input type="text" className='form-control' placeholder='Enter Email' name='email' onChange={(e) => { this.setState((prevValue) => ({ formData: { ...prevValue.formData, [e.target.name]: e.target.value } })) }} id='username' />
+                        <input type="text" className='form-control' placeholder='Enter Email' name='email' onChange={(e) => { this.setState((prevValue) => ({ formData: { ...prevValue.formData, [e.target.name.id]: e.target.value } })) }} id='username' />
                         <br />
                     </div>
                 </div>

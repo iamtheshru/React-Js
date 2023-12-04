@@ -25,6 +25,9 @@ const FunctionComponentIntro = () => {
                             <li> <Link to="functionalcomponentuseref">Functional  UseRef</Link> </li>
                             <li> <Link to="functionalimperativehandle">Functional Components UseImparative</Link> </li>
                             <li> <Link to="honycomtask">HoneyComTask</Link> </li>
+                            <li> <Link to="styledCompo">StyledComponent</Link> </li>
+                            <li> <Link to="customcsscompo">CustomCSSCompo</Link> </li>
+                            <li> <Link to="cssmodule">Custom CSS Module Component</Link> </li>
                         </li>
                     </ol>
                 </div>
