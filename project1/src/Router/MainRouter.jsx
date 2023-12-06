@@ -5,6 +5,8 @@ import Slider from "./../Componente/Slider.jsx";
 import About from "./../page/About.jsx";
 import Contact from "./../page/Contact.jsx";
 import Login from "./../page/Login.jsx";
+import Registration from "./../page/Registration.jsx";
+import LatestCollection from "./../Componente/LatestCollection.jsx";
 
 
 const MainRouter = createBrowserRouter([
@@ -14,6 +16,8 @@ const MainRouter = createBrowserRouter([
             <>
                 <Header />
                 <Slider />
+                <LatestCollection />
+
             </>
         )
     },
@@ -49,6 +53,14 @@ const MainRouter = createBrowserRouter([
             <>
                 <Header />
                 <Login />
+            </>
+        )
+    }, {
+        path: "/signup",
+        element: (
+            <>
+                <Header />
+                <Registration />
             </>
         )
     }

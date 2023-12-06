@@ -55,14 +55,11 @@ const Header = () => {
                                 </a>
                                 <div className={showBasic ? "dropdown-menu display-block" : "dropdown-menu"} aria-labelledby="navbarDropdownMenuLink"  >
                                     {/* <a className="dropdown-item" href="404.html">404</a> */}
-                                    <Link className="nav-link cool" to="/login" onClick={() => { setShowBasic(!showBasic) }}>Loing</Link>
-                                    <div className="dropdown-divider"></div>
-                                    <a className="dropdown-item" href="soon.html">Comingsoon</a>
+                                    <Link className="dropdown-item" to="/login" onClick={() => { setShowBasic(!showBasic) }}>Loing</Link>
+                                    {/* <div className="dropdown-divider"></div> */}
+                                    {/* <a className="dropdown-item" href="soon.html">Comingsoon</a> */}
 
                                 </div>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link cool" href="contact.html">Contact</a>
                             </li>
                         </ul>
 
