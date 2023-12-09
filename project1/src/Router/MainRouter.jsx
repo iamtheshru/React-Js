@@ -8,6 +8,7 @@ import Login from "./../page/Login.jsx";
 import Registration from "./../page/Registration.jsx";
 import LatestCollection from "./../Componente/LatestCollection.jsx";
 import ProductApi from "./../Componente/ProductApi.jsx";
+import AllDetails from "./../Componente/AllDetails.jsx";
 
 
 
@@ -65,16 +66,16 @@ const MainRouter = createBrowserRouter([
                 <Registration />
             </>
         )
-    }
-    // }, {
-    //     path: "/productapi",
-    //     element: (
-    //         <>
-    //             <Header />
+    }, {
+        path: "/productsdetails/:id",
+        element: (
+            <>
+                <Header />
+                <AllDetails />
 
-    //         </>
-    //     )
-    // }
+            </>
+        )
+    }
 ]);
 
 export default MainRouter;
