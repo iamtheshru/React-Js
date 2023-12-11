@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import CustomHook from '../Hook/CustomHook';
 
 const LoginCompo = () => {
     const [state, setState] = useState({ formData: "" })
-    const setData = (event) => {
-        setState((data) => ({ formData: { ...data.formData, [event.target.name]: event.target.value } }))
-    }
+    const { handleChange, inp, error } = CustomHook({ "role": "1" }, {})
+    // const setData = (event) => {
+    //     setState((data) => ({ formData: { ...data.formData, [event.target.name]: event.target.value } }))
+    // }
     return (
         <>
             <div className="container">
@@ -16,13 +18,15 @@ const LoginCompo = () => {
                             <div className="card-body">
 
                                 <form>
+                                    {JSON.stringify(inp)}
                                     <div className="row">
                                         <div className="col">
                                             {/* <label>Username </label> */}
                                             {/* <input type="text" placeholder='Enter User Name' className='form-control' onChange={(event)=>{
                                                 setState((data)=>({formData:{...data.formData,[event.target.name]:event.target.value}}))
                                             }} name="uname" required /> */}
-                                            <input type="text" placeholder='Enter User Name' className='form-control' onChange={setData} name="uname" required />
+                                            <input type="text" placeholder='Enter User Name' className='form-control' onChange={handleChange} onBlur={handleChange} name="uname" required />
+                                            {error.unameError ? <span>This field is Required</span> : ""}
 
                                             {/* {JSON.stringify(state)} */}
                                         </div>
@@ -32,7 +36,9 @@ const LoginCompo = () => {
                                         <div className="col">
 
                                             {/* <label>Password </label> */}
-                                            <input className='form-control' placeholder='Enter your Password' type="password" onChange={setData} name="pass" required />
+                                            <input className='form-control' placeholder='Enter your Password' type="password" onChange={handleChange} onBlur={handleChange} name="pass" required />
+                                            {error.passError ? <span>This field is Required</span> : ""}
+
                                         </div>
 
                                     </div>

@@ -47,6 +47,11 @@ const Header = () => {
                                 <Link className="nav-link cool" to="/contact">Contact</Link>
 
                             </li>
+                            <li className="nav-item">
+                                {/* <a className="nav-link cool" href="price.html">Pricing</a> */}
+                                <Link className="nav-link cool" to="/seatselector">SeatSelector</Link>
+
+                            </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle cool" href="#" onClick={() => { setShowBasic(!showBasic) }} id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">

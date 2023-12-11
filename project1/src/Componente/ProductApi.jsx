@@ -75,7 +75,7 @@ const ProductApi = () => {
                     <button onClick={product1} className="btn btn-primary ">Many More</button>
                     {/* <Link className="btn btn-primary" to="/allproducts">More Details</Link> */}
                 </MDBCol>
-                {selectedProduct && <AllDetails product={selectedProduct.id} />}
+                {selectedProduct && <AllDetails productId={selectedProduct.id} />}
             </MDBRow>
         </div>
 

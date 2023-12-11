@@ -9,6 +9,7 @@ import Registration from "./../page/Registration.jsx";
 import LatestCollection from "./../Componente/LatestCollection.jsx";
 import ProductApi from "./../Componente/ProductApi.jsx";
 import AllDetails from "./../Componente/AllDetails.jsx";
+import SeatSelector from "./../page/SeatSelector.jsx";
 
 
 
@@ -50,7 +51,8 @@ const MainRouter = createBrowserRouter([
                 <Contact />
             </>
         )
-    }, {
+    },
+    {
         path: "/login",
         element: (
             <>
@@ -72,6 +74,16 @@ const MainRouter = createBrowserRouter([
             <>
                 <Header />
                 <AllDetails />
+
+            </>
+        )
+    },
+    {
+        path: "/seatselector",
+        element: (
+            <>
+                <Header />
+                <SeatSelector />
 
             </>
         )
