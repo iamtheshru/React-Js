@@ -1,13 +1,51 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import CustomHook from '../Hook/CustomHook';
 
 const LoginCompo = () => {
-    const [state, setState] = useState({ formData: "" })
+    // const [state, setState] = useState({ formData: "" })
     const { handleChange, inp, error } = CustomHook({ "role": "1" }, {})
+    const navigate = useNavigate();
+
+
     // const setData = (event) => {
     //     setState((data) => ({ formData: { ...data.formData, [event.target.name]: event.target.value } }))
     // }
+    const Login = (event) => {
+        event.preventDefault();
+
+        // if (validate()) {
+        fetch(`http://localhost:5000/user?email=${inp.uname}&password=${inp.upass}`)
+            .then((res) => {
+                console.log(res);
+                return res.json()
+            })
+            .then((data) => {
+
+                console.log(data);
+                if (inp.name) {
+                    navigate('/')
+                }
+                else if (inp.uname === data) {
+                    alert('aa')
+                }
+            });
+    }
+
+    // }
+    // const validate = () => {
+    //     let result = true;
+    //     if (inp.uname == "") {
+    //         result = false;
+    //         console.log("data is required");
+    //     }
+    //     if (inp.upass === "") {
+    //         result = false
+    //         console.log("data is required");
+    //     }
+    //     return result
+    // }
+
     return (
         <>
             <div className="container">
@@ -17,7 +55,7 @@ const LoginCompo = () => {
                             <div className="card-header text-center">Login</div>
                             <div className="card-body">
 
-                                <form>
+                                <form onSubmit={Login}>
                                     {JSON.stringify(inp)}
                                     <div className="row">
                                         <div className="col">
@@ -36,8 +74,8 @@ const LoginCompo = () => {
                                         <div className="col">
 
                                             {/* <label>Password </label> */}
-                                            <input className='form-control' placeholder='Enter your Password' type="password" onChange={handleChange} onBlur={handleChange} name="pass" required />
-                                            {error.passError ? <span>This field is Required</span> : ""}
+                                            <input className='form-control' placeholder='Enter your Password' type="password" onChange={handleChange} onBlur={handleChange} name="upass" required />
+                                            {error.upassError ? <span>This field is Required</span> : ""}
 
                                         </div>
 
@@ -55,6 +93,7 @@ const LoginCompo = () => {
                                     <div className="col text-center my-2">
                                         <Link to="/signup">Click here to create new account</Link>
                                     </div>
+                                    {/* <button onClick={validate}>aa</button> */}
                                 </div>
                             </div>
                         </div>

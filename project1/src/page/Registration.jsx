@@ -1,9 +1,40 @@
 import React, { useState } from 'react';
 import CustomHook from './../Hook/CustomHook';
+import { useNavigate } from 'react-router-dom';
 
 const RegistrationCompo = () => {
-    const [state, setState] = useState({ formData: "" })
-    const { handleChange, inp, error } = CustomHook({ "role": "2" }, {})
+    // const [state, setState] = useState({ formData: "" })
+    const { handleChange, inp, error } = CustomHook({}, {})
+    const [message, setMessage] = useState('');
+    const navigate = useNavigate();
+    let savedata = (e) => {
+        if (!inp.uname || !inp.upass || !inp.uemail) {
+            setMessage("This field is required")
+        } else {
+            fetch("http://localhost:5000/user", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",  // sent request
+                    "Accept": "application/json",   // expected data sent back
+                },
+                body: JSON.stringify(inp)
+            }).then((res) => {
+                console.log(res);
+                return res.json()
+            })
+                .then((response) => {
+
+                    navigate("/login")
+                    console.log(response);
+                })
+        }
+    }
+
+
+    const submit = (e) => {
+        e.preventDefault();
+    }
+
     return (
         <>
             <div className="container">
@@ -13,8 +44,8 @@ const RegistrationCompo = () => {
                             <div className="card-header text-center">Signup</div>
                             <div className="card-body">
 
-                                <form>
-                                    {JSON.stringify(inp)}
+                                <form onSubmit={submit}>
+                                    {/* {JSON.stringify(inp)} */}
                                     <div className="row">
                                         <div className="col">
                                             <input type="text" placeholder='Enter User Name' className='form-control' onChange={handleChange} onBlur={handleChange} name="uname" required />
@@ -30,21 +61,30 @@ const RegistrationCompo = () => {
 
                                     </div>
                                     <div className="row mt-3">
+                                        <div className="col">
+                                            <input className='form-control' placeholder='Enter your Email' type="email" onChange={handleChange} onBlur={handleChange} name="uemail" required />
+                                            {error.uemail ? <span>This field is Required</span> : <></>}
+                                        </div>
+
+                                    </div>
+                                    <div className="row mt-3">
                                         <div className="col text-center">
 
-                                            <input type="submit" className='btn btn-info' /> &nbsp;
+                                            <input type="button" value="register" onClick={savedata} className='btn btn-info' /> &nbsp;
                                             <input type="reset" className='btn btn-warning' />
                                         </div>
 
                                     </div>
+                                    <p>{message}</p>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </>
-    );
+    )
 };
 
 export default RegistrationCompo;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-const CustomHook = (initValue, iniError, iniError1) => {
+const CustomHook = (initValue, iniError) => {
     const [inp, setInp] = useState(initValue)
     const [error, setError] = useState(iniError);
 
