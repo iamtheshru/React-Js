@@ -1,25 +1,40 @@
 {
   "user": [
     {
-      "name": "ZEELI",
-      "number": "1",
+      "uname": "shraddha",
+      "upass": "shru",
+      "uemail": "shraddha@gmail.com",
       "id": 1
     },
     {
-      "name": "POOJA",
-      "number": "3",
+      "uname": "zeel",
+      "upass": "zee",
+      "uemail": "zeel@gmail.com",
+      "id": 2
+    },
+    {
+      "uname": "pooja",
+      "upass": "poo",
+      "uemail": "poo@gmail.com",
       "id": 3
     },
     {
-      "name": "MEGHANA",
-      "number": "4",
+      "uname": "meghana",
+      "upass": "megh",
+      "uemail": "meghu@gmail.com",
       "id": 4
     },
     {
-      "name": "shraddha",
-      "password": "shraddha",
-      "number": "4",
-      "id": 4
+      "uname": "jayantibhai",
+      "upass": "123",
+      "uemail": "jayanti@gmail.com",
+      "id": 5
+    },
+    {
+      "uname": "bbb",
+      "upass": "bbb",
+      "uemail": "bbb@gmail.com",
+      "id": 6
     }
   ]
 }

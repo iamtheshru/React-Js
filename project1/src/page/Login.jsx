@@ -6,6 +6,7 @@ const LoginCompo = () => {
     // const [state, setState] = useState({ formData: "" })
     const { handleChange, inp, error } = CustomHook({ "role": "1" }, {})
     const navigate = useNavigate();
+    const [message, setMessage] = ('');
 
 
     // const setData = (event) => {
@@ -14,37 +15,25 @@ const LoginCompo = () => {
     const Login = (event) => {
         event.preventDefault();
 
-        // if (validate()) {
         fetch(`http://localhost:5000/user?email=${inp.uname}&password=${inp.upass}`)
             .then((res) => {
                 console.log(res);
                 return res.json()
             })
             .then((data) => {
-
+                console.log(inp.uname);
                 console.log(data);
-                if (inp.name) {
-                    navigate('/')
-                }
-                else if (inp.uname === data) {
-                    alert('aa')
+                const users = data.find((user) => user.uname === inp.uname && user.upass === inp.upass);
+                if (users) {
+                    navigate('/logout')
+                } else {
+                    // alert('Invalid username or password')
+                    setMessage('Invalid username or password')
                 }
             });
     }
 
-    // }
-    // const validate = () => {
-    //     let result = true;
-    //     if (inp.uname == "") {
-    //         result = false;
-    //         console.log("data is required");
-    //     }
-    //     if (inp.upass === "") {
-    //         result = false
-    //         console.log("data is required");
-    //     }
-    //     return result
-    // }
+
 
     return (
         <>
@@ -88,12 +77,12 @@ const LoginCompo = () => {
                                         </div>
 
                                     </div>
+                                    <div>{message}</div>
                                 </form>
                                 <div className="row">
                                     <div className="col text-center my-2">
                                         <Link to="/signup">Click here to create new account</Link>
                                     </div>
-                                    {/* <button onClick={validate}>aa</button> */}
                                 </div>
                             </div>
                         </div>

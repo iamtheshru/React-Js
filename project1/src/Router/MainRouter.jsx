@@ -5,6 +5,7 @@ import Slider from "./../Componente/Slider.jsx";
 import About from "./../page/About.jsx";
 import Contact from "./../page/Contact.jsx";
 import Login from "./../page/Login.jsx";
+import Logout from "./../page/Logout.jsx";
 import Registration from "./../page/Registration.jsx";
 import LatestCollection from "./../Componente/LatestCollection.jsx";
 import ProductApi from "./../Componente/ProductApi.jsx";
@@ -60,7 +61,17 @@ const MainRouter = createBrowserRouter([
                 <Login />
             </>
         )
-    }, {
+    },
+    {
+        path: "/logout",
+        element: (
+            <>
+                <Header />
+                <Logout />
+            </>
+        )
+    },
+    {
         path: "/signup",
         element: (
             <>
