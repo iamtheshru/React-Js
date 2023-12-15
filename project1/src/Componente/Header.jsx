@@ -52,6 +52,9 @@ const Header = () => {
                                 <Link className="nav-link cool" to="/seatselector">SeatSelector</Link>
 
                             </li>
+                            <li className="nav-item">
+                                <Link className="nav-link cool" to="/setlocalstorage" >Local Storage</Link>
+                            </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle cool" href="#" onClick={() => { setShowBasic(!showBasic) }} id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
@@ -60,10 +63,12 @@ const Header = () => {
                                 </a>
                                 <div className={showBasic ? "dropdown-menu display-block" : "dropdown-menu"} aria-labelledby="navbarDropdownMenuLink"  >
                                     {/* <a className="dropdown-item" href="404.html">404</a> */}
-                                    {showBasic ? <>
+                                    {/* {showBasic ? <>
                                         <Link className="dropdown-item" to="/login" onClick={() => { setShowBasic(!showBasic) }}>Loing</Link>
-                                    </> : <Link className="dropdown-item" to="/logout" onClick={() => { setShowBasic(!showBasic) }}>Logout</Link>}
-
+                                    </> : <Link className="dropdown-item" to="/logout" onClick={() => { setShowBasic(!showBasic) }}>Logout</Link>} */}
+                                    <Link className="dropdown-item" to="/login" onClick={() => { setShowBasic(!showBasic) }}>Signin</Link>
+                                    {/* <div className="dropdown-divider"></div> */}
+                                    {/* <Link className="dropdown-item" to="/setlocalstorage" onClick={() => { setShowBasic(!showBasic) }}>Local Storage</Link> */}
 
                                     {/* <div className="dropdown-divider"></div> */}
                                     {/* <a className="dropdown-item" href="soon.html">Comingsoon</a> */}
@@ -73,7 +78,7 @@ const Header = () => {
                         </ul>
 
                     </div>
-                    <div className="header-search-agileits-w3ls">
+                    {/* <div className="header-search-agileits-w3ls">
                         <form action="#" method="post">
                             <div className="search">
                                 <input className="form-control" type="search" placeholder="Search here..." name="Search" required="" />
@@ -95,7 +100,7 @@ const Header = () => {
                             </div>
                             <div className="clearfix"></div>
                         </form>
-                    </div>
+                    </div> */}
                 </nav>
 
             </div>

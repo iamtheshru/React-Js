@@ -5,8 +5,8 @@ import CustomHook from '../Hook/CustomHook';
 const LoginCompo = () => {
     // const [state, setState] = useState({ formData: "" })
     const { handleChange, inp, error } = CustomHook({ "role": "1" }, {})
+    const [loginError, setLoginError] = useState(false)
     const navigate = useNavigate();
-    const [message, setMessage] = ('');
 
 
     // const setData = (event) => {
@@ -15,22 +15,41 @@ const LoginCompo = () => {
     const Login = (event) => {
         event.preventDefault();
 
-        fetch(`http://localhost:5000/user?email=${inp.uname}&password=${inp.upass}`)
-            .then((res) => {
-                console.log(res);
-                return res.json()
-            })
-            .then((data) => {
-                console.log(inp.uname);
-                console.log(data);
-                const users = data.find((user) => user.uname === inp.uname && user.upass === inp.upass);
-                if (users) {
-                    navigate('/logout')
+        // fetch(`http://localhost:5000/user?email=${inp.uname}&password=${inp.upass}`)
+        //     .then((res) => {
+        //         console.log(res);
+        //         return res.json()
+        //     })
+        //     .then((data) => {
+        //         console.log(inp.uname);
+        //         console.log(data);
+        //         const users = data.find((user) => user.uname === inp.uname && user.upass === inp.upass);
+        //         if (users) {
+        //             navigate('/logout')
+        //         } else {
+        //             // alert('Invalid username or password')
+        //             setMessage('Invalid username or password')
+        //         }
+        //     });
+
+        fetch(`http://localhost:5000/users?email=${inp.uname}&password=${inp.pass}`)
+            .then((res) => { return res.json() })
+            .then((response) => {
+                console.log(response.length);
+                // console.log(response[0].role);
+                if (response.length > 0) {
+                    console.log(response[0].role);
+                    setLoginError(false)
+                    if (response[0].role == 1) {
+                        navigate("/admindahsboard")
+                    } else {
+
+                        navigate("/")
+                    }
                 } else {
-                    // alert('Invalid username or password')
-                    setMessage('Invalid username or password')
+                    setLoginError(true)
                 }
-            });
+            })
     }
 
 
@@ -77,13 +96,13 @@ const LoginCompo = () => {
                                         </div>
 
                                     </div>
-                                    <div>{message}</div>
                                 </form>
                                 <div className="row">
                                     <div className="col text-center my-2">
                                         <Link to="/signup">Click here to create new account</Link>
                                     </div>
                                 </div>
+                                {loginError ? <p className='alert alert-danger '>Invalid user</p> : ""}
                             </div>
                         </div>
                     </div>
