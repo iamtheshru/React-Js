@@ -53,7 +53,7 @@ const Header = () => {
 
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link cool" to="/setlocalstorage" >Local Storage</Link>
+                                <Link className="nav-link cool" to="/admindahsboard" >Admindahsboard</Link>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle cool" href="#" onClick={() => { setShowBasic(!showBasic) }} id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
@@ -67,8 +67,11 @@ const Header = () => {
                                         <Link className="dropdown-item" to="/login" onClick={() => { setShowBasic(!showBasic) }}>Loing</Link>
                                     </> : <Link className="dropdown-item" to="/logout" onClick={() => { setShowBasic(!showBasic) }}>Logout</Link>} */}
                                     <Link className="dropdown-item" to="/login" onClick={() => { setShowBasic(!showBasic) }}>Signin</Link>
-                                    {/* <div className="dropdown-divider"></div> */}
-                                    {/* <Link className="dropdown-item" to="/setlocalstorage" onClick={() => { setShowBasic(!showBasic) }}>Local Storage</Link> */}
+                                    <div className="dropdown-divider"></div>
+                                    <div className="dropdown-divider"></div>
+                                    <Link className="dropdown-item" to="/cookiesstorage" onClick={() => { setShowBasic(!showBasic) }}>Cookies Storage</Link>
+                                    <div className="dropdown-divider"></div>
+                                    <Link className="dropdown-item" to="/setlocalstorage" onClick={() => { setShowBasic(!showBasic) }}>Local Storage</Link>
 
                                     {/* <div className="dropdown-divider"></div> */}
                                     {/* <a className="dropdown-item" href="soon.html">Comingsoon</a> */}

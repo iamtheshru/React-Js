@@ -11,6 +11,8 @@ import ProductApi from "./../Componente/ProductApi.jsx";
 import AllDetails from "./../Componente/AllDetails.jsx";
 import SeatSelector from "./../page/SeatSelector.jsx";
 import SetLocalStorage from "./../page/SetLocalStorage.jsx";
+import CookiesStorage from "./../page/CookiesStorage.jsx";
+import Admindahsboard from "./../page/Admindahsboard.jsx";
 
 
 
@@ -92,8 +94,24 @@ const MainRouter = createBrowserRouter([
         path: "/setlocalstorage",
         element: (
             <>
-                {/* <Header /> */}
+                <Header />
                 <SetLocalStorage />
+            </>
+        )
+    }, {
+        path: "/cookiesstorage",
+        element: (
+            <>
+                <Header />
+                <CookiesStorage />
+            </>
+        )
+    }, {
+        path: "/admindahsboard",
+        element: (
+            <>
+                {/* <Header /> */}
+                <Admindahsboard />
             </>
         )
     }

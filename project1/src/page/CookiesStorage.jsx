@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
+import { Cookies, useCookies } from "react-cookie";
 // import './portal.css'
 
 const SetLocalStorage = () => {
 
+    const [item, setItem] = useCookies("aa")
+
     useEffect(() => {
-        localStorage.setItem('item', JSON.stringify({ 'username': 'data' }));
+        setItem('item', JSON.stringify({ 'username': 'data' }));
     }, [])
     return (
         <>
-            <h2>LocalStorage </h2>
+            <h2>Cookies </h2>
         </>
     );
 };

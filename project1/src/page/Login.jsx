@@ -4,7 +4,7 @@ import CustomHook from '../Hook/CustomHook';
 
 const LoginCompo = () => {
     // const [state, setState] = useState({ formData: "" })
-    const { handleChange, inp, error } = CustomHook({ "role": "1" }, {})
+    const { handleChange, inp, error } = CustomHook({}, {})
     const [loginError, setLoginError] = useState(false)
     const navigate = useNavigate();
 
@@ -32,7 +32,7 @@ const LoginCompo = () => {
         //         }
         //     });
 
-        fetch(`http://localhost:5000/users?email=${inp.uname}&password=${inp.pass}`)
+        fetch(`http://localhost:5000/user?name=${inp.name}&password=${inp.password}`)
             .then((res) => { return res.json() })
             .then((response) => {
                 console.log(response.length);
@@ -71,8 +71,8 @@ const LoginCompo = () => {
                                             {/* <input type="text" placeholder='Enter User Name' className='form-control' onChange={(event)=>{
                                                 setState((data)=>({formData:{...data.formData,[event.target.name]:event.target.value}}))
                                             }} name="uname" required /> */}
-                                            <input type="text" placeholder='Enter User Name' className='form-control' onChange={handleChange} onBlur={handleChange} name="uname" required />
-                                            {error.unameError ? <span>This field is Required</span> : ""}
+                                            <input type="text" placeholder='Enter User Name' className='form-control' onChange={handleChange} onBlur={handleChange} name="name" required />
+                                            {error.nameError ? <span>This field is Required</span> : ""}
 
                                             {/* {JSON.stringify(state)} */}
                                         </div>
@@ -82,8 +82,8 @@ const LoginCompo = () => {
                                         <div className="col">
 
                                             {/* <label>Password </label> */}
-                                            <input className='form-control' placeholder='Enter your Password' type="password" onChange={handleChange} onBlur={handleChange} name="upass" required />
-                                            {error.upassError ? <span>This field is Required</span> : ""}
+                                            <input className='form-control' placeholder='Enter your Password' type="password" onChange={handleChange} onBlur={handleChange} name="password" required />
+                                            {error.passwordError ? <span>This field is Required</span> : ""}
 
                                         </div>
 

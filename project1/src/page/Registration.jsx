@@ -4,11 +4,11 @@ import { useNavigate } from 'react-router-dom';
 
 const RegistrationCompo = () => {
     // const [state, setState] = useState({ formData: "" })
-    const { handleChange, inp, error } = CustomHook({}, {})
+    const { handleChange, inp, error } = CustomHook({ "role": "2" }, {})
     const [message, setMessage] = useState('');
     const navigate = useNavigate();
     let savedata = (e) => {
-        if (!inp.uname || !inp.upass || !inp.uemail) {
+        if (!inp.name || !inp.password || !inp.email) {
             setMessage("This field is required")
         } else {
             fetch("http://localhost:5000/user", {
@@ -45,25 +45,25 @@ const RegistrationCompo = () => {
                             <div className="card-body">
 
                                 <form onSubmit={submit}>
-                                    {/* {JSON.stringify(inp)} */}
+                                    {JSON.stringify(inp)}
                                     <div className="row">
                                         <div className="col">
-                                            <input type="text" placeholder='Enter User Name' className='form-control' onChange={handleChange} onBlur={handleChange} name="uname" required />
-                                            {error.unameError ? <span>This field is Required</span> : <></>}
+                                            <input type="text" placeholder='Enter User Name' className='form-control' onChange={handleChange} onBlur={handleChange} name="name" required />
+                                            {error.nameError ? <span>This field is Required</span> : <></>}
                                         </div>
 
                                     </div>
                                     <div className="row mt-3">
                                         <div className="col">
-                                            <input className='form-control' placeholder='Enter your Password' type="password" onChange={handleChange} onBlur={handleChange} name="upass" required />
-                                            {error.upassError ? <span>This field is Required</span> : <></>}
+                                            <input className='form-control' placeholder='Enter your Password' type="password" onChange={handleChange} onBlur={handleChange} name="password" required />
+                                            {error.passwordError ? <span>This field is Required</span> : <></>}
                                         </div>
 
                                     </div>
                                     <div className="row mt-3">
                                         <div className="col">
-                                            <input className='form-control' placeholder='Enter your Email' type="email" onChange={handleChange} onBlur={handleChange} name="uemail" required />
-                                            {error.uemail ? <span>This field is Required</span> : <></>}
+                                            <input className='form-control' placeholder='Enter your Email' type="email" onChange={handleChange} onBlur={handleChange} name="email" required />
+                                            {error.email ? <span>This field is Required</span> : <></>}
                                         </div>
 
                                     </div>
