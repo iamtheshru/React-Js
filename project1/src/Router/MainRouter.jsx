@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Header from "./../Componente/Header.jsx";
 import Slider from "./../Componente/Slider.jsx";
@@ -12,9 +12,10 @@ import AllDetails from "./../Componente/AllDetails.jsx";
 import SeatSelector from "./../page/SeatSelector.jsx";
 import SetLocalStorage from "./../page/SetLocalStorage.jsx";
 import CookiesStorage from "./../page/CookiesStorage.jsx";
-import Admindahsboard from "./../page/Admindahsboard.jsx";
 
 
+
+const AdminRoute = React.lazy(() => { return import('./AdminRouter.jsx') });
 
 const MainRouter = createBrowserRouter([
     {
@@ -34,15 +35,6 @@ const MainRouter = createBrowserRouter([
             <>
                 <Header />
                 <About />
-            </>
-        )
-    },
-    {
-        path: "/contact",
-        element: (
-            <>
-                <Header />
-                <Contact />
             </>
         )
     },
@@ -107,13 +99,14 @@ const MainRouter = createBrowserRouter([
             </>
         )
     }, {
-        path: "/admindahsboard",
-        element: (
-            <>
-                {/* <Header /> */}
-                <Admindahsboard />
-            </>
-        )
+        path: "/admin/*",
+        element: <><Suspense fallback={<h2>Loading...</h2>}> <AdminRoute /></Suspense></>,
+        // children: [
+        //     {
+        //         path: "classcompo/*",
+        //         element: <Suspense fallback={<h2>Loading...</h2>}> <ClassCompoRoute /></Suspense>,
+        //     }
+        // ]
     }
 ]);
 
