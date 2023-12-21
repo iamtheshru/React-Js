@@ -9,17 +9,32 @@
     },
     {
       "role": "2",
-      "name": "zee",
+      "name": "zeel",
       "password": "123",
       "email": "zzzz@ges",
-      "id": 2
+      "id": 2,
+      "pass": "123"
+    },
+    {
+      "role": "2",
+      "name": "pooja",
+      "password": "123",
+      "email": "zzzz@ges",
+      "id": 3
+    },
+    {
+      "role": "2",
+      "name": "Megha",
+      "password": "123",
+      "email": "zzzz@ges",
+      "id": 4
     },
     {
       "role": "2",
       "name": "mayank",
       "password": "123",
       "email": "mayank@gmail.com",
-      "id": 3
+      "id": 5
     }
   ]
 }
