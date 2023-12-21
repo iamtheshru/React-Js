@@ -1,0 +1,62 @@
+.txt_cap {
+    text-transform: capitalize;
+}
+
+.banner_text_1 h3 {
+    font-size: 2.0rem;
+    font-weight: 700;
+}
+
+.banner_text_1 h2 {
+    /* font-size: 3.5rem; */
+    font-weight: 700;
+}
+
+.banner_text_1 p {
+    font-size: .9rem;
+}
+
+
+.img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img img {
+    border-radius: 10px;
+}
+
+/* @font-face {
+    font-family: work_sans;
+    src: url(../fonts/WorkSans-VariableFont_wght.ttf);
+} */
+
+@font-face {
+    font-family: Marcellus;
+    src: url(./../../../public/assets/fonts/Marcellus-Regular.ttf);
+}
+
+div[class*="banner_text"] {
+    font-family: Marcellus;
+
+}
+
+.bg {
+    background-color: #ffc564;
+    color: black;
+    font-weight: 700;
+}
+
+.bg1 {
+    border: 1px solid #a3a3a3;
+    color: #a3a3a3;
+    font-weight: 600;
+}
+
+.bg1:hover {
+    background-color: #ffc564;
+    color: black;
+    font-weight: 700;
+
+}
