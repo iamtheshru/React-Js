@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./../Componente/Header.jsx";
 import SpecialOffers from "./../Componente/SpecialOffers.jsx";
 import AllProducts from "./../Pages/AllProducts.jsx";
+import AllDetails from "./../Pages/AllDetails.jsx";
 import ChairData from "./../Pages/ChairData.jsx";
 import SofaData from "./../Pages/SofaData.jsx";
 import StoolData from "./../Pages/StoolData.jsx";
@@ -25,6 +26,15 @@ const MainRouter = createBrowserRouter([
             <>
                 <Header />
                 <AllProducts />
+            </>
+        )
+    },
+    {
+        path: '/productsdetails/:id',
+        element: (
+            <>
+                <Header />
+                <AllDetails />
             </>
         )
     },
