@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./../Componente/Header.jsx";
 import SpecialOffers from "./../Componente/SpecialOffers.jsx";
+import Footer from "./../Componente/Footer.jsx";
 import AllProducts from "./../Pages/AllProducts.jsx";
 import AllDetails from "./../Pages/AllDetails.jsx";
 import ChairData from "./../Pages/ChairData.jsx";
@@ -17,6 +18,7 @@ const MainRouter = createBrowserRouter([
             <>
                 <Header />
                 <SpecialOffers />
+                <Footer/>
             </>
         )
     },
