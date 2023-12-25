@@ -1,5 +1,6 @@
 import { MDBContainer, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 import "./../Componente/assets/footer.css"
+import Data from './../Pages/data'
 
 const Footer = () => {
     return (<>
@@ -169,6 +170,7 @@ const Footer = () => {
                 </MDBRow>
             </MDBContainer>
         </footer>
+        <Data />
     </>);
 }
 

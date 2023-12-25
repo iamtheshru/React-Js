@@ -1,72 +1,52 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-class ControlledCompoEx extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { loanAmount: 0, emi: 0, loanYear: 0, monthly: 0, totalInterest: 0, totalAmount: 0 }
+const FetchProductDetails = () => {
+    const [value, setValue] = useState('')
+    const [mrp, setMrp] = useState('')
+    let { productId } = useParams();
+
+    const data = async (productId) => {
+        console.log(value);
+        const res = await fetch(`http://localhost:4000/AllData/${productId}`);
+        // console.log(res.stat);
+        const responseId = await res.text();
+        if (!responseId.trim()) {
+            throw new Error('Empty response body');
+        }
+
+        const productData = JSON.parse(responseId);
+        setValue(productData.price);
+        setMrp(productData.price);
+        console.log(productData.price);
     }
-    calculateResults = () => {
-        const { loanAmount, emi, loanYear } = this.state
-        const userAmount = Number(loanAmount);
-        const calculatedInterest = Number(emi) / 100 / 12;
-        const calculatedPayments = Number(loanYear) * 12;
-        const x = Math.pow(1 + calculatedInterest, calculatedPayments);
-        const monthly = (userAmount * x * calculatedInterest) / (x - 1);
-        const total = monthly * calculatedPayments;
-        const totalInterest = total - userAmount;
-        const totalAmount = userAmount + totalInterest
-        this.setState({ monthly });
-        this.setState({ totalInterest });
-        this.setState({ totalAmount })
-    }
-    data = () => {
-        console.log("aaa");
-    }
-    render() {
 
+    return (<>
+        {/* {JSON.stringify()} */}
+        <form action="" method='post'>
+            <div className="quantity">
+                <select
+                    name="quantity"
+                    id="quantity"
+                    onChange={data}
+                    value={value} // Use 'value' instead of 'defaultValue'
+                >
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+            <div className="d-flex justify-content-between dashed_btm mrp_retail">
+                <h3 className="txt_up">mrp</h3>
+                <h3 id="mrp">&#8377;84999</h3>
+            </div>
+        </form>
+    </>);
+};
+export default FetchProductDetails;
 
-        return (
-            <>
-                {JSON.stringify(this.state)}
-                <form action="" method='post'>
-
-                    <div className="quantity">
-                        <select name="quantity" id="quantity" onChange={this.data}>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                        </select>
-                    </div>
-                    <div className="col-4">
-                        <label>Loan Amount</label>
-                        <input type="text" className='form-control' placeholder='Loan Amount' name='usernamechangelog' onChange={(e) => { this.setState({ loanAmount: e.target.value }, this.calculateResults) }} id='username' />
-
-                    </div>
-                    <br />
-                    <div className="col-4">
-                        <label>Rate of interest</label>
-                        <input type="text" className='form-control' placeholder='Rate of interest (p.a)' name='username' onChange={(e) => { this.setState({ emi: e.target.value }, this.calculateResults) }} id='username' />
-                    </div>
-                    <br />
-                    <div className="col-4">
-                        <label>Loan tenure </label>
-                        <input type="text" className='form-control' placeholder='Loan tenure' name='username' onChange={(e) => { this.setState({ loanYear: e.target.value }, this.calculateResults) }} id='username' />
-                    </div>
-                    <br />
-                    <br />
-                </form >
-                <div>
-                    <p> EMi : {this.state.monthly}</p>
-                    <p>Total Interest : {this.state.totalInterest}</p>
-                    <p>Total Amount : {this.state.totalAmount}</p>
-                </div>
-            </>
-        )
-    }
-}
-export default ControlledCompoEx;
