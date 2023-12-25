@@ -2,10 +2,41 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { MDBContainer, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 import "./../Componente/assets/allDetails.css"
-import Data from './../Pages/data.jsx'
 const AllDetails = () => {
+    const [value, setValue] = useState(1);
+    const [mrp, setMrp] = useState();
+    const [amount, setAmount] = useState(1);
     let { id } = useParams();
     const [productDetails, setProductDetails] = useState(null);
+
+    const data = async (productId, newQuantity, optionIndex) => {
+        const res = await fetch(`http://localhost:4000/AllData/${productId}`);
+        // console.log(res.stat);
+        const responseId = await res.text();
+        if (!responseId.trim()) {
+            throw new Error('Empty response body');
+        }
+        const productData = JSON.parse(responseId);
+        // console.log(setValue(value));
+        const quantity = parseInt(optionIndex, 10);
+        // const amount = Number(productData.price);
+        const amount = parseInt(parseFloat(productData.price) * 1000, 10);
+        console.log("aa", amount);
+        console.log("bb", optionIndex);
+        const totalAmount = amount * quantity;
+        console.log("totalAmount", totalAmount);
+        setMrp(amount);
+        setAmount(totalAmount);
+
+    }
+    const handleQuantityChange = (event) => {
+        const newQuantity = parseInt(event.target.value, 10);
+        const optionIndex = newQuantity - 1
+        console.log(optionIndex);
+        setValue(newQuantity);
+
+        data(id, newQuantity, optionIndex);
+    };
 
     const fetchProductDetails = async () => {
         try {
@@ -64,8 +95,8 @@ const AllDetails = () => {
                             <div className="cart_product_title">
                                 <p>Acropolis Sheesham Wood King Size Bed In Provincial Teak Finish With Drawer Storage</p>
                             </div>
-                            <div className="quantity">
-                                <select name="quantity" id="quantity">
+                            <div className="quantity" >
+                                <select name="quantity" id="quantity" onChange={handleQuantityChange}>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -78,12 +109,12 @@ const AllDetails = () => {
                             </div>
                             <div className="d-flex justify-content-between dashed_btm mrp_retail">
                                 <h3 className="txt_up">mrp</h3>
-                                <h3 id="mrp">&#8377;84999</h3>
+                                <h3 id="mrp">&#8377;{mrp}</h3>
                             </div>
 
                             <div className="d-flex justify-content-between dashed_btm mrp_retail mt-2">
                                 <h3 className="txt_up">Amount</h3>
-                                <h3 id="amount_by_quantity">&#8377;84999</h3>
+                                <h3 id="amount_by_quantity">&#8377;{amount}</h3>
                             </div>
 
                             <div className="d-flex justify-content-between dashed_btm mrp_retail mt-2">
@@ -154,9 +185,6 @@ const AllDetails = () => {
                         <Link class="txt_up"> proceed to checkout</Link>
                     </div>
                 </MDBCol>
-            </MDBRow>
-            <MDBRow>
-                <Data />
             </MDBRow>
         </MDBContainer>
     );
