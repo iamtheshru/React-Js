@@ -6,10 +6,12 @@ const AllDetails = () => {
     const [value, setValue] = useState(1);
     const [mrp, setMrp] = useState();
     const [amount, setAmount] = useState(1);
+    const [retail, setRetail] = useState();
+    const [finalPrice, setFinalPrice] = useState();
     let { id } = useParams();
     const [productDetails, setProductDetails] = useState(null);
 
-    const data = async (productId, newQuantity, optionIndex) => {
+    const data = async (productId, newQuantity) => {
         const res = await fetch(`http://localhost:4000/AllData/${productId}`);
         // console.log(res.stat);
         const responseId = await res.text();
@@ -17,25 +19,27 @@ const AllDetails = () => {
             throw new Error('Empty response body');
         }
         const productData = JSON.parse(responseId);
-        // console.log(setValue(value));
-        const quantity = parseInt(optionIndex, 10);
-        // const amount = Number(productData.price);
-        const amount = parseInt(parseFloat(productData.price) * 1000, 10);
-        console.log("aa", amount);
-        console.log("bb", optionIndex);
-        const totalAmount = amount * quantity;
-        console.log("totalAmount", totalAmount);
+        const quantity = parseInt(newQuantity, 10);
+        // const amount = parseInt(parseFloat(productData.price) * 1000, 10);
+        const amount = productData.price.replace(/\D/g, "");
+        console.log("amount", amount);
         setMrp(amount);
+        const totalAmount = amount * quantity;
         setAmount(totalAmount);
+        console.log("totalAmount", totalAmount);
+        const retailsDiscount = totalAmount * 10 / 100;
+        setRetail(retailsDiscount)
+
+        const finalPrices = totalAmount - retailsDiscount
+        console.log("totalAmount", finalPrices);
+        setFinalPrice(finalPrices)
 
     }
     const handleQuantityChange = (event) => {
         const newQuantity = parseInt(event.target.value, 10);
-        const optionIndex = newQuantity - 1
-        console.log(optionIndex);
         setValue(newQuantity);
 
-        data(id, newQuantity, optionIndex);
+        data(id, newQuantity);
     };
 
     const fetchProductDetails = async () => {
@@ -57,6 +61,7 @@ const AllDetails = () => {
 
             // Set the updated productData in the state
             setProductDetails(productData);
+            data(id, value)
         } catch (error) {
             console.error('Error fetching product details:', error);
         }
@@ -70,6 +75,11 @@ const AllDetails = () => {
         return <p>Loading...</p>;
     }
 
+    const removeData = () => {
+        setAmount('')
+        setRetail('')
+        setFinalPrice('')
+    }
     return (
         <MDBContainer >
             <MDBRow className="d-flex justify-content-between color">
@@ -83,12 +93,12 @@ const AllDetails = () => {
                                     alt={productDetails.title}
                                 />
                             </div>
-                            <div class="cart_product_text">
-                                <h5 class="txt_cap">enter pincode for delivery details</h5>
+                            <div className="cart_product_text">
+                                <h5 className="txt_cap">enter pincode for delivery details</h5>
                             </div>
                             <div className="cart_product_btn">
                                 <Link to='/allproduct'>move to wishlist</Link>
-                                <button>Remove</button>
+                                <button onClick={removeData}>Remove</button>
                             </div>
                         </MDBCol>
                         <MDBCol >
@@ -120,12 +130,12 @@ const AllDetails = () => {
                             <div className="d-flex justify-content-between dashed_btm mrp_retail mt-2">
                                 <h3 className="txt_cap">retail discount</h3>
                                 <input type="hidden" name="discount_percent" value="10" id="discount_percent" />
-                                <h3 id="retail_discount">-&#8377;14,335</h3>
+                                <h3 id="retail_discount">-&#8377;{retail}</h3>
                             </div>
 
                             <div className="d-flex justify-content-between dashed_btm mrp_retail mt-2">
                                 <h3 className="txt_cap">item price</h3>
-                                <h3 id="item_price">&#8377;70,624</h3>
+                                <h3 id="item_price">&#8377;{finalPrice}</h3>
                             </div>
 
                             <div className="d-flex  warranty  my-3">
@@ -150,39 +160,39 @@ const AllDetails = () => {
                             Your Next Purchase, Credits Expire in 14 Days.</h4>
                     </div>
 
-                    <div class="cart_summary">
+                    <div className="cart_summary">
 
-                        <div class="summary_title">
+                        <div className="summary_title">
                             <h2>cart summary</h2>
                         </div>
                         <div className="d-flex justify-content-between total_items dashed_btm ">
                             <h3 className="txt_cap">items in cart</h3>
-                            <h3>1</h3>
+                            <h3>{value}</h3>
                         </div>
 
                         <div className="d-flex justify-content-between total_items dashed_btm mt-2">
                             <h3 className="txt_cap">cart total price</h3>
-                            <h3>&#8377;70,624</h3>
+                            <h3>&#8377;{finalPrice}</h3>
                         </div>
                         <div className="total_payment total_items">
-                            <div class="d-flex justify-content-between">
-                                <h6 class="txt_up">you pay<span class="tax"> (Inclusive of All Taxes)</span>
+                            <div className="d-flex justify-content-between">
+                                <h6 className="txt_up">you pay<span className="tax"> (Inclusive of All Taxes)</span>
                                 </h6>
-                                <h3>&#8377;70,624</h3>
+                                <h3>&#8377;{finalPrice}</h3>
                             </div>
 
                             <div className="d-flex justify-content-between ">
                                 <h6 className="txt_up aa">you saved</h6>
-                                <h3 className="color">&#8377;14,375</h3>
+                                <h3 className="color">&#8377;{retail}</h3>
                             </div>
                         </div>
                     </div>
-                    <div class=" gstin d-flex justify-content-between align-content-center ">
+                    <div className=" gstin d-flex justify-content-between align-content-center ">
                         <h6 className="">Use GSTIN For Business Purchase (Optional)</h6>
-                        <i class="fa-solid fa-chevron-right"></i>
+                        <i className="fa-solid fa-chevron-right"></i>
                     </div>
-                    <div class="checkout">
-                        <Link class="txt_up"> proceed to checkout</Link>
+                    <div className="checkout">
+                        <Link className="txt_up" to="/login"> proceed to checkout</Link>
                     </div>
                 </MDBCol>
             </MDBRow>

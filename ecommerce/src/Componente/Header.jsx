@@ -42,16 +42,16 @@ export default function App() {
                     <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
                         <MDBNavbarItem className='mr-auto m-2 mb-lg-0'>
 
-                            <Link className='text-white'>Home</Link>
+                            <Link className='text-white' to="/">Home</Link>
                         </MDBNavbarItem>
                         <MDBNavbarItem className='mr-auto m-2 mb-lg-0'>
-                            <Link className='text-white'>new arrivals</Link>
+                            <Link className='text-white' to='/'>new arrivals</Link>
                         </MDBNavbarItem>
                         <MDBNavbarItem className='mr-auto m-2 mb-lg-0'>
-                            <Link className='text-white'>store</Link>
+                            <Link className='text-white' to='/'>store</Link>
                         </MDBNavbarItem  >
                         <MDBNavbarItem className='mr-auto m-2 mb-lg-0'>
-                            <Link className='text-white'>contact us</Link>
+                            <Link className='text-white' to='/'>contact us</Link>
                         </MDBNavbarItem>
 
                     </MDBNavbarNav>
@@ -82,7 +82,7 @@ export default function App() {
                                 </MDBDropdownItem>
                                 <MDBDropdownItem className='my-2'>
 
-                                    <Link className='text-white py-2'>wishlist</Link>
+                                    <Link className='text-white py-2' to="/login">login</Link>
                                 </MDBDropdownItem>
 
                             </MDBDropdownMenu>

@@ -39,7 +39,7 @@ export default function App() {
             </MDBRow>
             <MDBRow>
                 <MDBCol>
-                    <Link to='/allproduct' className='me-2 btn bg'>All Product</Link>
+                    <Link to='/' className='me-2 btn bg'>All Product</Link>
                     <Link to='/chair' className='mx-2 btn  bg1'>Chair</Link>
                     <Link to='/sofa' className='mx-2 btn bg1'>Sofa</Link>
                     <Link to='/stool' className='mx-2 btn bg1'>Stool</Link>

@@ -9,6 +9,7 @@ import SofaData from "./../Pages/SofaData.jsx";
 import StoolData from "./../Pages/StoolData.jsx";
 import FootstoolData from "./../Pages/FootstoolData.jsx";
 import OfficeData from "./../Pages/OfficeData.jsx";
+import Login from "./../Pages/Login.jsx";
 import { createBrowserRouter } from "react-router-dom";
 
 const MainRouter = createBrowserRouter([
@@ -18,7 +19,8 @@ const MainRouter = createBrowserRouter([
             <>
                 <Header />
                 <SpecialOffers />
-                <Footer/>
+                <AllProducts />
+                <Footer />
             </>
         )
     },
@@ -27,7 +29,6 @@ const MainRouter = createBrowserRouter([
         element: (
             <>
                 <Header />
-                <AllProducts />
             </>
         )
     },
@@ -82,6 +83,15 @@ const MainRouter = createBrowserRouter([
             <>
                 <Header />
                 <OfficeData />
+            </>
+        )
+    },
+    {
+        path: '/login',
+        element: (
+            <>
+                {/* <Header /> */}
+                <Login />
             </>
         )
     }

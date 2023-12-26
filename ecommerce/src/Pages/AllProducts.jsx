@@ -13,7 +13,7 @@ const AllProducts = () => {
 
     useEffect(() => {
         fetchData()
-    }, [fetchData])
+    }, [])
     return (<>
         <MDBContainer>
             <MDBRow>
