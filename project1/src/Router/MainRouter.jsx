@@ -12,6 +12,8 @@ import AllDetails from "./../Componente/AllDetails.jsx";
 import SeatSelector from "./../page/SeatSelector.jsx";
 import SetLocalStorage from "./../page/SetLocalStorage.jsx";
 import CookiesStorage from "./../page/CookiesStorage.jsx";
+import Logout from "./../Pages/Logout.jsx";
+
 
 
 
@@ -53,6 +55,15 @@ const MainRouter = createBrowserRouter([
             <>
                 <Header />
                 <Login />
+            </>
+        )
+    },
+    {
+        path: "/logout",
+        element: (
+            <>
+                {/* <Header /> */}
+                <Logout />
             </>
         )
     }, {

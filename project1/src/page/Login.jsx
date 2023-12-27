@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import CustomHook from '../Hook/CustomHook';
+import { useCookies } from 'react-cookie';
 
 const LoginCompo = () => {
     // const [state, setState] = useState({ formData: "" })
     const { handleChange, inp, error } = CustomHook({}, {})
     const [loginError, setLoginError] = useState(false)
+    const [cookies, setCookie] = useCookies(['name']);
+    const [serverError, setServerError] = useState(false)
+
     const navigate = useNavigate();
 
 
@@ -40,7 +44,10 @@ const LoginCompo = () => {
                 if (response.length > 0) {
                     console.log(response[0].role);
                     setLoginError(false)
+                    setCookie('loggedin', "active");
+
                     if (response[0].role == 1) {
+                        setCookie('admin', "true");
                         navigate("/admin")
                     } else {
 
@@ -49,6 +56,8 @@ const LoginCompo = () => {
                 } else {
                     setLoginError(true)
                 }
+            }).catch((error) => {
+                setServerError(true)
             })
     }
 

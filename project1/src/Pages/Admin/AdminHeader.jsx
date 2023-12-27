@@ -21,8 +21,8 @@ export default function HeaderCompo() {
     const [showBasic, setShowBasic] = useState(false);
     const menuItems = {
         "/home": "Home",
-        "/about": "About us",
-        "/contact": "Contact Us",
+        "/about1": "About us",
+        "/contact1": "Contact Us",
     };
     const DynamicMenuData = Object.entries(menuItems).map(([key, value], i) => {
         return (

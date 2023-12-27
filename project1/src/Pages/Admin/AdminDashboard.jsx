@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import NestedList from './sidebar.jsx';
 import AdminHeader from './AdminHeader.jsx';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 const AdminDashboard = () => {
+    const [cookies, setCookie, removeCookie] = useCookies(['loggedin']);
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (cookies.loggedin == undefined || cookies.admin == undefined) {
+            navigate("/logout")
+        }
+        if (cookies.loggedin !== "active" && cookies.admin != "true") {
+            navigate("/logout")
+        }
+    })
     return (
         <>
             <div className="container-fuild">
