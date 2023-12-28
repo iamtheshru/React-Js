@@ -192,7 +192,7 @@ const AllDetails = () => {
                         <i className="fa-solid fa-chevron-right"></i>
                     </div>
                     <div className="checkout">
-                        <Link className="txt_up" to="/login"> proceed to checkout</Link>
+                        <Link className="txt_up" to="/card"> proceed to checkout</Link>
                     </div>
                 </MDBCol>
             </MDBRow>

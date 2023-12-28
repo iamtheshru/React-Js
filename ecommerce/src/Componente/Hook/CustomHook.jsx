@@ -14,24 +14,11 @@ const CustomHook1 = (initValue, iniError) => {
             setError1({ ...error1, [[e.target.name + "Error"]]: "" })
         }
     }
-    return { handleChange1, inp1, error1 };
-}
-const CustomHook2 = (initValue, iniError) => {
-    const [inp2, setInp2] = useState(initValue);
-    const [error2, setError2] = useState(iniError);
-
-    const handleChange2 = (e) => {
-        setInp2((inp2) => ({ ...inp2, [e.target.name]: e.target.value }))
-        if (e.target.value == "") {
-            let SpanId2 = [e.target.name] + 'Error';
-            setError2({ ...error2, [SpanId2]: "This field is required" })
-        } else {
-            console.log("inside else condition");
-            setError2({ ...error2, [[e.target.name + "Error"]]: "" })
-            // setInp2('')
-        }
+    const resetForm1 = () => {
+        setInp1(initValue)
     }
-    return { handleChange2, inp2, error2 };
+    return { handleChange1, inp1, error1,resetForm1 };
 }
 
-export default (CustomHook1, CustomHook2);
+
+export default (CustomHook1);

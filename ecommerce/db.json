@@ -234,10 +234,17 @@
     },
     {
       "role": "2",
-      "name": "aa",
+      "name": "shraddha",
+      "password": "123",
       "email": "j.j.patel.9998@gmail.com",
-      "password": "sdj",
       "id": 5
+    },
+    {
+      "role": "2",
+      "name": "shraddha",
+      "password": "123",
+      "email": "j.j.patel.9998@gmail.com",
+      "id": 6
     }
   ]
 }

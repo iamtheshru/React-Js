@@ -10,6 +10,8 @@ import StoolData from "./../Pages/StoolData.jsx";
 import FootstoolData from "./../Pages/FootstoolData.jsx";
 import OfficeData from "./../Pages/OfficeData.jsx";
 import Login from "./../Pages/Login.jsx";
+import Admin from "./../Pages/Admin.jsx";
+import Card from "./../Pages/Card.jsx";
 import { createBrowserRouter } from "react-router-dom";
 
 const MainRouter = createBrowserRouter([
@@ -92,6 +94,24 @@ const MainRouter = createBrowserRouter([
             <>
                 <Header />
                 <Login />
+            </>
+        )
+    },
+    {
+        path: '/admin',
+        element: (
+            <>
+                <Header />
+                <Admin />
+            </>
+        )
+    },
+    {
+        path: '/card',
+        element: (
+            <>
+                <Header />
+                <Card />
             </>
         )
     }

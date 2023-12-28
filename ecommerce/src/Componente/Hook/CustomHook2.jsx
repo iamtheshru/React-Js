@@ -13,10 +13,12 @@ const CustomHook2 = (initValue, iniError) => {
         } else {
             console.log("inside else condition");
             setError2({ ...error2, [[e.target.name + "Error"]]: "" })
-            // setInp2('')
         }
     }
-    return { handleChange2, inp2, error2 };
+    const resetForm2 = () => {
+        setInp2(initValue);
+    };
+    return { handleChange2, inp2, setInp2, error2, resetForm2 };
 }
 
 export default (CustomHook2);
