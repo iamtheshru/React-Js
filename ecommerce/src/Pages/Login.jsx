@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 const Loing = () => {
     const [state, setState] = useState(true)
-    const [remove, setRemove] = useState()
     const [loginError, setLoginError] = useState(false)
     const navigate = useNavigate();
 
@@ -40,27 +39,28 @@ const Loing = () => {
     }
 
     const savedata1 = () => {
-        fetch(` http://localhost:4000/user?name1=${inp1.name}&password1=${inp1.password}`)
+        console.log(inp1.name1);
+        fetch(` http://localhost:4000/user?name=${inp1.name1}&password=${inp1.password1}`)
             .then((res) => { return res.json() })
             .then((response) => {
                 // console.log(response.length);
                 if (response.length > 0) {
-                    console.log(response[0].role);
+                    console.log(response[0]);
 
                     // setCookie('loggedin', "active");
 
-                    if (response[0].role === 1) {
+                    if (response[0].role === "1") {
                         // setCookie('admin', "true");
-                        navigate("/admin")
+                        // navigate("/admin")
                         // resetForm1()
                         console.log("dddd");
                     } else {
-                        navigate("/")
+                        // navigate("/")
                         // resetForm1()
                         console.log("vvvv");
                     }
                 } else {
-                    // setLoginError(true)
+                    setLoginError(true)
                     console.log("called");
                 }
             }).catch((error) => {

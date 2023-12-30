@@ -107,7 +107,7 @@ const MainRouter = createBrowserRouter([
         )
     },
     {
-        path: '/card',
+        path: '/card/:id',
         element: (
             <>
                 <Header />

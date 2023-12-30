@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { MDBContainer, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 import "./../Componente/assets/allDetails.css"
+import Card from "./Card";
 const AllDetails = () => {
     const [value, setValue] = useState(1);
     const [mrp, setMrp] = useState();
@@ -10,6 +11,8 @@ const AllDetails = () => {
     const [finalPrice, setFinalPrice] = useState();
     let { id } = useParams();
     const [productDetails, setProductDetails] = useState(null);
+    const [products, setProducts] = useState([]);
+
 
     const data = async (productId, newQuantity) => {
         const res = await fetch(`http://localhost:4000/AllData/${productId}`);
@@ -80,6 +83,13 @@ const AllDetails = () => {
         setRetail('')
         setFinalPrice('')
     }
+
+    const [receivedData, setReceivedData] = useState(null);
+
+    const handleDataReceived = (data) => {
+        setReceivedData(data);
+    };
+
     return (
         <MDBContainer >
             <MDBRow className="d-flex justify-content-between color">
@@ -191,8 +201,23 @@ const AllDetails = () => {
                         <h6 className="">Use GSTIN For Business Purchase (Optional)</h6>
                         <i className="fa-solid fa-chevron-right"></i>
                     </div>
+
                     <div className="checkout">
-                        <Link className="txt_up" to="/card"> proceed to checkout</Link>
+                        <Link
+                            className="txt_up"
+                            to={{
+                                pathname: `/card/${id}`,  // Assuming products is the data you want to pass
+                                state: {
+                                    productDetails: productDetails,
+                                    finalPrice: finalPrice,
+                                    retail: retail,
+                                    quantity: value,
+                                },
+                            }}
+                        > proceed to checkout
+                            <Card onDataReceived={handleDataReceived} />
+
+                        </Link>
                     </div>
                 </MDBCol>
             </MDBRow>
