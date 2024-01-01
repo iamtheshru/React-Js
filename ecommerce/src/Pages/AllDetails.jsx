@@ -2,17 +2,18 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { MDBContainer, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 import "./../Componente/assets/allDetails.css"
-import Card from "./Card";
+import CustomHook from './../Componente/Hook/CustomHookAllDetails.jsx';
+
+// import Card from "./Card";
 const AllDetails = () => {
-    const [value, setValue] = useState(1);
+    const [value, setValue] = useState("1");
     const [mrp, setMrp] = useState();
     const [amount, setAmount] = useState(1);
-    const [retail, setRetail] = useState();
-    const [finalPrice, setFinalPrice] = useState();
+    const [retail, setRetail] = useState(0);
+    const [finalPrice, setFinalPrice] = useState(0);
     let { id } = useParams();
-    const [productDetails, setProductDetails] = useState(null);
-    const [products, setProducts] = useState([]);
-
+    const [productDetails, setProductDetails] = useState();
+    const { handleInputChange, inp, setInp } = CustomHook({ value: "", finalPrice: "", retail: "" }, {})
 
     const data = async (productId, newQuantity) => {
         const res = await fetch(`http://localhost:4000/AllData/${productId}`);
@@ -84,11 +85,35 @@ const AllDetails = () => {
         setFinalPrice('')
     }
 
-    const [receivedData, setReceivedData] = useState(null);
 
-    const handleDataReceived = (data) => {
-        setReceivedData(data);
-    };
+
+
+    const savedata = () => {
+        const requestData = {
+            ...inp,  // Include data from the state
+            retail,
+            value,
+            finalPrice
+            // Include retail value
+        };
+        fetch('http://localhost:4000/card', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            },
+            body: JSON.stringify(requestData),
+        })
+            .then((res) => res.json())
+            .then((response) => {
+                console.log(response);
+                // Handle success or further actions
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
+    }
 
     return (
         <MDBContainer >
@@ -177,24 +202,33 @@ const AllDetails = () => {
                         </div>
                         <div className="d-flex justify-content-between total_items dashed_btm ">
                             <h3 className="txt_cap">items in cart</h3>
-                            <h3>{value}</h3>
+                            {/* <h3>{value}</h3> */}
+                            <input type="text" value={value} name="value" />
                         </div>
 
                         <div className="d-flex justify-content-between total_items dashed_btm mt-2">
                             <h3 className="txt_cap">cart total price</h3>
-                            <h3>&#8377;{finalPrice}</h3>
+                            {/* <h3>&#8377;{finalPrice}</h3> */}
+                            <input type="text" value={finalPrice} name="finalPrice" />
+
                         </div>
                         <div className="total_payment total_items">
                             <div className="d-flex justify-content-between">
                                 <h6 className="txt_up">you pay<span className="tax"> (Inclusive of All Taxes)</span>
                                 </h6>
-                                <h3>&#8377;{finalPrice}</h3>
+                                {/* <h3>&#8377;{finalPrice}</h3> */}
+                                <input type="text" value={finalPrice} />
+
                             </div>
 
                             <div className="d-flex justify-content-between ">
                                 <h6 className="txt_up aa">you saved</h6>
-                                <h3 className="color">&#8377;{retail}</h3>
+                                {/* <h3 className="color">&#8377;{retail}</h3> */}
+                                <input type="text" value={retail} name="retail" onChange={handleInputChange}
+                                />
+
                             </div>
+                            <button onClick={savedata}>Click</button>
                         </div>
                     </div>
                     <div className=" gstin d-flex justify-content-between align-content-center ">
@@ -205,23 +239,15 @@ const AllDetails = () => {
                     <div className="checkout">
                         <Link
                             className="txt_up"
-                            to={{
-                                pathname: `/card/${id}`,  // Assuming products is the data you want to pass
-                                state: {
-                                    productDetails: productDetails,
-                                    finalPrice: finalPrice,
-                                    retail: retail,
-                                    quantity: value,
-                                },
-                            }}
-                        > proceed to checkout
-                            <Card onDataReceived={handleDataReceived} />
-
+                            to={`/card/${id}`} // Assuming products is the data you want to pass
+                            state={{ productDetails, finalPrice, retail, value }}
+                            onClick={savedata}
+                        > Add to card
                         </Link>
                     </div>
                 </MDBCol>
             </MDBRow>
-        </MDBContainer>
+        </MDBContainer >
     );
 };
 

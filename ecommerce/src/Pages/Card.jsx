@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import { MDBCol, MDBContainer, MDBRow } from 'mdb-react-ui-kit';
 
-const Card = (props) => {
+const Card = () => {
     let { id } = useParams();
-
-    const { location = {} } = props;
-    const { state = {} } = location;
-    const { productDetails = {}, finalPrice = 0, retail = 0, quantity = 0 } = state;
+    const location = useLocation();
+    const { productDetails, finalPrice, retail, value } = location.state || {};
+    console.log(value);
 
     const fetchProductDetails = async () => {
         try {
@@ -21,36 +20,32 @@ const Card = (props) => {
             const productData = await response.json();
             console.log(productData);
 
-            const imagePath = `http://localhost:4000/${productData.image}`;
-            console.log('Image URL:', imagePath);
-            productData.image = imagePath;
+            // const imagePath = `http://localhost:4000/${productData.image}`;
+            // console.log('Image URL:', imagePath);
+            // productData.image = imagePath;
 
-            // setLoading(false);
-            productDetails(productData);
-
-            finalPrice(productData.quantity);
-            console.log("productData.quantity", productData.quantity);
-            console.log("productData.quantity", productData.quantity);
-            const amount = parseInt(productData.price.replace(/\D/g, ''), 10);
-            const totalAmount = amount * productData.quantity;
-            // setFinalPrice(totalAmount);
-            console.log("totalAmount", totalAmount);
-            const retailsDiscount = totalAmount * 10 / 100;
-            // setRetail(retailsDiscount);
         } catch (error) {
             console.error('Error fetching product details:', error);
-            // setLoading(false);
         }
     };
 
     useEffect(() => {
         fetchProductDetails();
-    }, [id]);
+    }, []);
 
     return (
         <MDBContainer>
-            <MDBRow className='d-flex justify-content-center'>
-                <MDBCol>
+            <MDBRow className='d-flex justify-content-center mt-5 '>
+                <MDBCol lg='6'>
+                    <div >
+                        {/* <img
+                            src={productDetails.image}
+                            className="img_100"
+                            alt={productDetails.title}
+                        /> */}
+                    </div>
+                </MDBCol>
+                <MDBCol lg='6'>
                     <div className="cart_summary">
                         <div className="summary_title">
                             <h2>cart summary</h2>
@@ -60,7 +55,7 @@ const Card = (props) => {
                         <>
                             <div className="d-flex justify-content-between total_items dashed_btm">
                                 <h3 className="txt_cap">items in cart</h3>
-                                <h3>{quantity}</h3>
+                                <h3>{value}</h3>
                             </div>
 
                             <div className="d-flex justify-content-between total_items dashed_btm mt-2">
@@ -79,13 +74,15 @@ const Card = (props) => {
                                     <h3 className="color">&#8377;{retail}</h3>
                                 </div>
                             </div>
+                            <div className="checkout">
+                                <Link to="/login">Click</Link>
+                            </div>
+                            <button>Remove</button>
                         </>
-
                     </div>
-                    <Link to="/login">Click</Link>
                 </MDBCol>
             </MDBRow>
-        </MDBContainer>
+        </MDBContainer >
     );
 };
 

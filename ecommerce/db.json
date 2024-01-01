@@ -246,5 +246,48 @@
       "email": "j.j.patel.9998@gmail.com",
       "id": 6
     }
+  ],
+  "card": [
+    {
+      "value": "",
+      "finalPrice": "",
+      "id": 1
+    },
+    {
+      "value": "",
+      "finalPrice": "",
+      "retail": "",
+      "id": 2
+    },
+    {
+      "value": "",
+      "finalPrice": "",
+      "retail": "",
+      "id": 3
+    },
+    {
+      "value": "",
+      "finalPrice": "",
+      "retail": "",
+      "id": 4
+    },
+    {
+      "value": "",
+      "finalPrice": "",
+      "retail": "",
+      "id": 5
+    },
+    {
+      "value": "",
+      "finalPrice": "",
+      "retail": "",
+      "id": 6
+    },
+    {
+      "value": "1",
+      "finalPrice": 19799.1,
+      "retail": 2199.9,
+      "id": 7
+    }
   ]
 }

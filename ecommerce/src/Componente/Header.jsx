@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import "./assets/headerstyle.css";
 import {
     MDBContainer,
@@ -16,13 +16,27 @@ import {
     MDBDropdownItem,
     MDBCollapse,
 } from 'mdb-react-ui-kit';
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 export default function App() {
     const [openBasic, setOpenBasic] = useState(false);
 
+    const [count, setCount] = useState(0)
+    const addCard = () => {
+        fetch(` http://localhost:4000/card`)
+            .then((res) => { return res.json() })
+            .then((response) => {
+                console.log(response);
+                setCount(() => response.length > 0 ? (response.length) : "");
+            }).catch((error) => {
+                console.log("error");
+            })
+    }
+    useEffect(() => {
+        addCard()
+    }, [])
     return (
-        <MDBNavbar expand='lg' className='body ' >
+        <MDBNavbar expand='lg' className='body pt-5 pb-3 ' >
             <MDBContainer fluid  >
                 <MDBNavbarBrand href='#'>
                     <img src="assets/images/logo.png" alt="" />
@@ -64,7 +78,7 @@ export default function App() {
                         <Link className='text-color px-4'><i class="fa-solid fa-2x  fa-bell"></i></Link>
                     </MDBNavbarItem>
                     <MDBNavbarItem className='  border border-top-0 border-bottom-0'>
-                        <Link className='text-color px-4'><i class="fa-solid fa-2x fa-bag-shopping"></i></Link>
+                        <Link className='text-color px-4' onclick={addCard}>{count}<i class="fa-solid fa-2x fa-bag-shopping"></i></Link>
                     </MDBNavbarItem>
                     <MDBNavbarItem>
                         <MDBDropdown className='px-4 '>
