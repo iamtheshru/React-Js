@@ -20,6 +20,7 @@ import { Link, useParams } from 'react-router-dom'
 
 export default function App() {
     const [openBasic, setOpenBasic] = useState(false);
+    const { id } = useParams('')
 
     const [count, setCount] = useState(0)
     const addCard = () => {
@@ -78,7 +79,7 @@ export default function App() {
                         <Link className='text-color px-4'><i class="fa-solid fa-2x  fa-bell"></i></Link>
                     </MDBNavbarItem>
                     <MDBNavbarItem className='  border border-top-0 border-bottom-0'>
-                        <Link className='text-color px-4' onclick={addCard}>{count}<i class="fa-solid fa-2x fa-bag-shopping"></i></Link>
+                        <Link className='text-color px-4' to={`/addtocard/${id}`}>{count}<i class="fa-solid fa-2x fa-bag-shopping"></i></Link>
                     </MDBNavbarItem>
                     <MDBNavbarItem>
                         <MDBDropdown className='px-4 '>

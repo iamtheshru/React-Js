@@ -20,9 +20,9 @@ const Card = () => {
             const productData = await response.json();
             console.log(productData);
 
-            // const imagePath = `http://localhost:4000/${productData.image}`;
-            // console.log('Image URL:', imagePath);
-            // productData.image = imagePath;
+            const imagePath = `http://localhost:4000/${productData.image}`;
+            console.log('Image URL:', imagePath);
+            productData.image = imagePath;
 
         } catch (error) {
             console.error('Error fetching product details:', error);
@@ -38,11 +38,11 @@ const Card = () => {
             <MDBRow className='d-flex justify-content-center mt-5 '>
                 <MDBCol lg='6'>
                     <div >
-                        {/* <img
+                        <img
                             src={productDetails.image}
                             className="img_100"
                             alt={productDetails.title}
-                        /> */}
+                        />
                     </div>
                 </MDBCol>
                 <MDBCol lg='6'>
@@ -50,8 +50,6 @@ const Card = () => {
                         <div className="summary_title">
                             <h2>cart summary</h2>
                         </div>
-
-
                         <>
                             <div className="d-flex justify-content-between total_items dashed_btm">
                                 <h3 className="txt_cap">items in cart</h3>

@@ -249,45 +249,40 @@
   ],
   "card": [
     {
-      "value": "",
-      "finalPrice": "",
+      "value": "1",
+      "finalPrice": 19799.1,
+      "retail": 2199.9,
       "id": 1
-    },
-    {
-      "value": "",
-      "finalPrice": "",
-      "retail": "",
-      "id": 2
-    },
-    {
-      "value": "",
-      "finalPrice": "",
-      "retail": "",
-      "id": 3
-    },
-    {
-      "value": "",
-      "finalPrice": "",
-      "retail": "",
-      "id": 4
-    },
-    {
-      "value": "",
-      "finalPrice": "",
-      "retail": "",
-      "id": 5
-    },
-    {
-      "value": "",
-      "finalPrice": "",
-      "retail": "",
-      "id": 6
     },
     {
       "value": "1",
       "finalPrice": 19799.1,
       "retail": 2199.9,
-      "id": 7
+      "id": 2
+    },
+    {
+      "value": 2,
+      "finalPrice": 39598.2,
+      "retail": 4399.8,
+      "id": 3
+    },
+    {
+      "value": 2,
+      "finalPrice": 39598.2,
+      "retail": 4399.8,
+      "id": 4
+    },
+    {
+      "value": "1",
+      "finalPrice": 19799.1,
+      "retail": 2199.9,
+      "id": 5
+    },
+    {
+      "value": "1",
+      "finalPrice": 19799.1,
+      "retail": 2199.9,
+      "id": 6
     }
   ]
 }

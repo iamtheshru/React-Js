@@ -12,25 +12,18 @@ import OfficeData from "./../Pages/OfficeData.jsx";
 import Login from "./../Pages/Login.jsx";
 import Admin from "./../Pages/Admin.jsx";
 import Card from "./../Pages/Card.jsx";
+import AddToCard from "./../Pages/AddToCard.jsx";
 import { createBrowserRouter } from "react-router-dom";
 
 const MainRouter = createBrowserRouter([
     {
-        path: '/',
+        path: '/:id',
         element: (
             <>
                 <Header />
                 <SpecialOffers />
                 <AllProducts />
                 <Footer />
-            </>
-        )
-    },
-    {
-        path: '/allproduct',
-        element: (
-            <>
-                <Header />
             </>
         )
     },
@@ -112,6 +105,15 @@ const MainRouter = createBrowserRouter([
             <>
                 <Header />
                 <Card />
+            </>
+        )
+    },
+    {
+        path: '/addtocard/:id',
+        element: (
+            <>
+                <Header />
+                <AddToCard />
             </>
         )
     }

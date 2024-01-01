@@ -93,7 +93,8 @@ const AllDetails = () => {
             ...inp,  // Include data from the state
             retail,
             value,
-            finalPrice
+            finalPrice,
+
             // Include retail value
         };
         fetch('http://localhost:4000/card', {
@@ -224,26 +225,25 @@ const AllDetails = () => {
                             <div className="d-flex justify-content-between ">
                                 <h6 className="txt_up aa">you saved</h6>
                                 {/* <h3 className="color">&#8377;{retail}</h3> */}
-                                <input type="text" value={retail} name="retail" onChange={handleInputChange}
-                                />
+                                <input type="text" value={retail} name="retail" />
 
                             </div>
-                            <button onClick={savedata}>Click</button>
-                        </div>
-                    </div>
-                    <div className=" gstin d-flex justify-content-between align-content-center ">
-                        <h6 className="">Use GSTIN For Business Purchase (Optional)</h6>
-                        <i className="fa-solid fa-chevron-right"></i>
-                    </div>
+                            {/* <button onClick={savedata}>Click</button> */}
+                            <div className=" gstin d-flex justify-content-between align-content-center ">
+                                <h6 className="">Use GSTIN For Business Purchase (Optional)</h6>
+                                <i className="fa-solid fa-chevron-right"></i>
+                            </div>
 
-                    <div className="checkout">
-                        <Link
-                            className="txt_up"
-                            to={`/card/${id}`} // Assuming products is the data you want to pass
-                            state={{ productDetails, finalPrice, retail, value }}
-                            onClick={savedata}
-                        > Add to card
-                        </Link>
+                            <div className="checkout">
+                                <Link
+                                    className="txt_up"
+                                    to={`/card/${id}`} // Assuming products is the data you want to pass
+                                    state={{ productDetails, finalPrice, retail, value }}
+                                    onClick={savedata}
+                                > Add to card
+                                </Link>
+                            </div>
+                        </div>
                     </div>
                 </MDBCol>
             </MDBRow>
