@@ -113,7 +113,6 @@ const AllDetails = () => {
             .catch((error) => {
                 console.error('Error:', error);
             });
-
     }
 
     return (
@@ -228,16 +227,10 @@ const AllDetails = () => {
                                 <input type="text" value={retail} name="retail" />
 
                             </div>
-                            {/* <button onClick={savedata}>Click</button> */}
-                            <div className=" gstin d-flex justify-content-between align-content-center ">
-                                <h6 className="">Use GSTIN For Business Purchase (Optional)</h6>
-                                <i className="fa-solid fa-chevron-right"></i>
-                            </div>
 
-                            <div className="checkout">
+                            <div className="checkout mt-2">
                                 <Link
-                                    className="txt_up"
-                                    to={`/card/${id}`} // Assuming products is the data you want to pass
+                                    className="txt_up" to={`/addtocard/${id}`}
                                     state={{ productDetails, finalPrice, retail, value }}
                                     onClick={savedata}
                                 > Add to card

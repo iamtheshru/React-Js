@@ -16,7 +16,8 @@ import {
     MDBDropdownItem,
     MDBCollapse,
 } from 'mdb-react-ui-kit';
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom';
+import AddToCard from '../Pages/AddToCard';
 
 export default function App() {
     const [openBasic, setOpenBasic] = useState(false);
@@ -33,9 +34,10 @@ export default function App() {
                 console.log("error");
             })
     }
+
     useEffect(() => {
         addCard()
-    }, [])
+    }, [addCard])
     return (
         <MDBNavbar expand='lg' className='body pt-5 pb-3 ' >
             <MDBContainer fluid  >

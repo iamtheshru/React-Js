@@ -19,13 +19,6 @@ const Loing = () => {
 
     const Submit1 = (event) => {
         event.preventDefault();
-        // if (!inp1.name1 || !inp1.password1) {
-        //     setMessage("This field is required");
-        // } else {
-        //     console.log("Submit1:", inp1);
-        // }
-
-
     }
 
     const Submit2 = (event) => {
@@ -51,11 +44,10 @@ const Loing = () => {
 
                     if (response[0].role === "1") {
                         // setCookie('admin', "true");
-                        // navigate("/admin")
-                        // resetForm1()
+                        navigate("/admin")
                         console.log("dddd");
                     } else {
-                        // navigate("/")
+                        navigate("/")
                         // resetForm1()
                         console.log("vvvv");
                     }
@@ -65,6 +57,7 @@ const Loing = () => {
                 }
             }).catch((error) => {
                 // setServerError(true)
+                console.log("error");
             })
 
     }
@@ -101,15 +94,18 @@ const Loing = () => {
                             <h2 className="lgn-text">Welcome</h2>
                             <label className="fnt">
                                 <span>Name</span>
-                                <input type="text" className="lng-input" value={inp1.name1} name="name1" onChange={handleChange1} onBlur={handleChange1} />
-
+                                <input type="text" className="lng-input" value={inp1.name1} name="name1" onChange={handleChange1} onBlur={handleChange1} required />
+                                {error1.name1Error ? <span>This field is Required</span> : ""}
                             </label>
                             <label className="fnt">
                                 <span>Password</span>
-                                <input type="password" className="lng-input" value={inp1.password1} name="password1" onChange={handleChange1} onBlur={handleChange1} />
+                                <input type="password" className="lng-input" value={inp1.password1} name="password1" onChange={handleChange1} onBlur={handleChange1} required />
+                                {error1.password1Error ? <span>This field is Required</span> : ""}
                             </label>
                             <p class="forgot-pass">Forgot password?</p>
                             <button type="button" class="submit lg-btn" onClick={savedata1}>Sign In</button>
+                            <p>{message}</p>
+
                         </div>
                         <div class="sub-cont col-30">
                             <div class="img">
@@ -128,18 +124,18 @@ const Loing = () => {
                             <label className="fnt">
                                 <span>Name</span>
                                 <input type="text" className="lng-input" name="name" value={inp2.name} onChange={handleChange2} onBlur={handleChange2} />
-                                {/* {error2.nameError ? <span>This field is Required</span> : ""} */}
+
                             </label>
                             <label className="fnt">
                                 <span>Email</span>
                                 <input type="email" className="lng-input" name="email" value={inp2.email} onChange={handleChange2} onBlur={handleChange2} />
+
                             </label>
                             <label className="fnt">
                                 <span>Password</span>
                                 <input type="password" className="lng-input" name="password" value={inp2.password} onChange={handleChange2} onBlur={handleChange2} />
                             </label>
                             <button type="button" class="submit lg-btn" onClick={savedata}>Register</button>
-                            {/* <p>{message}</p> */}
                         </div>
                         <div class="sub-cont col-30">
                             <div class="img">

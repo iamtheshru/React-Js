@@ -224,27 +224,6 @@
       "password": "123",
       "email": "zzzz@ges",
       "id": 3
-    },
-    {
-      "role": "2",
-      "name": "Dishank",
-      "email": "dishank@gmail.com",
-      "password": "suagaggs",
-      "id": 4
-    },
-    {
-      "role": "2",
-      "name": "shraddha",
-      "password": "123",
-      "email": "j.j.patel.9998@gmail.com",
-      "id": 5
-    },
-    {
-      "role": "2",
-      "name": "shraddha",
-      "password": "123",
-      "email": "j.j.patel.9998@gmail.com",
-      "id": 6
     }
   ],
   "card": [
@@ -261,28 +240,16 @@
       "id": 2
     },
     {
-      "value": 2,
-      "finalPrice": 39598.2,
-      "retail": 4399.8,
+      "value": "1",
+      "finalPrice": 19799.1,
+      "retail": 2199.9,
       "id": 3
     },
     {
-      "value": 2,
-      "finalPrice": 39598.2,
-      "retail": 4399.8,
+      "value": "1",
+      "finalPrice": 19799.1,
+      "retail": 2199.9,
       "id": 4
-    },
-    {
-      "value": "1",
-      "finalPrice": 19799.1,
-      "retail": 2199.9,
-      "id": 5
-    },
-    {
-      "value": "1",
-      "finalPrice": 19799.1,
-      "retail": 2199.9,
-      "id": 6
     }
   ]
 }

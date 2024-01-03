@@ -17,7 +17,7 @@ import { createBrowserRouter } from "react-router-dom";
 
 const MainRouter = createBrowserRouter([
     {
-        path: '/:id',
+        path: '/',
         element: (
             <>
                 <Header />
