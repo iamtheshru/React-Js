@@ -1,0 +1,21 @@
+.body {
+    background-color: #303030;
+}
+
+.list {
+    list-style-type: none;
+    margin: 0 10px;
+}
+
+.text-color {
+    color: #ffc564;
+}
+
+.btn-bg {
+    background-color: #ffc564;
+}
+
+.mr {
+    margin-right: -40px;
+    border: 2px solid white;
+}

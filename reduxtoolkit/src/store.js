@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { reducer } from "./reducer.js";
+import reducer from "./reducer.js";
 
 
 const store = configureStore({
@@ -7,3 +7,5 @@ const store = configureStore({
         count: reducer
     }
 })
+
+export default store;
