@@ -1,4 +1,4 @@
-import { FETCH_PRODUCTS } from '../Action/types.jsx';
+import { ADD_PRODUCTS, FETCH_PRODUCTS } from '../Action/types.jsx';
 
 
 const initialState = {
@@ -7,8 +7,13 @@ const initialState = {
     productDetail: null,
 };
 
-const productsReducer = (state = initialState, action) => {
+const reducerData = (state = initialState, action) => {
     switch (action.type) {
+        case ADD_PRODUCTS:
+            return {
+                ...state,
+                items: action.payload,
+            };
         case FETCH_PRODUCTS:
             return {
                 ...state,
@@ -18,5 +23,5 @@ const productsReducer = (state = initialState, action) => {
             return state;
     }
 };
+export default reducerData;
 
-export default productsReducer;
