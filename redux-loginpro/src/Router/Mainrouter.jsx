@@ -3,6 +3,7 @@ import HeaderComponent from "../CommonCompo/HeaderCompo.jsx";
 import Login from "../CommonCompo/Login.jsx";
 import Signup from "../CommonCompo/Signup.jsx";
 import Admin from "../CommonCompo/Admin.jsx";
+import Edituser from "../CommonCompo/Admin/Edituser.jsx";
 import React, { Suspense } from "react";
 
 // const AdminRoute = React.lazy(() => { return import('./AdminRouter.jsx') })
@@ -36,6 +37,13 @@ const Mainroute = createBrowserRouter([
             <Admin />
         </>,
     },
+    {
+        path: "/edituser/:id",
+        element: <>
+            <HeaderComponent />
+            <Edituser />
+        </>,
+    }
     // {
     //     path: "/admin/*",
     //     element: <>

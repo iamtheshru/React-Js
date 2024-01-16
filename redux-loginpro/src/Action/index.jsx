@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
-import { ADD_PRODUCTS, FETCH_PRODUCTS } from "./types";
+import { ADD_PRODUCTS, FETCH_PRODUCTS, UPDATE_PRODUCTS, ALLUSER_PRODUCTS, DELETE_PRODUCTS } from "./types";
+import { Link } from "react-router-dom";
 // import API from '../httpcom';
 import axios from "axios";
 
@@ -49,6 +49,57 @@ export const postProducts = (data) => {
             console.log(response.data);
             dispatch({
                 type: ADD_PRODUCTS,
+                payload: response.data,
+            });
+        }
+        catch (ERROR) {
+            console.log(ERROR, "Error");
+        }
+    }
+
+}
+export const alluserProducts = (data) => {
+
+    return async (dispatch) => {
+        try {
+            const response = await axios.get('http://localhost:5000/posts');
+            console.log("response", response);;
+            dispatch({
+                type: ALLUSER_PRODUCTS,
+                payload: response.data,
+            });
+        }
+        catch (ERROR) {
+            console.log(ERROR, "Error");
+        }
+    }
+
+}
+export const updateProducts = (userId, updatedData) => {
+
+    return async (dispatch) => {
+        try {
+            const response = await axios.patch(`http://localhost:5000/posts/${userId}`, updatedData);
+            console.log("response", response);;
+            dispatch({
+                type: UPDATE_PRODUCTS,
+                payload: response.data,
+            });
+        }
+        catch (ERROR) {
+            console.log(ERROR, "Error");
+        }
+    }
+
+}
+export const deleteProducts = () => {
+
+    return async (dispatch) => {
+        try {
+            const response = await axios.delete(`http://localhost:5000/posts`);
+            console.log("response", response);;
+            dispatch({
+                type: DELETE_PRODUCTS,
                 payload: response.data,
             });
         }
