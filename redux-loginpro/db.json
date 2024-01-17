@@ -1,39 +1,32 @@
 {
   "posts": [
     {
-      "id": "1",
+      "id": "6230",
+      "role": "1",
       "name": "Admin",
       "password": "123",
-      "email": "admin@gmail.com",
-      "role": "1"
+      "email": "admin@gmail.com"
     },
     {
-      "id": "ef31",
+      "id": "6230",
+      "role": "2",
+      "name": "shraddha",
+      "password": "1233",
+      "email": "s.j.patel@gmail.com"
+    },
+    {
+      "id": "4bbd",
       "role": "2",
       "name": "zeel",
       "password": "456",
-      "email": "zeel@gmail.com"
+      "email": "j.j.patel@gmail.com"
     },
     {
-      "id": "6ba3",
-      "role": "2",
-      "name": "pooja",
-      "password": "789",
-      "email": "pooja@gmail.com"
-    },
-    {
-      "id": "85d1",
+      "id": "a725",
       "role": "2",
       "name": "megha",
-      "password": "1234`",
+      "password": "1234",
       "email": "megha@gmail.com"
-    },
-    {
-      "id": "9a84",
-      "role": "2",
-      "name": "ShruPatel",
-      "password": "sp123",
-      "email": "spatel@gmail.com"
     }
   ]
 }

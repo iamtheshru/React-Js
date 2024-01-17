@@ -27,7 +27,6 @@ class ExampleOfJsx extends Component {
                 <br />
                 <br />
                 <input type="text" value={UserName} name='' id='' /> //input na andar value print
-
             </>
         )
     }

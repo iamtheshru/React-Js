@@ -92,11 +92,11 @@ export const updateProducts = (userId, updatedData) => {
     }
 
 }
-export const deleteProducts = () => {
+export const deleteProducts = (id) => {
 
     return async (dispatch) => {
         try {
-            const response = await axios.delete(`http://localhost:5000/posts`);
+            const response = await axios.delete(`http://localhost:5000/posts/${id}`);
             console.log("response", response);;
             dispatch({
                 type: DELETE_PRODUCTS,
