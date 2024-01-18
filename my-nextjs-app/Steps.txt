@@ -1,0 +1,10 @@
+npx create-next-app my-nextjs-app
+cd my-nextjs-app
+
+
+Next.js uses the pages directory to automatically create routes for your application. You can create pages by adding files inside the pages directory. For example:
+
+Create an index.js file in the pages directory for the homepage:
+
+
+npm run dev
