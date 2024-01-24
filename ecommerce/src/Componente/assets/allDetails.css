@@ -1,0 +1,198 @@
+.category_img {
+    width: 70%;
+    margin: auto auto 10px auto;
+}
+
+.quantity select {
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 30px 0;
+}
+
+.txt_up {
+    text-transform: uppercase;
+}
+
+.txt_cap {
+    text-transform: capitalize;
+}
+
+.warranty {
+    background-color: #e7e7e7;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+input.warranty {
+    margin-right: 10px;
+    width: 20px;
+}
+
+.dashed_btm {
+    border-bottom: 1px dashed black;
+}
+
+.cart_product_btn a {
+    padding: 15px 20px;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    background-color: #ffc15a;
+    color: #fff;
+}
+
+.cart_product_btn button {
+    padding: 15px 20px;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    background-color: #e7e7e7;
+    /* color: #fff; */
+    width: 100%;
+    border: none;
+}
+
+
+.cart_product_text h5 {
+    font-size: 23px;
+    margin: 20px 0;
+    font-weight: 600;
+}
+
+.pincode input {
+    width: 100%;
+    padding: 15px 0 15px 10px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+.coupan p {
+    padding: 15px 0 15px 10px;
+    display: block;
+    color: #fff;
+    margin: 10px 0;
+    background-color: #979797;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.coupan h4 {
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #67AD5B;
+}
+
+.cart_summary {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.summary_title h2 {
+    text-align: center;
+    font-size: 20px;
+}
+
+.total_items h3 {
+    font-size: 15px;
+}
+
+.total_payment {
+    margin-top: 15px;
+}
+
+span.tax {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.color {
+    color: #67AD5B;
+}
+
+.cart_summary h4 {
+    font-weight: 500;
+
+}
+
+.cart_summary h2 {
+    font-size: 20px;
+    color: #000;
+}
+
+.gstin {
+    background-color: #d9d9d9;
+    padding: 15px 10px 0;
+    margin: 15px 0;
+    border-radius: 10px;
+    color: #000;
+    font-size: 18px;
+    text-align: center;
+}
+
+.gstin h6 {
+    font-size: 18px;
+}
+
+.gstin i {
+    margin-top: 2px;
+}
+
+.mrp_retail h3 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.warranty_text p,
+.warranty_text h6 {
+    margin-bottom: 0;
+}
+
+.color {
+    color: #000;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
+    /* margin-top: 35px; */
+}
+
+.cart_product_img {
+    border: 2px solid #878787;
+    border-radius: 10px;
+}
+
+.mr-10 {
+    padding-left: 50px;
+}
+
+.cart_product_img img {
+    margin: 40px 0;
+    padding: 0 10px;
+}
+
+.img_100 {
+    width: 100%;
+    display: block;
+    aspect-ratio: 2/1;
+    object-fit: contain;
+}
+
+.checkout a {
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+    background-color: #ffc15a;
+    display: block;
+    border-radius: 10px;
+}

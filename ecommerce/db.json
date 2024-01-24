@@ -1,0 +1,324 @@
+{
+  "AllData": [
+    {
+      "id": "1",
+      "image": "./assets/images/product-1.png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "2",
+      "image": "./assets/images/product-2.png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "3",
+      "image": "./assets/images/product-3.png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "4",
+      "image": "./assets/images/product-4.png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "5",
+      "image": "./assets/images/product-5.png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "6",
+      "image": "./assets/images/product-6.png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "7",
+      "image": "./assets/images/product-7.png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "8",
+      "image": "./assets/images/product-8.png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "9",
+      "image": "./assets/images/product-9.png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "10",
+      "image": "./assets/images/product-10.png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    }
+  ],
+  "ChairCategory": [
+    {
+      "id": "1",
+      "image": "./assets/images/select-all.png",
+      "discription": "All"
+    },
+    {
+      "id": "2",
+      "image": "./assets/images/rocking.png",
+      "discription": "Rocking"
+    },
+    {
+      "id": "3",
+      "image": "./assets/images/folding.png",
+      "discription": "Folding"
+    },
+    {
+      "id": "4",
+      "image": "./assets/images/iconic.png",
+      "discription": "Iconic"
+    },
+    {
+      "id": "5",
+      "image": "./assets/images/cafe.png",
+      "discription": "Cafe"
+    },
+    {
+      "id": "6",
+      "image": "./assets/images/armchair.png",
+      "discription": "Armchair"
+    }
+  ],
+  "ChairData": [
+    {
+      "id": "1",
+      "image": "./assets/images/chair-1.png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "2",
+      "image": "./assets/images/chair-2.png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "3",
+      "image": "./assets/images/chair-3.png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "4",
+      "image": "./assets/images/chair-4.png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "5",
+      "image": "./assets/images/chair-5.png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "6",
+      "image": "./assets/images/chair-6.png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "7",
+      "image": "./assets/images/chair-7.png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "8",
+      "image": "./assets/images/chair-8.png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "9",
+      "image": "./assets/images/chair-9 .png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "10",
+      "image": "./assets/images/chair-10 .png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "11",
+      "image": "./assets/images/chair-11 .png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "12",
+      "image": "./assets/images/chair-12 .png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "13",
+      "image": "./assets/images/chair-13 .png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "14",
+      "image": "./assets/images/chair-14 .png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "15",
+      "image": "./assets/images/chair-15 .png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "16",
+      "image": "./assets/images/chair-16 .png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "17",
+      "image": "./assets/images/chair-17 .png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    },
+    {
+      "id": "18",
+      "image": "./assets/images/chair-18 .png",
+      "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
+      "price": "21,999"
+    }
+  ],
+  "user": [
+    {
+      "name": "Admin",
+      "password": "123",
+      "email": "admin@gmail.com",
+      "role": "1",
+      "id": "1"
+    },
+    {
+      "role": "2",
+      "name": "zeel",
+      "password": "123",
+      "email": "zzzz@ges",
+      "id": "2"
+    },
+    {
+      "role": "2",
+      "name": "pooja",
+      "password": "123",
+      "email": "zzzz@ges",
+      "id": "3"
+    },
+    {
+      "id": "77cf",
+      "role": "2",
+      "name": "ankit",
+      "password": "123",
+      "email": "ankit@gmail.com"
+    },
+    {
+      "id": "1eb1",
+      "role": "2",
+      "name": "ankit",
+      "password": "234",
+      "email": "ankit@gmail.com"
+    },
+    {
+      "id": "28ab",
+      "role": "2",
+      "name": "anki",
+      "password": "345",
+      "email": "ankit@gmail.com"
+    },
+    {
+      "id": "971a",
+      "role": "2",
+      "name": "ShruPatel",
+      "password": "12",
+      "email": "s.j.patel.3110@gmail.com"
+    },
+    {
+      "id": "947f",
+      "role": "2",
+      "name": "ShruPatel",
+      "password": "123",
+      "email": "ankit@gmail.com"
+    },
+    {
+      "id": "412d",
+      "role": "2",
+      "name": "ShruPatel",
+      "password": "234",
+      "email": "s.j.patel@gmail.com"
+    },
+    {
+      "id": "c0ce",
+      "role": "2",
+      "name": "ShruPatel",
+      "password": "zzz",
+      "email": "sss"
+    },
+    {
+      "id": "ac14",
+      "role": "2",
+      "name": "ss",
+      "password": "123",
+      "email": "s.j.patel.3110@gmail.com"
+    },
+    {
+      "id": "0e5d",
+      "role": "2",
+      "name": "ShruPatel",
+      "password": "123",
+      "email": "s.j.patel.3110@gmail.com"
+    }
+  ],
+  "card": [
+    {
+      "id": "b00f",
+      "value": "1",
+      "finalPrice": 19799.1,
+      "retail": 2199.9
+    },
+    {
+      "id": "a420",
+      "value": "1",
+      "finalPrice": 19799.1,
+      "retail": 2199.9
+    },
+    {
+      "id": "bbbe",
+      "value": "1",
+      "finalPrice": 19799.1,
+      "retail": 2199.9
+    },
+    {
+      "id": "ad98",
+      "value": "1",
+      "finalPrice": 19799.1,
+      "retail": 2199.9
+    },
+    {
+      "id": "9880",
+      "value": "1",
+      "finalPrice": 19799.1,
+      "retail": 2199.9
+    }
+  ]
+}
