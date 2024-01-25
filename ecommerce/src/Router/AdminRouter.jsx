@@ -1,8 +1,8 @@
 import React from 'react';
 import { useRoutes } from 'react-router-dom';
-// import AdminDashboard from './../Pages/Admin/AdminDashboard.jsx';
+import AdminDashboardHome from './../Pages/Admin/AdminDashboard.jsx';
 import Admin from "./../Pages/Admin/Admin.jsx";
-import AdminDashboardHome from "./../Pages/Admin/AdminDashboardHome.jsx";
+import EditUser from "./../Pages/Admin/EditUser.jsx";
 
 
 const AdminRoute = () => {
@@ -12,8 +12,12 @@ const AdminRoute = () => {
             element: <Admin />,
             children: [
                 {
-                    path: "dashboard",
+                    path: "allusers",
                     element: <AdminDashboardHome />,
+                },
+                {
+                    path: "/edituser/:id",
+                    element: <EditUser />,
                 }
             ]
         }

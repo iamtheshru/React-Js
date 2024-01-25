@@ -14,7 +14,7 @@ import Card from "./../Pages/Card.jsx";
 import AddToCard from "./../Pages/AddToCard.jsx";
 import { createBrowserRouter } from "react-router-dom";
 
-const AdminRoute = React.lazy(() => { return import('./AdminRouter.jsx') });
+const AdminRouter = React.lazy(() => import('./AdminRouter'));
 const MainRouter = createBrowserRouter([
     {
         path: '/',
@@ -109,10 +109,10 @@ const MainRouter = createBrowserRouter([
         )
     },
     {
-        path: '/admin',
+        path: '/admin/*',
         element: (
             <>
-                <Suspense fallback={<h2>Loading...</h2>}><AdminRoute></AdminRoute></Suspense>
+                <Suspense fallback={<h2>Loading...</h2>}><AdminRouter /></Suspense>
             </>
         )
     }
