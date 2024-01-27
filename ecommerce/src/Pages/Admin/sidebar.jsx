@@ -54,6 +54,14 @@ export default function NestedList() {
                         </li>
                     </ul> */}
                 </Link>
+
+            </ListItemButton>
+            <ListItemButton>
+                <ListItemIcon>
+                    <DraftsIcon />
+                </ListItemIcon>
+                <Link to="addusers" className=''>Add Users</Link>
+
             </ListItemButton>
             <ListItemButton>
                 <ListItemIcon>
