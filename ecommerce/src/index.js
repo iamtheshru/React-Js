@@ -3,6 +3,6 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import MainRouter from './Router/MainRouter.jsx';
 import { RouterProvider } from "react-router-dom";
-
+import "./Componente/assets/headerstyle.css";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<RouterProvider router={MainRouter} />);

@@ -1,10 +1,13 @@
 import { MDBCol, MDBRow, MDBContainer } from "mdb-react-ui-kit";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+// import { CartContext } from '../Pages/AddToCartProvider'
+
 
 const AddToCard = () => {
     const [products, setProducts] = useState([]);
+    // const { cartData, setCartData } = useContext(CartContext);
+
     const fetchProductDetails = async () => {
         try {
             const response = await fetch(`http://localhost:4000/card`);
@@ -30,6 +33,7 @@ const AddToCard = () => {
         console.log(id);
         fetchProductDetails(id)
     };
+
     useEffect(() => {
         fetchProductDetails();
     }, []);

@@ -14,9 +14,9 @@ const Edituser = () => {
             })
     }
     const updatedata = () => {
-        const formData = new FormData();
-        formData.append("file", userById.file);
-        formData.append("price", userById.price);
+        // const formData = new FormData();
+        // formData.append("file", userById.file);
+        // formData.append("price", userById.price);
 
         fetch(`http://localhost:4000/AllData/${id}`, {
             method: "PATCH",
@@ -24,7 +24,7 @@ const Edituser = () => {
                 "Content-Type": "application/json",  // sent request
                 "Accept": "application/json",   // expected data sent back
             },
-            body: formData,
+            body: JSON.stringify(userById),
         })
             .then((res) => {
                 return res.json();

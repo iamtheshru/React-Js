@@ -12,9 +12,9 @@ export default function App() {
                 </MDBCol>
             </MDBRow>
             <MDBRow>
-                <MDBCol size='7' lg='7' md='12' sm='12'  >
-                    <div className="position-relative  w-100 img my-3 ">
-                        <img className="w-100" src="./assets/images/banner-img-1.png" alt="" />
+                <MDBCol size='7' lg='7' md='12' sm='12' className='mb-3' >
+                    <div className="position-relative  w-100 img  ">
+                        <img className="w-100 " src="./assets/images/banner-img-1.png" alt="" />
                         <div className="position-absolute bottom-0 start-0  banner_text_1 text-white ps-3 banner_text">
                             <h3 className="txt_cap">high quality</h3>
                             <h3 className="txt_cap">furniture</h3>
@@ -24,8 +24,8 @@ export default function App() {
                         </div>
                     </div>
                 </MDBCol>
-                <MDBCol size='3' lg='5' md='12' sm='12'  >
-                    <div className="position-relative  w-100 img my-3   ">
+                <MDBCol size='3' lg='5' md='12' sm='12' className='mb-3' >
+                    <div className="position-relative  w-100 img   ">
                         <img className="w-100 " src="./assets/images/banner-img-2.png" alt="" />
                         <div className="position-absolute bottom-0 start-0 banner_text_1 text-white ps-4 banner_text ">
                             <h3 className="txt_cap ">Discount Upto</h3>

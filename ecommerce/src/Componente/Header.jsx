@@ -1,5 +1,5 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
-import "./assets/headerstyle.css";
+import React, { useContext, useEffect, useLayoutEffect, useState } from 'react';
+// import "./assets/headerstyle.css";
 import {
     MDBContainer,
     MDBNavbar,
@@ -17,13 +17,20 @@ import {
     MDBCollapse,
 } from 'mdb-react-ui-kit';
 import { Link, useParams } from 'react-router-dom';
-import AddToCard from '../Pages/AddToCard';
+// import AddToCard from '../Pages/AddToCard';
+// import { CartContext } from '../Pages/AddToCartProvider';
+// import { CartContext } from '../Pages/AddToCartProvider';
+
+
 
 export default function App() {
     const [openBasic, setOpenBasic] = useState(false);
     const { id } = useParams('')
 
-    const [count, setCount] = useState(0)
+
+    // const { cartData, setCartData } = useContext(CartContext);
+    const [count, setCount] = useState(0);
+
     const addCard = () => {
         fetch(` http://localhost:4000/card`)
             .then((res) => { return res.json() })
@@ -35,12 +42,14 @@ export default function App() {
             })
     }
 
+
+
     useEffect(() => {
         addCard()
-    }, [addCard])
+    }, [count])
     return (
-        <MDBNavbar expand='lg' className='body pt-5 pb-3 ' >
-            <MDBContainer fluid  >
+        <MDBNavbar expand='lg' className='body pt-3 pb-3 ' >
+            <MDBContainer fluid className='h60' >
                 <MDBNavbarBrand href='#'>
                     <img src="assets/images/logo.png" alt="" />
 
@@ -72,7 +81,7 @@ export default function App() {
                         </MDBNavbarItem>
 
                     </MDBNavbarNav>
-                    <form className='d-flex input-group w-50 px-4'>
+                    <form className='d-flex input-group w-50 px-4 pt-2'>
                         <input type='search' className='form-control' placeholder='Type query' aria-label='Search' />
                         <MDBBtn className='text-white btn-bg' ><i class="fa-solid fa-magnifying-glass posi_ab "></i></MDBBtn>
 
@@ -80,8 +89,10 @@ export default function App() {
                     <MDBNavbarItem >
                         <Link className='text-color px-4'><i class="fa-solid fa-2x  fa-bell"></i></Link>
                     </MDBNavbarItem>
-                    <MDBNavbarItem className='  border border-top-0 border-bottom-0'>
-                        <Link className='text-color px-4' to={`/addtocard/${id}`}>{count}<i class="fa-solid fa-2x fa-bag-shopping"></i></Link>
+                    <MDBNavbarItem className=' pb-4 '>
+                        <Link className='text-color px-4 ' to={`/addtocard/${id}`}>{count}<i class="fa-solid fa-2x fa-bag-shopping"></i>
+                            {/* <AddToCard /> */}
+                        </Link>
                     </MDBNavbarItem>
                     <MDBNavbarItem>
                         <MDBDropdown className='px-4 '>

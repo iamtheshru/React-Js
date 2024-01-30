@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const AddUser = () => {
     const [data, setData] = useState({
-        file: null,
+        file: '',
         description: "",
         price: "",
     })
@@ -13,31 +13,37 @@ const AddUser = () => {
         }));
     };
     const handleFileChange = (e) => {
+        // const imagePath = `./assets/images/${data.file}`
         setData((prevData) => ({
             ...prevData,
             file: e.target.files[0],
         }));
     };
     const dataPost = () => {
-        if (!data.file || !data.price || !data.description) {
-            console.log("This field is required");
-        } else {
-            fetch('http://localhost:4000/AllData', {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",  // sent request
-                    "Accept": "application/json",   // expected data sent back
-                },
-                body: JSON.stringify(data)
+        const formData = new FormData()
+        formData.append("file", data.file);
+        formData.append("description", data.description);
+        formData.append("price", data.price);
+
+        // if (!data.file || !data.price || !data.description) {
+        //     console.log("This field is required");
+        // } else {
+        fetch('http://localhost:4000/AllData', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",  // sent request
+                "Accept": "application/json",   // expected data sent back
+            },
+            body: formData
+        })
+            .then((datas) => {
+                console.log(datas);
+                return datas.json();
             })
-                .then((data) => {
-                    console.log(data);
-                    return data.json();
-                })
-                .then((result) => {
-                    console.log(result);
-                })
-        }
+            .then((result) => {
+                console.log(result);
+            })
+        // }
     }
 
     return (<>
@@ -46,7 +52,8 @@ const AddUser = () => {
                 <form>
                     <div className="row mt-3">
                         <div className="col">
-                            <input className='form-control' type="file" name="file" onChange={handleFileChange} />
+                            <img src={data.file} alt="Image" />
+                            <input className='form-control' type="file" name="image" onChange={handleFileChange} />
                         </div>
                     </div>
                     <div className="row mt-3">
@@ -56,7 +63,7 @@ const AddUser = () => {
                     </div>
                     <div className="row mt-3">
                         <div className="col-12">
-                            <input type='text' placeholder='Price ' className='form-control' name="price" value={data.price} onChange={handleInputChange} required />
+                            <input type='text' placeholder='price ' className='form-control' name="price" value={data.price} onChange={handleInputChange} required />
                         </div>
                     </div>
                     <div className="row mt-3">
