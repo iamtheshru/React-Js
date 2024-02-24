@@ -295,6 +295,12 @@
       "finalPrice": 19799.1,
       "retail": 2199.9,
       "id": 2
+    },
+    {
+      "value": "1",
+      "finalPrice": 19799.1,
+      "retail": 2199.9,
+      "id": 3
     }
   ]
 }
