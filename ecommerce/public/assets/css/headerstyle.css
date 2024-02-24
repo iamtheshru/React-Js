@@ -1,0 +1,36 @@
+body {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    background: #ebebeb86;
+}
+
+.nav1 {
+    background-color: #303030;
+}
+
+.h60 {
+    height: 50px;
+}
+
+.list {
+    list-style-type: none;
+    margin: 0 10px;
+}
+
+.text-color {
+    color: #ffc564;
+}
+
+.btn-bg {
+    background-color: #ffc564;
+}
+
+.mr {
+    margin-right: -40px;
+    border: 2px solid white;
+}
+
+.text-color {
+    top: 10px;
+    position: relative;
+
+}
