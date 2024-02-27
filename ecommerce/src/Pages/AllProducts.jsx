@@ -28,7 +28,7 @@ const AllProducts = () => {
                                             <img src={products.image} alt="" style={{ aspectRatio: '4/2', objectFit: "contain", padding: "10px" }} className="w-100" />
                                             <div className="card-body text-dark" style={{ fontWeight: "800" }}>
                                                 <h6 className="card-title ">{products.discription}</h6>
-                                                <p className="card-text">{products.price} /-</p>
+                                                <p className="card-text">Rs. {products.price} /-</p>
                                             </div>
                                         </div>
                                     </Link>

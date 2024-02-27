@@ -42,7 +42,10 @@ const MainRouter = createBrowserRouter([
         element: (
             <>
                 <Header />
+                <SpecialOffers />
                 <ChairData />
+                <Footer />
+
             </>
         )
     },
@@ -51,7 +54,9 @@ const MainRouter = createBrowserRouter([
         element: (
             <>
                 <Header />
+                <SpecialOffers />
                 <SofaData />
+                <Footer />
             </>
         )
     },
@@ -60,7 +65,10 @@ const MainRouter = createBrowserRouter([
         element: (
             <>
                 <Header />
+                <SpecialOffers />
                 <StoolData />
+                <Footer />
+
             </>
         )
     },
@@ -68,8 +76,12 @@ const MainRouter = createBrowserRouter([
         path: '/footstool',
         element: (
             <>
+
                 <Header />
+                <SpecialOffers />
                 <FootstoolData />
+                <Footer />
+
             </>
         )
     },
@@ -78,7 +90,10 @@ const MainRouter = createBrowserRouter([
         element: (
             <>
                 <Header />
+                <SpecialOffers />
                 <OfficeData />
+                <Footer />
+
             </>
         )
     },

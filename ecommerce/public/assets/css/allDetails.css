@@ -1,7 +1,4 @@
-body {
-    
-
-}
+body {}
 
 .category_img {
     width: 70%;
@@ -201,3 +198,11 @@ span.tax {
     display: block;
     border-radius: 10px;
 }
+
+.pincode input {
+    border: none;
+}
+
+/* .total_items input {
+    border: none !important;
+} */

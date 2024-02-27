@@ -30,8 +30,7 @@ const AdminDashboardHome = () => {
             })
             .catch((error) => {
                 console.error("Error deleting post:", error);
-            }
-            )
+            })
     }
 
     useEffect(() => {

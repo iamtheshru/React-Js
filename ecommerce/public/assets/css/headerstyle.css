@@ -1,6 +1,6 @@
 body {
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-    background: #ebebeb86;
+    background: #ebebeb86 !important;
 }
 
 .nav1 {
@@ -33,4 +33,9 @@ body {
     top: 10px;
     position: relative;
 
+}
+
+.hecolor {
+    background-color: #ffc564 !important;
+    box-shadow: none !important;
 }

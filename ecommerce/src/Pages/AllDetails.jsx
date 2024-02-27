@@ -119,7 +119,7 @@ const AllDetails = () => {
     return (
         <MDBContainer >
             <MDBRow className="d-flex justify-content-between color">
-                <MDBCol className="mt-5 pt-5  card1" lg='7'>
+                <MDBCol className="my-5 pt-5  card1" lg='7'>
                     <MDBRow>
                         <MDBCol className="category_img" >
                             <div className="cart_product_img">

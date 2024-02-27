@@ -78,7 +78,7 @@ const AddToCard = () => {
                                         <div className="checkout">
                                             <Link to="/login">Buye</Link>
                                         </div>
-                                        <button onClick={() => handleRemove(products.id)}>remove</button>
+                                        <button style={{ "background-color": "#ffc15a", "padding": "15px", "width": "100%", "margin-top": "8px", "border-radius": "10px", "border": "none", "color": "white" }} onClick={() => handleRemove(products.id)}>remove</button>
                                     </>
                                 </div>
                             </MDBCol>

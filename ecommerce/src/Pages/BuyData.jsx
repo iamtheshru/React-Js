@@ -1,17 +1,17 @@
-// import emailjs from 'emailjs-com'
+import emailjs from 'emailjs-com'
 const BuyData = () => {
 
     const sendEmail = (e) => {
         e.preventDefault();
-        // emailjs.sendForm(
-        //     'service_m3aw8uk', //service key
-        //     'template_wjo6tck', //template Key
-        //     e.target,
-        //     'GPmjDXDLLJWPn1DTn' //Public Key
-        // ).then(res => {
-        //     console.log(res)
-        //     e.target.reset();
-        // })
+        emailjs.sendForm(
+            'service_m3aw8uk', //service key
+            'template_wjo6tck', //template Key
+            e.target,
+            'GPmjDXDLLJWPn1DTn' //Public Key
+        ).then(res => {
+            console.log(res)
+            e.target.reset();
+        })
     }
 
     return (<>

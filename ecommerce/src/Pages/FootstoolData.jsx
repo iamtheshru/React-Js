@@ -1,7 +1,7 @@
 const Chair = () => {
     return (<>
 
-        aa</>);
+        ComingSoon</>);
 }
 
 export default Chair;

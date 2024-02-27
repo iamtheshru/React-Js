@@ -82,7 +82,7 @@ export default function App(props) {
                     </MDBNavbarNav>
                     <form className='d-flex input-group w-50 px-4 pt-2'>
                         <input type='search' className='form-control' placeholder='Type query' aria-label='Search' />
-                        <MDBBtn className='text-white btn-bg' ><i class="fa-solid fa-magnifying-glass posi_ab "></i></MDBBtn>
+                        <MDBBtn className='text-white  hecolor' ><i class="fa-solid fa-magnifying-glass posi_ab "></i></MDBBtn>
 
                     </form>
                     <MDBNavbarItem >
@@ -101,15 +101,15 @@ export default function App(props) {
                             <MDBDropdownMenu className=' mt-4 mr body square borde  text-center '>
                                 <MDBDropdownItem className='my-2'>
 
-                                    <Link className='text-white '>my account</Link>
+                                    <Link className='text-black '>my account</Link>
                                 </MDBDropdownItem>
                                 <MDBDropdownItem className='my-2'>
 
-                                    <Link className='text-white py-5'>my orders</Link>
+                                    <Link className='text-black py-5'>my orders</Link>
                                 </MDBDropdownItem>
                                 <MDBDropdownItem className='my-2'>
 
-                                    <Link className='text-white py-2' to="/login">login</Link>
+                                    <Link className='text-black py-2' to="/login">login</Link>
                                 </MDBDropdownItem>
 
                             </MDBDropdownMenu>

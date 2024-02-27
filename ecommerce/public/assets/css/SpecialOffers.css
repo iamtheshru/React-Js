@@ -27,14 +27,11 @@
     border-radius: 20px;
 }
 
-/* @font-face {
-    font-family: work_sans;
-    src: url(../fonts/WorkSans-VariableFont_wght.ttf);
-} */
+
 
 @font-face {
     font-family: Marcellus;
-    src: url(./../../../public/assets/fonts/Marcellus-Regular.ttf);
+    src: url(./../fonts/Marcellus-Regular.ttf);
 }
 
 div[class*="banner_text"] {
