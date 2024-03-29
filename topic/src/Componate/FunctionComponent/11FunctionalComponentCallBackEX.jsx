@@ -19,7 +19,7 @@ const Functionalcomponentcallback = () => {
                 <div className="col">
                     <h3>{count}</h3>
                     <h3>{item}</h3>
-                    <h3>{data()}</h3>  {/*multiple callback  and without dependency*/}
+                    <h3>{data()}</h3>  multiple callback  and without dependency
                     <ChildUseMemo add={add} />
                     <button onClick={() => setCount(count + 1)}>Count</button>
                     <button onClick={() => setItem(item * 2)}>Update Item</button>

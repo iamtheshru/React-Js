@@ -9,14 +9,14 @@ class LoaderExample extends Component {
     }
     componentDidMount() {
         setTimeout(() => {
-            this.setState({ loaders: true })
+            this.setState({ loaders: true });
         }, 2000);
     }
     Change = () => {
         this.setState({ loaders: false })
         // console.log(this.state.loader);
         setTimeout(() => {
-            this.setState({ loaders: true })
+            this.setState({ loaders: true }) 
         }, 2000);
         // if (this.state.loaders === true) {
         //     let Displ = document.getElementById("btn");

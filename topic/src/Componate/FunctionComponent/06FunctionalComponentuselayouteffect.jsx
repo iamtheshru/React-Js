@@ -34,7 +34,6 @@ const FunctionalCompoUselayouteffect = () => {
         <>
             <button onClick={() => { changeState(!state) }}>Click</button>
             <button onClick={() => { changeState2(!state) }}>Click</button>
-            const [count, setCount] = useState(0);
         </>
     );
 }

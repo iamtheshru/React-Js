@@ -1,4 +1,4 @@
-import { useState } from "react";
+ import { useState } from "react";
 
 const CustomHook1 = (initValue, iniError) => {
     const [inp1, setInp1] = useState(initValue);

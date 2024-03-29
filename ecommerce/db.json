@@ -55,38 +55,6 @@
       "price": "10,000"
     }
   ],
-  "ChairCategory": [
-    {
-      "id": "1",
-      "image": "./assets/images/select-all.png",
-      "discription": "All"
-    },
-    {
-      "id": "2",
-      "image": "./assets/images/rocking.png",
-      "discription": "Rocking"
-    },
-    {
-      "id": "3",
-      "image": "./assets/images/folding.png",
-      "discription": "Folding"
-    },
-    {
-      "id": "4",
-      "image": "./assets/images/iconic.png",
-      "discription": "Iconic"
-    },
-    {
-      "id": "5",
-      "image": "./assets/images/cafe.png",
-      "discription": "Cafe"
-    },
-    {
-      "id": "6",
-      "image": "./assets/images/armchair.png",
-      "discription": "Armchair"
-    }
-  ],
   "ChairData": [
     {
       "id": "1",
@@ -138,61 +106,61 @@
     },
     {
       "id": "9",
-      "image": "./assets/images/chair-9 .png",
+      "image": "./assets/images/chair-9.png",
       "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
       "price": "21,999"
     },
     {
       "id": "10",
-      "image": "./assets/images/chair-10 .png",
+      "image": "./assets/images/chair-10.png",
       "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
       "price": "21,999"
     },
     {
       "id": "11",
-      "image": "./assets/images/chair-11 .png",
+      "image": "./assets/images/chair-11.png",
       "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
       "price": "21,999"
     },
     {
       "id": "12",
-      "image": "./assets/images/chair-12 .png",
+      "image": "./assets/images/chair-12.png",
       "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
       "price": "21,999"
     },
     {
       "id": "13",
-      "image": "./assets/images/chair-13 .png",
+      "image": "./assets/images/chair-13.png",
       "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
       "price": "21,999"
     },
     {
       "id": "14",
-      "image": "./assets/images/chair-14 .png",
+      "image": "./assets/images/chair-14.png",
       "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
       "price": "21,999"
     },
     {
       "id": "15",
-      "image": "./assets/images/chair-15 .png",
+      "image": "./assets/images/chair-15.png",
       "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
       "price": "21,999"
     },
     {
       "id": "16",
-      "image": "./assets/images/chair-16 .png",
+      "image": "./assets/images/chair-16.png",
       "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
       "price": "21,999"
     },
     {
       "id": "17",
-      "image": "./assets/images/chair-17 .png",
+      "image": "./assets/images/chair-17.png",
       "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
       "price": "21,999"
     },
     {
       "id": "18",
-      "image": "./assets/images/chair-18 .png",
+      "image": "./assets/images/chair-18.png",
       "discription": "Claven Fabric LHS Pull Out Sofa Cum Bed In Charcoal Grey Colour With Storage Claven Fabric LHS Pull Out",
       "price": "21,999"
     }
@@ -288,19 +256,19 @@
       "value": "1",
       "finalPrice": 19799.1,
       "retail": 2199.9,
-      "id": 2
+      "id": 1
+    },
+    {
+      "value": 5,
+      "finalPrice": 98995.5,
+      "retail": 10999.5,
+      "id": 3
     },
     {
       "value": "1",
-      "finalPrice": 27891,
-      "retail": 3099,
+      "finalPrice": 19799.1,
+      "retail": 2199.9,
       "id": 4
-    },
-    {
-      "value": "1",
-      "finalPrice": 26099.1,
-      "retail": 2899.9,
-      "id": 5
     }
   ]
 }

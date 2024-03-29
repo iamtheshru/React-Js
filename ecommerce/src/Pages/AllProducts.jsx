@@ -10,6 +10,7 @@ const AllProducts = () => {
             .then((res) => res.json())
             .then((data) => setProducts((currentdata) => [...currentdata, ...data]))
     }
+   
 
     useEffect(() => {
         fetchData()

@@ -5,6 +5,7 @@ import Footer from "./../Componente/Footer.jsx";
 import AllProducts from "./../Pages/AllProducts.jsx";
 import AllDetails from "./../Pages/AllDetails.jsx";
 import ChairData from "./../Pages/ChairData.jsx";
+import ChairAllDetails from "./../Pages/ChairAllDetails.jsx";
 import SofaData from "./../Pages/SofaData.jsx";
 import StoolData from "./../Pages/StoolData.jsx";
 import FootstoolData from "./../Pages/FootstoolData.jsx";
@@ -46,6 +47,15 @@ const MainRouter = createBrowserRouter([
                 <ChairData />
                 <Footer />
 
+            </>
+        )
+    },
+    {
+        path: '/productsdetailsChair/:id',
+        element: (
+            <>
+                <Header />
+                <ChairAllDetails />
             </>
         )
     },

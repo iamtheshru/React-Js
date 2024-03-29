@@ -8,6 +8,7 @@ export class CompositionVsInheritance extends Component {
             ParentCompoData: "Something from ParentCompoData"
         }
     }
+    
     render() {
         return (
             <>

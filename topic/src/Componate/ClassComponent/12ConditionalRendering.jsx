@@ -12,7 +12,7 @@ class ConditionalRendering extends Component {
                 <> <button onClick={() => { this.setState({ isLogin: !this.state.isLogin }) }}>{(this.state.isLogin) ? "Login" : "Logout"}</button></>
             </>
         )
-    }
+    } 
 }
 
 export default ConditionalRendering;

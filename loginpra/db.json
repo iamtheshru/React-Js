@@ -1,0 +1,17 @@
+{
+  "user": [
+    {
+      "name": "Admin",
+      "password": "123",
+      "email": "admin@gmail.com",
+      "role": "1",
+      "id": "1"
+    },
+    {
+      "id": "bbb2",
+      "role": "2",
+      "name": "zeel",
+      "password": "zee"
+    }
+  ]
+}
