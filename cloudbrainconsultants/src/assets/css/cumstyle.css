@@ -1,0 +1,82 @@
+.com-bg {
+    background: #8cc739;
+}
+.com-textcolor{
+    color:#8cc739 ;
+}
+@font-face {
+    src: url(./lato/Lato-Regular.ttf);
+    font-family:"lato";
+}
+
+.heade_font{
+    font-family:lato;
+    color: #404656;
+    font-weight: 400;
+}
+/*------- about------ */
+.about_bg {
+    background: rgb(0 0 0 / 12%);
+}
+
+.text_col {
+    color: #647b9c;
+}
+
+
+
+/*------- service------ */
+.ser_bg {
+    background-color: #f4f8fa;
+}
+
+.ser-box1bg {
+    background: rgba(0, 173, 182, 0.1);
+}
+
+.ser-box2bg {
+    background: rgba(247, 179, 32, 0.1);
+}
+
+.ser-box3bg {
+    background: rgba(13, 214, 234, 0.1);
+}
+
+.ser-box4bg {
+    background: rgba(185, 95, 253, 0.1);
+}
+
+.ser_box1 h2 {
+    color: #00adb6;
+}
+
+.ser_box2 h2 {
+    color: #f7b320;
+}
+
+.ser_box3 h2 {
+    color: #0dd6ea;
+}
+
+.ser_box4 h2 {
+    color: #b95ffd;
+}
+
+.ser_textcol {
+    color: #647b9c;
+}
+
+/*------- contact------ */
+
+.Contact_input {
+    background: #f2f3f5;
+    border-color: #f2f3f5;
+}
+
+.Contact_span {
+    color: #647b9c;
+}
+.form_shadow{
+    border: 1px solid #e6eaf3;
+}
+
