@@ -8,3 +8,8 @@ Create an index.js file in the pages directory for the homepage:
 
 
 npm run dev
+
+mongodb+srv://freeapi:<password>@cluster0.ncgv4.mongodb.net/
+
+shru3110
+freeapi

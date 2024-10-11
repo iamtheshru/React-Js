@@ -2,69 +2,69 @@ import React, { useState } from "react";
 import { API_URL } from "../config";
 import { Navigate, useNavigate } from "react-router-dom";
 import ForgetPwd from "./ForgetPwd.jsx";
-import { ToastContainer } from "react-toastify";
+// import { ToastContainer } from "react-toastify";
 import CustomerHook from "./CustomeHook";
 
 function Login() {
     const [show, setShow] = useState(true);
     const [inp1, setInp1] = useState({ email: "", password: "" });
     const [open, setOpen] = useState(false);
-    const { handeldata2, inp2, error2, resetdata2 } = CustomerHook({ role: "2", username: "", password: "", email: "" });
+    const { handalchange2, inp2, error2, handalreset2 } = CustomerHook({ role: "2", username: "", password: "", email: "" });
 
-    let navigate = useNavigate();
+    const navigate = useNavigate();
+    const isAuthenticated = localStorage.getItem("token");
+    if (isAuthenticated) {
+        return <Navigate to="/login/navbar" replace />;
+    }
 
     const showedata = () => {
         setShow(!show);
     };
 
-    const forgetPwd = () => {
-        setOpen(true);
-    };
-
-    const isAuth = localStorage.getItem("token");
-    if (isAuth) {
-        return <Navigate to="/login/navbar" replace />;
+    const handalchange1 = (e) => {
+        setInp1((prevent) => ({ ...prevent, [e.target.name]: e.target.value }))
     }
-
-    const handeldata1 = (e) => {
-        setInp1((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-    };
 
     const Submitdata1 = async (e) => {
         e.preventDefault();
 
-        const inpdata1 = {
+        const fromdata = {
             email: inp1.email,
             password: inp1.password,
-        };
+        }
 
-        if (!inp1.email && !inp1.password) {
-            console.log("This field is required");
-        } else {
-            const response = await fetch(`${API_URL}/api/v1/users/login`, {
+
+        // Validate input fields
+        if (!inp1.password || !inp1.email) {
+            console.log("All fields are required");
+            return; // Stop execution if any field is empty
+        }
+
+        try {
+            const responce = await fetch(`${API_URL}/api/v1/users/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    Accept: "application/json",
                 },
-                body: JSON.stringify(inpdata1),
+                body: JSON.stringify(fromdata)
             });
 
-            if (response.ok) {
-                const fetchdata = await response.json();
-                const stordata = fetchdata.data.user;
-                const token = fetchdata.data.accessToken;
-                localStorage.setItem("stordata", JSON.stringify(stordata));
-                localStorage.setItem("token", JSON.stringify(token));
-
-                console.log("success", fetchdata);
-                navigate("navbar");
+            if (responce.ok) {
+                const logindata = await responce.json();
+                // console.log(logindata);
+                const tokendata = logindata.data.user;
+                localStorage.setItem("token", JSON.stringify(tokendata));
+                setTimeout(() => {
+                    navigate("/login/navbar")
+                }, 1000)
             } else {
-                const data = await response.json();
-                console.log("error", data);
+                const errorData = await responce.json()
+                console.log(errorData);
             }
+        } catch (error) {
+            console.log(error);
         }
-    };
+    }
 
     const Submitdata2 = async (e) => {
         e.preventDefault();
@@ -75,9 +75,13 @@ function Login() {
             email: inp2.email,
         };
 
-        if (!inp2.username && !inp2.password && !inp2.email) {
-            console.log("This field is required");
-        } else {
+        // Validate input fields
+        if (!inp2.username || !inp2.password || !inp2.email) {
+            console.log("All fields are required");
+            return; // Stop execution if any field is empty
+        }
+
+        try {
             const response = await fetch(`${API_URL}/api/v1/users/register`, {
                 method: "POST",
                 headers: {
@@ -86,15 +90,25 @@ function Login() {
                 },
                 body: JSON.stringify(inpdata),
             });
+
+            // Check if response is successful
             if (response.ok) {
                 const data = await response.json();
-                console.log("success", data);
+                console.log("Success:", data);
             } else {
-                const data = await response.json();
-                console.log("error", data);
+                const errorData = await response.json();
+                console.log("Error:", errorData);
             }
+        } catch (error) {
+            console.error("Network error:", error);
         }
-        resetdata2();
+
+        handalreset2(); // Clear form after submission
+    };
+    const forgetPwd = () => {
+        setOpen(true);
+        console.log("hello");
+
     };
 
     return (
@@ -110,9 +124,9 @@ function Login() {
                                 name="email"
                                 required
                                 className="border-solid border-slate-400 border-2 mx-2"
-                                onChange={handeldata1}
-                                onBlur={handeldata1}
                                 value={inp1.email}
+                                onChange={handalchange1}
+                                onBlur={handalchange1}
                             />
                         </div>
                         <div className="m-2">
@@ -122,9 +136,9 @@ function Login() {
                                 name="password"
                                 required
                                 className="border-solid border-slate-400 border-2 mx-2"
-                                onChange={handeldata1}
-                                onBlur={handeldata1}
                                 value={inp1.password}
+                                onChange={handalchange1}
+                                onBlur={handalchange1}
                             />
                         </div>
                         <div className="m-2 text-center">
@@ -135,15 +149,7 @@ function Login() {
                                 Register
                             </button>
                         </div>
-                        <div
-                            className="mt-10 text-sm border-b border-gray-500 py-5 cursor-pointer"
-                            onClick={forgetPwd}
-                        >
-                            Forget password?
-                        </div>
                     </form>
-                    <ForgetPwd open={open} setOpen={setOpen} />
-                    <ToastContainer />
                 </>
             ) : (
                 <form className="shadow bg-slate-100 p-10" onSubmit={Submitdata2}>
@@ -155,8 +161,8 @@ function Login() {
                             name="username"
                             required
                             className="border-solid border-slate-400 border-2 mx-2"
-                            onChange={handeldata2}
-                            onBlur={handeldata2}
+                            onChange={handalchange2}
+                            onBlur={handalchange2}
                             value={inp2.username}
                         />
                     </div>
@@ -167,8 +173,8 @@ function Login() {
                             name="password"
                             required
                             className="border-solid border-slate-400 border-2 mx-2"
-                            onChange={handeldata2}
-                            onBlur={handeldata2}
+                            onChange={handalchange2}
+                            onBlur={handalchange2}
                             value={inp2.password}
                         />
                     </div>
@@ -179,8 +185,8 @@ function Login() {
                             name="email"
                             required
                             className="border-solid border-slate-400 border-2 ml-9"
-                            onChange={handeldata2}
-                            onBlur={handeldata2}
+                            onChange={handalchange2}
+                            onBlur={handalchange2}
                             value={inp2.email}
                         />
                     </div>
@@ -191,11 +197,20 @@ function Login() {
                         <button onClick={showedata} className="bg-red-500 px-2 py-1 rounded">
                             Login
                         </button>
+                        <div
+                            class="mt-10 text-sm border-b border-gray-500 py-5 playfair tooltip cursor-pointer"
+                            onClick={forgetPwd}
+                        >
+                            Forget password ?
+                        </div>
                     </div>
                 </form>
             )}
+
+            <ForgetPwd open={open} setOpen={setOpen} />
         </main>
     );
 }
 
 export default Login;
+
