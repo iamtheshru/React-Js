@@ -22,7 +22,7 @@ function Navbar() {
             <button className="bg-red-400 p-2 rounded m-2" onClick={handlelogout}>Logout</button>
         </nav>
 
-        {/* <Usedata /> */}
+        <Usedata />
     </>);
 }
 
