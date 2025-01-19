@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../../context/AuthProvider';
+import { SetLocalStorege } from '../../utils/localStorage';
 
 const CreateTask = () => {
     const [taskTitle, setTaskTitle] = useState('');
@@ -9,16 +10,15 @@ const CreateTask = () => {
     const [category, setCategory] = useState('');
 
     const [newTask, setNewTask] = useState({});
+    const [userData, setUserData] = useContext(AuthContext);
 
     const submitHandler = (e) => {
         e.preventDefault();
-        const [userData, setUserData] = useContext(AuthContext);
-
         // console.log(taskTitle, taskDescription, taskDate, asignTo, category);
-
         setNewTask({ taskTitle, taskDescription, taskDate, category, active: false, newTask: true, failed: false, completed: false })
         // console.log(newTask);
         const data = userData;
+        // console.log(data);
         // console.log(JSON.parse(data));
         data.forEach(function (elem) {
             if (asignTo == elem.firstName) {
@@ -26,8 +26,9 @@ const CreateTask = () => {
                 elem.taskCounts.newTask = elem.taskCounts.newTask + 1;
                 // console.log(elem.tasks);
             }
-
         });
+        // window.location.reload();
+        SetLocalStorege();
         setUserData(data)
         console.log(data);
 
@@ -80,7 +81,8 @@ const CreateTask = () => {
                         value={taskDescription}
                         onChange={(e) => { setTaskDescription(e.target.value) }}
                         className='w-full h-44 text-sm py-2 px-4 rounded outline-none bg-transparent border-[1px] border-gray-400' name="" id=""></textarea>
-                    <button className='bg-emerald-500 py-3 hover:bg-emerald-600 px-5 rounded text-sm mt-4 w-full'>Create Task</button>
+                    <input type="submit" value="Submit" className='bg-emerald-500 py-3 hover:bg-emerald-600 px-5 rounded text-sm mt-4 w-full' />
+                    {/* <button className='bg-emerald-500 py-3 hover:bg-emerald-600 px-5 rounded text-sm mt-4 w-full'>Create Task</button> */}
                 </div>
 
             </form>
