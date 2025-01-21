@@ -14,30 +14,45 @@ const CreateTask = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        // console.log(taskTitle, taskDescription, taskDate, asignTo, category);
-        setNewTask({ taskTitle, taskDescription, taskDate, category, active: false, newTask: true, failed: false, completed: false })
-        // console.log(newTask);
-        const data = userData;
-        // console.log(data);
-        // console.log(JSON.parse(data));
-        data.forEach(function (elem) {
-            if (asignTo == elem.firstName) {
-                elem.tasks.push(newTask);
-                elem.taskCounts.newTask = elem.taskCounts.newTask + 1;
-                // console.log(elem.tasks);
+
+        const newTaskData = {
+            taskTitle,
+            taskDescription,
+            taskDate,
+            category,
+            active: false,
+            newTask: true,
+            failed: false,
+            completed: false
+        };
+
+        setNewTask(newTaskData);
+
+        const updatedData = userData.map((user) => {
+            if (asignTo === user.firstName) {
+                return {
+                    ...user,
+                    tasks: [...user.tasks, newTaskData],
+                    taskCounts: {
+                        ...user.taskCounts,
+                        newTask: user.taskCounts.newTask + 1,
+                    },
+                };
             }
+            return user;
         });
-        // window.location.reload();
-        SetLocalStorege();
-        setUserData(data)
-        console.log(data);
+
+        // console.log(updatedData);
+
+        SetLocalStorege(updatedData);
+        setUserData(updatedData);
 
         setTaskTitle("");
         setTaskDescription("");
         setTaskDate("");
         setAsignTo("");
         setCategory("");
-    }
+    };
     return (
         <div className='p-5 bg-[#1c1c1c] mt-5 rounded'>
             <form onSubmit={(e) => { submitHandler(e) }}

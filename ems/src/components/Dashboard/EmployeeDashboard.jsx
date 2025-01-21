@@ -4,12 +4,12 @@ import TaskListNumber from '../others/TaskListNumber';
 import TaskList from '../TaskList/TaskList'
 
 const EmployeeDashboard = (props) => {
-    // console.log(data);
+    console.log(props.data);
 
     return (
         <>
             <div className='p-10 bg-[#1C1C1C] h-screen'>
-                <Header changeUser={props.changeUser} data={props.data} />
+                <Header data={props.data} changeUser={props.changeUser} />
                 <TaskListNumber data={props.data} />
                 <TaskList data={props.data} />
             </div>
