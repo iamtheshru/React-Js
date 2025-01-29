@@ -251,18 +251,5 @@
       "email": "s.j.patel.3110@gmail.com"
     }
   ],
-  "card": [
-    {
-      "value": "1",
-      "finalPrice": 19799.1,
-      "retail": 2199.9,
-      "id": "1"
-    },
-    {
-      "value": 5,
-      "finalPrice": 98995.5,
-      "retail": 10999.5,
-      "id": "3"
-    }
-  ]
+  "card": []
 }

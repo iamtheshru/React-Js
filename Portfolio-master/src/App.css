@@ -32,7 +32,30 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* =======ChatWithMe======== */
+
+@media (min-width: 576px) {
+  .z-index {
+    z-index: 100;
+  }
+}
+
+@media (max-width: 576px) {
+  .width {
+    width: 480px;
+  }
+
+  .z-index {
+    z-index: 100;
+  }
+
+  .width-full {
+    width: 100% !important;
   }
 }

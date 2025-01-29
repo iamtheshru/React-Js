@@ -7,6 +7,8 @@ import {
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
+import ChatWithMe from "./chatwithme.js"
+
 function Footer() {
   let date = new Date();
   let year = date.getFullYear();
@@ -52,6 +54,9 @@ function Footer() {
               </a>
             </li>
           </ul>
+        </Col>
+        <Col>
+          <ChatWithMe  className="mr-1"/>
         </Col>
       </Row>
     </Container>
