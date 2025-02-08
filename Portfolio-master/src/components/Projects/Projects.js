@@ -7,6 +7,8 @@ import Sq from "../../Assets/Projects/sq.png";
 import Ticket from "../../Assets/Projects/ticket-system.png";
 import Game from "../../Assets/Projects/game.png";
 import Ems from "../../Assets/Projects/react.png"
+import happymart from "../../Assets/Projects/happymart.png"
+import brunchfood from "../../Assets/Projects/brunch-food.png"
 function Projects() {
   const [activeBtn, setActiveBtn] = useState("all");
 
@@ -92,18 +94,29 @@ function Projects() {
             </>
           )
           }
-          {/* {(activeBtn === "all" || activeBtn === "wd") && (
-            < Col md={4} className="project-card">
+          {(activeBtn === "all" || activeBtn === "wd") && (
+            <>            < Col md={4} className="project-card">
               <ProjectCard
-                imgPath={chatify}
+                imgPath={happymart}
                 isBlog={false}
-                title="Chatify"
+                title="Happy Mart"
                 description=""
-                ghLink="https://github.com/soumyajit4419/Chatify"
-                demoLink="https://chatify-49.web.app/"
+                ghLink="https://github.com/iamtheshru/HappyMart"
+                demoLink="https://iamtheshru.github.io/HappyMart/index.html"
               />
-            </Col>)
-          } */}
+            </Col>
+              < Col md={4} className="project-card">
+                <ProjectCard
+                  imgPath={brunchfood}
+                  isBlog={false}
+                  title="Brunch Food"
+                  description=""
+                  ghLink="https://github.com/iamtheshru/Brunch-Food"
+                  demoLink="https://iamtheshru.github.io/Brunch-Food/"
+                />
+              </Col>
+            </>)
+          }
         </Row>
       </Container>
     </Container >
