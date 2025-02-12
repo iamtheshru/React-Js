@@ -16,10 +16,10 @@ function AboutCard() {
           <p style={{ textAlign: "justify" }} className="purple">Apart from coding, some other activities that I love to do!</p>
           <ul>
             <li className="about-activity">
-              <ImPointRight /> Playing Games
+              <ImPointRight /> Social Media Influencers
             </li>
             <li className="about-activity">
-              <ImPointRight /> Writing Tech Blogs
+              <ImPointRight />  Adventure Activities
             </li>
             <li className="about-activity">
               <ImPointRight /> Travelling
