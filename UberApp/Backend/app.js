@@ -6,6 +6,8 @@ const app = express();
 const connectTpDb = require('./db/db');
 const userRouters = require('./routes/user.routers')
 
+// console.log("MongoDB URI:", process.env.DB_CONNECT);
+
 connectTpDb();
 app.use(cors()) //domin male tyare use karishu
 app.use(express.json());

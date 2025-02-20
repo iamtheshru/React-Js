@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
-
-function connectTpDb() {
-    mongoose.connect('process.env.DB_CONNECT').then(() => {
-        console.log('Connected to MongoDB')
-    }).catch(err => { console.log(err.message) })
+function connectToDb() {
+    mongoose.connect(process.env.DB_CONNECT, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    })
+    .then(() => console.log("Connected to MongoDB successfully!"))
+    .catch((error) => console.error("Error connecting to MongoDB:", error));
 }
 
-module.exports = connectTpDb
+module.exports = connectToDb;
