@@ -1,0 +1,139 @@
+@import "tailwindcss";
+@font-face {
+  font-family: 'Inter-bold';
+  src: url('../../public/font/Inter/static/Inter_18pt-Bold.ttf');
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../../public/font/Inter/static/Inter_18pt-Regular.ttf');
+}
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);  
+  color: var(--foreground);
+  font-family: 'Inter';
+}
+.main_container{
+  max-width: 1200px;
+  margin: auto;
+}
+.second_tital{
+font-family: 'inter-bold';
+font-weight: 600;
+color: #1E293B;
+font-size: 40px;
+}
+.silder__content h1{
+  font-family: 'Inter-bold';
+  font-size:64px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0;
+  padding: 0;
+color: #1E293B;
+}
+.silder__content p{
+  color: #64748B;
+  font-size: 16px;
+}
+.stats_section h2{
+  font-family: 'Inter-bold';
+  font-weight: 700;
+  font-size: 36px;
+}
+.stats_section p{
+  font-family: 'Inter';
+  /* font-weight: 700; */
+  font-size: 20px;
+}
+
+
+.categories_sec p{
+  font-family: 'inter-bold';
+  font-size: 16px;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.swiper-pagination {
+  position: relative !important;
+  bottom: -5px !important; 
+}
+.swiper-pagination-bullet{
+  background-color: #99F6E4 !important;
+  opacity: 1 !important;
+}
+.swiper-pagination-bullet-active{
+  background: #334155 !important;
+}
+
+.footer_title{
+  font-family: 'Inter-bold';
+  font-weight: 600;
+  font-size: 16px;
+  color: #14B8A6;
+  margin-bottom: 17px;
+}
+footer ul li a,
+footer  p{
+  font-family: 'Inter';
+  font-weight: 400;
+  font-size: 14px;
+  color: #FFF;
+  margin-bottom: 17px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .second_tital{
+    font-size: 32px;
+  }
+  .silder__content h1{
+    font-size: 40px;
+  }
+  .silder__content p{
+    font-size: 14px;
+  }
+  .stats_section h2{
+    font-size: 24px;
+  }
+  .stats_section p{
+    font-size: 16px;
+  }
+  .categories_sec p{
+    font-size: 14px;
+  }
+  .footer_title{
+    font-size: 14px;
+  }
+  footer ul li a,
+  footer  p{
+    font-size: 12px;
+  }
+  
+}
