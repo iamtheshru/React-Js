@@ -30,6 +30,8 @@ const Pagination = () => {
 
         if (name === 'img' && type === 'file') {
             const file = e.target.files[0];
+            console.log(file);
+
             if (file) {
                 const reader = new FileReader();
                 reader.onloadend = () => {
