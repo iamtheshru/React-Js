@@ -1,35 +1,40 @@
 // src/components/ErrorAlert.tsx
 import React from "react";
-import { Alert, Button } from "antd";
+import { Alert } from "antd";
 
 interface ErrorAlertProps {
     message: string;
     onClose?: () => void;
-    showmessege: boolean
 }
 
-const ErrorAlert: React.FC<ErrorAlertProps> = ({ message, onClose, showmessege }) => {
-
+export const ErrorSuccess: React.FC<ErrorAlertProps> = ({ message, onClose }) => {
     return (
         <>
-            {showmessege == true ? (<Alert
+            <Alert
                 message={message}
                 type="success"
                 showIcon
                 closable
                 onClose={onClose}
-            />) : (
-                <Alert
-                    message={message}
-                    type="error"
-                    showIcon
-                    closable
-                    onClose={onClose}
-                />
-            )
-            }
+            />
         </>
     );
 };
 
-export default ErrorAlert;
+
+
+export const ErrorAlert: React.FC<ErrorAlertProps> = ({ message, onClose }) => {
+    return (
+        <>
+            <Alert
+                message={message}
+                type="error"
+                showIcon
+                closable
+                onClose={onClose}
+            />
+        </>
+    );
+};
+
+

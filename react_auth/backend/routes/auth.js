@@ -99,5 +99,62 @@ router.post("/reset-password", async (req, res) => {
     res.status(500).send("Error resetting password");
   }
 });
+router.post("/create-user", async (req, res) => {
+  const { name, email, password } = req.body;
+
+  try {
+    const existingUser = await User.findOne({ email });
+    if (existingUser) return res.status(400).send("User already exists");
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = new User({ name, email, password: hashedPassword });
+    await newUser.save();
+
+    res.status(201).json({ message: "User created", user: newUser });
+  } catch (err) {
+    res.status(500).send("Error creating user");
+  }
+});
+// Update User
+router.put("/update-user/:id", authMiddleware, async (req, res) => {
+  const { name, email } = req.body;
+
+  try {
+    const updatedUser = await User.findByIdAndUpdate(
+      req.params.id,
+      { name, email },
+      { new: true }
+    ).select("-password");
+
+    if (!updatedUser) return res.status(404).send("User not found");
+
+    res.json({ message: "User updated", user: updatedUser });
+  } catch (err) {
+    res.status(500).send("Error updating user");
+  }
+});
+// Delete User
+router.delete("/delete-user/:id", authMiddleware, async (req, res) => {
+  try {
+    const deletedUser = await User.findByIdAndDelete(req.params.id);
+    if (!deletedUser) return res.status(404).send("User not found");
+
+    res.json({ message: "User deleted" });
+  } catch (err) {
+    res.status(500).send("Error deleting user");
+  }
+});
+// Get all users
+router.get("/users", authMiddleware, async (req, res) => {
+  try {
+    const users = await User.find().select("-password");
+    res.json(users);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error fetching users");
+  }
+});
+
+
 
 module.exports = router;

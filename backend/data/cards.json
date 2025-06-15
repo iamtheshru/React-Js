@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "name": "Card 1",
+    "description": "This is the description for Card 1.",
+    "img": "https://picsum.photos/seed/card1/300/200",
+    "price": 71.5,
+    "size": "Large",
+    "category": "Books"
+  },
+  {
+    "id": 2,
+    "name": "Card 2",
+    "description": "This is the description for Card 2.",
+    "img": "https://picsum.photos/seed/card2/300/200",
+    "price": 70.56,
+    "size": "Small",
+    "category": "Books"
+  },
+  {
+    "id": 3,
+    "name": "Card 3",
+    "description": "This is the description for Card 3.",
+    "img": "https://picsum.photos/seed/card3/300/200",
+    "price": 14.18,
+    "size": "Small",
+    "category": "Electronics"
+  },
+  {
+    "id": 4,
+    "name": "Card 4",
+    "description": "This is the description for Card 4.",
+    "img": "https://picsum.photos/seed/card4/300/200",
+    "price": 71.01,
+    "size": "Large",
+    "category": "Electronics"
+  },
+  {
+    "id": 5,
+    "name": "Card 5",
+    "description": "This is the description for Card 5.",
+    "img": "https://picsum.photos/seed/card5/300/200",
+    "price": 86.82,
+    "size": "Medium",
+    "category": "Clothing"
+  },
+  {
+    "id": 6,
+    "name": "Card 6",
+    "description": "This is the description for Card 6.",
+    "img": "https://picsum.photos/seed/card6/300/200",
+    "price": 69.77,
+    "size": "Small",
+    "category": "Clothing"
+  },
+  {
+    "id": 7,
+    "name": "Card 7",
+    "description": "This is the description for Card 7.",
+    "img": "https://picsum.photos/seed/card7/300/200",
+    "price": 66.09,
+    "size": "Medium",
+    "category": "Clothing"
+  },
+  {
+    "id": 8,
+    "name": "Card 8",
+    "description": "This is the description for Card 8.",
+    "img": "https://picsum.photos/seed/card8/300/200",
+    "price": 84.75,
+    "size": "Large",
+    "category": "Clothing"
+  },
+  {
+    "id": 9,
+    "name": "Card 9",
+    "description": "This is the description for Card 9.",
+    "img": "https://picsum.photos/seed/card9/300/200",
+    "price": 58.01,
+    "size": "Medium",
+    "category": "Clothing"
+  },
+  {
+    "id": 10,
+    "name": "Card 10",
+    "description": "This is the description for Card 10.",
+    "img": "https://picsum.photos/seed/card10/300/200",
+    "price": 96.05,
+    "size": "Large",
+    "category": "Accessories"
+  },
+  {
+    "id": 11,
+    "name": "Card 11",
+    "description": "This is the description for Card 11.",
+    "img": "https://picsum.photos/seed/card11/300/200",
+    "price": 89.85,
+    "size": "Large",
+    "category": "Books"
+  },
+  {
+    "id": 12,
+    "name": "Card 12",
+    "description": "This is the description for Card 12.",
+    "img": "https://picsum.photos/seed/card12/300/200",
+    "price": 35.49,
+    "size": "Large",
+    "category": "Clothing"
+  },
+  {
+    "id": 13,
+    "name": "Card 13",
+    "description": "This is the description for Card 13.",
+    "img": "https://picsum.photos/seed/card13/300/200",
+    "price": 50.25,
+    "size": "Small",
+    "category": "Clothing"
+  },
+  {
+    "id": 14,
+    "name": "Card 14",
+    "description": "This is the description for Card 14.",
+    "img": "https://picsum.photos/seed/card14/300/200",
+    "price": 94.89,
+    "size": "Small",
+    "category": "Accessories"
+  },
+  {
+    "id": 15,
+    "name": "Card 15",
+    "description": "This is the description for Card 15.",
+    "img": "https://picsum.photos/seed/card15/300/200",
+    "price": 19.57,
+    "size": "Medium",
+    "category": "Accessories"
+  },
+  {
+    "id": 16,
+    "name": "Card 16",
+    "description": "This is the description for Card 16.",
+    "img": "https://picsum.photos/seed/card16/300/200",
+    "price": 56.62,
+    "size": "Small",
+    "category": "Accessories"
+  },
+  {
+    "id": 17,
+    "name": "Card 17",
+    "description": "This is the description for Card 17.",
+    "img": "https://picsum.photos/seed/card17/300/200",
+    "price": 53.94,
+    "size": "Medium",
+    "category": "Clothing"
+  },
+  {
+    "id": 18,
+    "name": "Card 18",
+    "description": "This is the description for Card 18.",
+    "img": "https://picsum.photos/seed/card18/300/200",
+    "price": 71.69,
+    "size": "Small",
+    "category": "Accessories"
+  },
+  {
+    "id": 19,
+    "name": "Card 19",
+    "description": "This is the description for Card 19.",
+    "img": "https://picsum.photos/seed/card19/300/200",
+    "price": 17.99,
+    "size": "Small",
+    "category": "Books"
+  },
+  {
+    "id": 20,
+    "name": "Card 20",
+    "description": "This is the description for Card 20.",
+    "img": "https://picsum.photos/seed/card20/300/200",
+    "price": 56.9,
+    "size": "Small",
+    "category": "Books"
+  },
+  {
+    "id": 21,
+    "name": "Card 21",
+    "description": "This is the description for Card 21.",
+    "img": "https://picsum.photos/seed/card21/300/200",
+    "price": 80.1,
+    "size": "Small",
+    "category": "Accessories"
+  },
+  {
+    "id": 22,
+    "name": "Card 22",
+    "description": "This is the description for Card 22.",
+    "img": "https://picsum.photos/seed/card22/300/200",
+    "price": 20.29,
+    "size": "Medium",
+    "category": "Accessories"
+  },
+  {
+    "id": 23,
+    "name": "Card 23",
+    "description": "This is the description for Card 23.",
+    "img": "https://picsum.photos/seed/card23/300/200",
+    "price": 41.05,
+    "size": "Large",
+    "category": "Electronics"
+  },
+  {
+    "id": 24,
+    "name": "Card 24",
+    "description": "This is the description for Card 24.",
+    "img": "https://picsum.photos/seed/card24/300/200",
+    "price": 27.76,
+    "size": "Large",
+    "category": "Clothing"
+  },
+  {
+    "id": 25,
+    "name": "Card 25",
+    "description": "This is the description for Card 25.",
+    "img": "https://picsum.photos/seed/card25/300/200",
+    "price": 79.9,
+    "size": "Medium",
+    "category": "Books"
+  },
+  {
+    "id": 26,
+    "name": "Card 26",
+    "description": "This is the description for Card 26.",
+    "img": "https://picsum.photos/seed/card26/300/200",
+    "price": 99.07,
+    "size": "Large",
+    "category": "Electronics"
+  },
+  {
+    "id": 27,
+    "name": "Card 27",
+    "description": "This is the description for Card 27.",
+    "img": "https://picsum.photos/seed/card27/300/200",
+    "price": 71.76,
+    "size": "Large",
+    "category": "Books"
+  },
+  {
+    "id": 28,
+    "name": "Card 28",
+    "description": "This is the description for Card 28.",
+    "img": "https://picsum.photos/seed/card28/300/200",
+    "price": 74.12,
+    "size": "Large",
+    "category": "Accessories"
+  },
+  {
+    "id": 29,
+    "name": "Card 29",
+    "description": "This is the description for Card 29.",
+    "img": "https://picsum.photos/seed/card29/300/200",
+    "price": 68.84,
+    "size": "Small",
+    "category": "Clothing"
+  },
+  {
+    "id": 30,
+    "name": "Card 30",
+    "description": "This is the description for Card 30.",
+    "img": "https://picsum.photos/seed/card30/300/200",
+    "price": 33.42,
+    "size": "Small",
+    "category": "Electronics"
+  },
+  {
+    "id": 31,
+    "name": "Card 31",
+    "description": "This is the description for Card 31.",
+    "img": "https://picsum.photos/seed/card31/300/200",
+    "price": 56.7,
+    "size": "Medium",
+    "category": "Clothing"
+  },
+  {
+    "id": 32,
+    "name": "Card 32",
+    "description": "This is the description for Card 32.",
+    "img": "https://picsum.photos/seed/card32/300/200",
+    "price": 25.25,
+    "size": "Small",
+    "category": "Clothing"
+  },
+  {
+    "id": 33,
+    "name": "Card 33",
+    "description": "This is the description for Card 33.",
+    "img": "https://picsum.photos/seed/card33/300/200",
+    "price": 68.39,
+    "size": "Small",
+    "category": "Electronics"
+  },
+  {
+    "id": 34,
+    "name": "Card 34",
+    "description": "This is the description for Card 34.",
+    "img": "https://picsum.photos/seed/card34/300/200",
+    "price": 62.45,
+    "size": "Small",
+    "category": "Books"
+  },
+  {
+    "id": 35,
+    "name": "Card 35",
+    "description": "This is the description for Card 35.",
+    "img": "https://picsum.photos/seed/card35/300/200",
+    "price": 18.14,
+    "size": "Large",
+    "category": "Electronics"
+  },
+  {
+    "id": 36,
+    "name": "Card 36",
+    "description": "This is the description for Card 36.",
+    "img": "https://picsum.photos/seed/card36/300/200",
+    "price": 92.06,
+    "size": "Small",
+    "category": "Accessories"
+  },
+  {
+    "id": 37,
+    "name": "Card 37",
+    "description": "This is the description for Card 37.",
+    "img": "https://picsum.photos/seed/card37/300/200",
+    "price": 71.18,
+    "size": "Small",
+    "category": "Clothing"
+  },
+  {
+    "id": 38,
+    "name": "Card 38",
+    "description": "This is the description for Card 38.",
+    "img": "https://picsum.photos/seed/card38/300/200",
+    "price": 77.41,
+    "size": "Medium",
+    "category": "Clothing"
+  },
+  {
+    "id": 39,
+    "name": "Card 39",
+    "description": "This is the description for Card 39.",
+    "img": "https://picsum.photos/seed/card39/300/200",
+    "price": 82.85,
+    "size": "Medium",
+    "category": "Accessories"
+  },
+  {
+    "id": 40,
+    "name": "Card 40",
+    "description": "This is the description for Card 40.",
+    "img": "https://picsum.photos/seed/card40/300/200",
+    "price": 35.95,
+    "size": "Small",
+    "category": "Clothing"
+  },
+  {
+    "id": 41,
+    "name": "Card 41",
+    "description": "This is the description for Card 41.",
+    "img": "https://picsum.photos/seed/card41/300/200",
+    "price": 72.74,
+    "size": "Large",
+    "category": "Books"
+  },
+  {
+    "id": 42,
+    "name": "Card 42",
+    "description": "This is the description for Card 42.",
+    "img": "https://picsum.photos/seed/card42/300/200",
+    "price": 91.03,
+    "size": "Small",
+    "category": "Books"
+  },
+  {
+    "id": 43,
+    "name": "Card 43",
+    "description": "This is the description for Card 43.",
+    "img": "https://picsum.photos/seed/card43/300/200",
+    "price": 37.71,
+    "size": "Medium",
+    "category": "Electronics"
+  },
+  {
+    "id": 44,
+    "name": "Card 44",
+    "description": "This is the description for Card 44.",
+    "img": "https://picsum.photos/seed/card44/300/200",
+    "price": 90.43,
+    "size": "Small",
+    "category": "Accessories"
+  },
+  {
+    "id": 45,
+    "name": "Card 45",
+    "description": "This is the description for Card 45.",
+    "img": "https://picsum.photos/seed/card45/300/200",
+    "price": 42.2,
+    "size": "Medium",
+    "category": "Clothing"
+  },
+  {
+    "id": 46,
+    "name": "Card 46",
+    "description": "This is the description for Card 46.",
+    "img": "https://picsum.photos/seed/card46/300/200",
+    "price": 79.95,
+    "size": "Large",
+    "category": "Clothing"
+  },
+  {
+    "id": 47,
+    "name": "Card 47",
+    "description": "This is the description for Card 47.",
+    "img": "https://picsum.photos/seed/card47/300/200",
+    "price": 46.81,
+    "size": "Small",
+    "category": "Electronics"
+  },
+  {
+    "id": 48,
+    "name": "Card 48",
+    "description": "This is the description for Card 48.",
+    "img": "https://picsum.photos/seed/card48/300/200",
+    "price": 78.03,
+    "size": "Small",
+    "category": "Books"
+  },
+  {
+    "id": 49,
+    "name": "Card 49",
+    "description": "This is the description for Card 49.",
+    "img": "https://picsum.photos/seed/card49/300/200",
+    "price": 81.68,
+    "size": "Small",
+    "category": "Electronics"
+  },
+  {
+    "id": 50,
+    "name": "Card 50",
+    "description": "This is the description for Card 50.",
+    "img": "https://picsum.photos/seed/card50/300/200",
+    "price": 83.09,
+    "size": "Medium",
+    "category": "Electronics"
+  }
+]

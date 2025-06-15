@@ -2,20 +2,23 @@ import { Button } from "antd";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { registerUser } from "../auth-user/@service-user";
-import ErrorAlert from "../../../common/ui/Error";
 import { useState } from "react";
+import { ErrorSuccess, ErrorAlert } from "../../../common/ui/Error";
+import type { UserType } from "../auth-user/@type";
 
-const initialValues = {
-    username: "",
+type RegisterType = Pick<UserType, "name" | "email" | "password">;
+
+const initialValues: RegisterType = {
+    name: "",
     email: "",
     password: "",
 };
 
 const validationSchema = Yup.object({
-    username: Yup.string()
+    name: Yup.string()
         .min(3, "Minimum 3 characters")
         .max(50, "Maximum 50 characters")
-        .required("Username is required"),
+        .required("name is required"),
     email: Yup.string()
         .email("Invalid email format")
         .min(3, "Minimum 3 characters")
@@ -28,48 +31,54 @@ const validationSchema = Yup.object({
 });
 
 const Register = () => {
-    const [errorMsg, setErrorMsg] = useState<string>("");
-    const [showmessege, setShowmessege] = useState<boolean | null>(null);
+    const [errorMsg, setErrorMsg] = useState<string | null>(null);
+    const [success, setSuccess] = useState<string | null>(null);
+
     const formik = useFormik({
         initialValues,
         validationSchema,
         onSubmit: async (values, { resetForm }) => {
             try {
+                // const formData = new FormData();
+                // formData.append("name", values.name);
+                // formData.append("email", values.email);
+                // formData.append("password", values.password);
                 await registerUser(values);
-                // alert("Registration successful!");
-                setErrorMsg("Success");
-                setShowmessege(true);
+                setSuccess("Success");
                 resetForm();
-            } catch (error) {
-                setErrorMsg("Error");
-                setShowmessege(false);
-                // alert("Registration failed!");
-                console.error(error);
+            } catch (error: any) {
+                setErrorMsg(error.message)
             }
         },
     });
 
+    const checkError = (filed: keyof RegisterType): boolean => {
+        return !!(formik.touched[filed] && formik.errors[filed])
+    }
+
     return (
         <div className="max-w-md mx-auto space-y-4">
             {errorMsg && (
-                <ErrorAlert
-                    message={errorMsg}
-                    showmessege={showmessege}
-                    onClose={() => setErrorMsg("")} />
+                <ErrorAlert message={errorMsg} onClose={() => setErrorMsg(null)} />
             )}
+
+            {success && (
+                <ErrorSuccess message={success} onClose={() => setSuccess(null)} />
+            )}
+
             <form onSubmit={formik.handleSubmit} className="space-y-4">
                 <div>
-                    <label>Username</label>
+                    <label>name</label>
                     <input
                         type="text"
-                        name="username"
+                        name="name"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        value={formik.values.username}
+                        value={formik.values.name}
                         className="border p-2 w-full"
                     />
-                    {formik.touched.username && formik.errors.username && (
-                        <div className="text-red-500">{formik.errors.username}</div>
+                    {checkError("name") && (
+                        <div className="text-red-500">{formik.errors.name}</div>
                     )}
                 </div>
 
@@ -83,7 +92,7 @@ const Register = () => {
                         value={formik.values.email}
                         className="border p-2 w-full"
                     />
-                    {formik.touched.email && formik.errors.email && (
+                    {checkError("email") && (
                         <div className="text-red-500">{formik.errors.email}</div>
                     )}
                 </div>
@@ -98,7 +107,7 @@ const Register = () => {
                         value={formik.values.password}
                         className="border p-2 w-full"
                     />
-                    {formik.touched.password && formik.errors.password && (
+                    {checkError("password") && (
                         <div className="text-red-500">{formik.errors.password}</div>
                     )}
                 </div>
