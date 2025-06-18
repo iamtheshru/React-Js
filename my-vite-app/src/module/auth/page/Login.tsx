@@ -1,7 +1,7 @@
 import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { loginUser } from '../auth-user/@service-user';
 import { ErrorAlert, ErrorSuccess } from '../../../common/ui/Error';
 import type { UserType } from '../auth-user/@type';
@@ -30,10 +30,8 @@ const Login = () => {
     const onSubmit = async (values: LoginType) => {
         try {
             const data = await loginUser(values);
-
             setSuccess('Login successful!');
-            localStorage.setItem("token", data.data.token)
-            // console.log(data.data.token);
+            localStorage.setItem("token", data.data.token);
             navigate('/dashboard');
         } catch (error: any) {
             setErrorMsg(error?.message || 'Login failed!');
@@ -41,25 +39,23 @@ const Login = () => {
     };
 
     return (
-        <div className=" flex items-center justify-center px-4">
-            <div className="w-full max-w-lg bg-white rounded-xl shadow-lg p-10">
+        <div className="flex items-center justify-center min-h-screen px-4 bg-gray-50">
+            <div className="w-full max-w-md bg-white rounded-xl shadow-lg p-8">
                 {error && <ErrorAlert message={error} onClose={() => setErrorMsg(null)} />}
                 {success && <ErrorSuccess message={success} onClose={() => setSuccess(null)} />}
 
-                <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Welcome Back 👋</h2>
+                <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">Welcome Back 👋</h2>
 
                 <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
                     {({ errors, touched }) => (
-                        <Form className="space-y-6">
+                        <Form className="space-y-5">
                             <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                                    Email
-                                </label>
+                                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
                                 <Field
                                     type="email"
                                     name="email"
                                     id="email"
-                                    className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                                    className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
                                 />
                                 {touched.email && errors.email && (
                                     <div className="text-red-500 text-sm mt-1">{errors.email}</div>
@@ -67,14 +63,12 @@ const Login = () => {
                             </div>
 
                             <div>
-                                <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                                    Password
-                                </label>
+                                <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
                                 <Field
                                     type="password"
                                     name="password"
                                     id="password"
-                                    className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                                    className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
                                 />
                                 {touched.password && errors.password && (
                                     <div className="text-red-500 text-sm mt-1">{errors.password}</div>
@@ -83,13 +77,23 @@ const Login = () => {
 
                             <button
                                 type="submit"
-                                className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded transition duration-300"
+                                className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 rounded transition"
                             >
                                 Sign In
                             </button>
                         </Form>
                     )}
                 </Formik>
+
+                <div className="mt-4 text-center">
+                    <Link to="/register" className="text-indigo-600 hover:underline text-sm">Register
+                    </Link>
+                </div>
+                <div className="mt-4 text-center">
+                    <Link to="/forgetpassword" className="text-indigo-600 hover:underline text-sm">
+                        Forgot Password?
+                    </Link>
+                </div>
             </div>
         </div>
     );

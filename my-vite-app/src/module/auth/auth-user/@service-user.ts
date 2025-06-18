@@ -111,20 +111,61 @@ export const getidUser = async (id: string) => {
 
 //-----------------EditUser-----------------------------------
 
-export const editUser = async (id: string) => {
+export const editUser = async (id: string, data = {}) => {
     console.log(`${baseUrl}/update/${id}`);
     const token = localStorage.getItem("token");
 
     try {
-        const response = await axios.put(`${baseUrl}/update/${id}`, {
+        const response = await axios.put(`${baseUrl}/update/${id}`, data, {
             headers: {
                 Authorization: `Bearer ${token}`,
-                accessKey: `${accesskey}`
+                accessKey: `${accesskey}`,
+                "Content-Type": "application/json"
             }
         });
+        console.log("edit", response.data);
+
         return response.data;
     } catch (error: any) {
         throw new Error(error.response?.data?.error || "error");
+    }
+};
+
+//====================forgetpassword======================
+export const forgetPassword = async ({ email }: { email: string }) => {
+    try {
+        const res = await axios.post(`${baseUrl}/forgot-password`, { email }, {
+            headers: { accessKey: `${accesskey}` }
+        });
+        return res.data;
+    } catch (error: any) {
+        throw new Error(error?.response?.data?.message || "forgetPassword error");
+    }
+};
+
+//=========================resetpassword====================
+
+
+export const resetpassword = async ({
+    newPassword,
+    token,
+}: {
+    newPassword: string;
+    token: string;
+}) => {
+    try {
+        const res = await axios.post(
+            `${baseUrl}/reset-password`,
+            { newPassword, token },
+            {
+                headers: {
+                    accessKey: accesskey, // if required
+                },
+            }
+        );
+        return res.data;
+    } catch (error: any) {
+        throw new Error(error.response?.data?.message || "resetPassword error");
     }
 };
 
