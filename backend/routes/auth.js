@@ -91,7 +91,7 @@ router.post("/forgot-password", async (req, res) => {
       tls: { rejectUnauthorized: false }
     });
 
-    const resetLink = `http://localhost:3000/reset-password/${token}`;
+    const resetLink = `http://localhost:5173/reset-password/${token}`;
     await transporter.sendMail({
       from: '"Your App" <vankarrahul2710@gmail.com>',
       to: user.email,
@@ -114,7 +114,7 @@ router.post("/reset-password", async (req, res) => {
       resetPasswordExpires: { $gt: Date.now() }
     });
 
-    if (!user) return res.status(400).json({ status: "error", message: "Invalid or expired token" });
+    // if (!user) return res.status(400).json({ status: "error", message: "Invalid or expired token" });
 
     user.password = await bcrypt.hash(newPassword, 10);
     user.resetPasswordToken = undefined;
@@ -145,15 +145,49 @@ router.post("/create", upload.none(), async (req, res) => {
 // GET ALL USERS
 router.get("/list", authMiddleware, async (req, res) => {
   try {
-    const users = await User.find().select("-password");
-    return res.status(200).json({ status: "success", message: "Users fetched", data: users });
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 5;
+    const keyword = req.query.keyword?.toString().trim() || "";
+
+    const skip = (page - 1) * limit;
+
+    const query = keyword
+      ? {
+        $or: [
+          { name: { $regex: keyword, $options: "i" } },
+          { email: { $regex: keyword, $options: "i" } },
+        ],
+      }
+      : {};
+
+    const users = await User.find(query)
+      .select("-password")
+      .skip(skip)
+      .limit(limit);
+
+    const totalUsers = await User.countDocuments(query);
+
+    return res.status(200).json({
+      status: "success",
+      message: "Users fetched",
+      data: users,
+      currentPage: page,
+      totalPages: Math.ceil(totalUsers / limit),
+      totalUsers,
+    });
   } catch (err) {
-    return res.status(500).json({ status: "error", message: "Error fetching users" });
+    return res.status(500).json({
+      status: "error",
+      message: "Error fetching users",
+    });
   }
 });
 
+
+
+
 // UPDATE USER
-router.put("/update/:id", authMiddleware, async (req, res) => {
+router.put("/update/:id", authMiddleware, upload.none(), async (req, res) => {
   const { id } = req.params;
   const { name, email } = req.body;
   try {
