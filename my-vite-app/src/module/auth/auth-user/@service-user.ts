@@ -33,18 +33,18 @@ export const loginUser = async ({ email, password }: { email: string, password: 
     }
 }
 //-----------------getUser-----------------------------------
-export const getUser = async () => {
+export const getUser = async (page: number, limit: number, keyword: string = "") => {
     const token = localStorage.getItem("token");
     console.log(token);
 
     try {
-        const response = await axios.get(`${baseUrl}/list`, {
+        const response = await axios.get(`${baseUrl}/list?page=${page}&limit=${limit}&keyword=${keyword}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
                 accessKey: `${accesskey}`
             }
         });
-        console.log(response);
+        // console.log(response);
         return response.data;
     } catch (error: any) {
         // console.error("Error details:", error);
@@ -123,7 +123,7 @@ export const editUser = async (id: string, data = {}) => {
                 "Content-Type": "application/json"
             }
         });
-        console.log("edit", response.data);
+        // console.log("edit", response.data);
 
         return response.data;
     } catch (error: any) {
